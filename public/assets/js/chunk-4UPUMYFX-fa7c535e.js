@@ -1,0 +1,2 @@
+import{a as c}from"/assets/js/chunk-W774OHJB-c50c5e8e.js";import{e as s}from"/assets/js/chunk-WLHSDIGQ-997a23cc.js";var e=s(c(),1);function a(t){let r=(0,e.useMemo)(()=>{let n=window.matchMedia(t);function o(){return n.matches}function i(u){return n.addEventListener("change",u),()=>n.removeEventListener("change",u)}return{getCurrentValue:o,subscribe:i}},[t]);return(0,e.useSyncExternalStore)(r.subscribe,r.getCurrentValue)}export{a};
+//# sourceMappingURL=/assets/js/chunk-4UPUMYFX-fa7c535e.js.map

@@ -1,0 +1,2 @@
+import{$p as d,Yp as o,_p as n}from"/assets/js/chunk-SY3BGRWE-e63f925f.js";import{b as a}from"/assets/js/chunk-4JY5UMT2-eb896d4a.js";function i(e){return n(e.timeline)}function s(e,r,t){return i(e)===r?!1:(a(e.tree===t.initialTree&&!d(e.timeline)&&!e.tree.hasUncommittedChanges(),"Cannot switch tree mode after tree data has been loaded because it would reset timeline data"),o(e.tree,r),e.timeline=t.createTimeline(r),t.resetTimeline&&e.timeline.reset(e.tree),!0)}export{i as a,s as b};
+//# sourceMappingURL=/assets/js/chunk-Y7UYUSE6-30cd027a.js.map

@@ -1,0 +1,2 @@
+import{f as t}from"/assets/js/chunk-DCJ63L7W-c8a340fa.js";import{c as e}from"/assets/js/chunk-AFIDN3ND-f543f34c.js";import{a as f}from"/assets/js/chunk-W774OHJB-c50c5e8e.js";import{e as s}from"/assets/js/chunk-WLHSDIGQ-997a23cc.js";var r=s(f(),1);function v(n,m,o=[]){r.default.useEffect(()=>{e()?.isRemountingUI()||t(n,m)},o)}export{v as a};
+//# sourceMappingURL=/assets/js/chunk-Y6FMVPBZ-38d5da41.js.map

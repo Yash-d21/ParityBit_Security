@@ -1,0 +1,2 @@
+function f(t){let e=t.annotations?.framerComponentPresetProps;return e?new Set(e.split(",").map(n=>n.trim()).filter(Boolean)):new Set}function m(t,e){if(!t)return{};let n=e==="onlyPresets",r=f(t);if(r.size===0)return n?{}:t.properties;let i={};for(let o in t.properties){if(r.has(o)!==n)continue;let s=t.properties[o];s&&(i[o]=s)}return i}export{f as a,m as b};
+//# sourceMappingURL=/assets/js/chunk-K7R2FMXE-77397762.js.map
