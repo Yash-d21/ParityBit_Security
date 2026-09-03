@@ -130,41 +130,12 @@
   color: rgb(210, 210, 210);
 }
 
-.products-section__description {
-  margin: 4px 0 0;
-  font-family: "Inter", sans-serif;
-  font-size: 14px;
-  line-height: 1.55;
-  color: rgb(180, 180, 180);
-}
-
-.products-section__features {
+.products-section__paragraph {
   margin: 8px 0 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.products-section__features li {
-  position: relative;
-  padding-left: 14px;
   font-family: "Inter", sans-serif;
   font-size: 13px;
-  line-height: 1.55;
+  line-height: 1.6;
   color: rgb(200, 200, 200);
-}
-
-.products-section__features li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.65em;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: rgb(123, 49, 255);
 }
 
 .products-section__wave {

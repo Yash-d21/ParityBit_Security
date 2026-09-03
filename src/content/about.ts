@@ -12,4 +12,28 @@ export const aboutContent = {
   brandLocation: 'Winnipeg, Canada · Next-Gen Cybersecurity',
   analysisLabel: 'Analysis',
   visualImage: '/assets/images/about-network.png',
-};
+  layers: ['Real-time threat intelligence', 'Unified SOC operations'],
+  pillars: [
+    {
+      title: 'Threat intelligence',
+      body: 'Detect, investigate, and attribute threats with AI-driven intelligence across modern digital environments.',
+    },
+    {
+      title: 'Security automation',
+      body: 'Unify SOC operations, tickets, and response so analysts spend time on decisions — not swivel-chair work.',
+    },
+    {
+      title: 'Proactive defense',
+      body: 'Phishing simulation, OSINT investigation, and continuous monitoring to stop attacks before they cause damage.',
+    },
+  ],
+  profileBar: 'Intelligence-driven defense',
+  platformTitle: 'AI-native platforms',
+  platformSubtitle: 'Our proprietary security stack',
+  chips: [
+    { label: 'ATLAS', hint: 'Threat intelligence' },
+    { label: 'VECTOR', hint: 'Unified SOC' },
+    { label: 'Trace', hint: 'OSINT & investigation' },
+    { label: 'ZeroXphish', hint: 'Human-risk simulation' },
+  ],
+} as const;

@@ -1,0 +1,332 @@
+.research-section {
+  width: 100%;
+  align-self: stretch;
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  padding: 88px 0 96px;
+}
+
+.research-section__container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.research-section__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.research-section__title {
+  margin: 0;
+  font-family: "Inter Tight Regular", "Inter", sans-serif;
+  font-size: clamp(32px, 4.4vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+}
+
+.research-section__cta {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: rgb(176, 132, 255);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.research-section__cta:hover {
+  color: rgb(255, 255, 255);
+}
+
+.research-section__columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px 40px;
+  margin-bottom: 48px;
+}
+
+.research-section__column {
+  text-decoration: none;
+  color: inherit;
+  min-width: 0;
+}
+
+.research-section__column h3 {
+  margin: 0 0 12px;
+  font-family: "Inter Tight Regular", "Inter", sans-serif;
+  font-size: 22px;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+}
+
+.research-section__column p {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgb(168, 168, 168);
+}
+
+.research-section__arrow {
+  display: inline-block;
+  margin-right: 8px;
+  color: rgb(176, 132, 255);
+  font-weight: 600;
+}
+
+.research-section__column:hover h3 {
+  color: rgb(176, 132, 255);
+}
+
+.research-section__stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  min-height: 360px;
+  margin: 0 auto;
+  max-width: 1080px;
+  padding-top: 12px;
+}
+
+.research-section__feed {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  z-index: 2;
+}
+
+.research-section__rail-label {
+  position: absolute;
+  left: 0;
+  top: -22px;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(120, 120, 120);
+}
+
+.research-section__sources {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(92px, 1fr));
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.research-section__source {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 52px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgb(18, 18, 18);
+}
+
+.research-section__source-name {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: rgb(236, 238, 240);
+}
+
+.research-section__source-hint {
+  margin-top: 2px;
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  line-height: 1.2;
+  color: rgb(140, 140, 140);
+}
+
+.research-section__wires {
+  width: 72px;
+  height: 236px;
+  margin-left: -2px;
+  flex: 0 0 auto;
+}
+
+.research-section__core {
+  position: relative;
+  width: min(420px, 46vw);
+  height: 320px;
+  flex: 0 0 auto;
+  margin-left: -18px;
+}
+
+.research-section__cloud {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.research-section__pills {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 0;
+  padding: 4px;
+  border-radius: 8px;
+  background: rgb(12, 12, 12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  z-index: 2;
+}
+
+.research-section__pill {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 8px 12px;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgb(168, 168, 168);
+  cursor: pointer;
+}
+
+.research-section__pill.is-active {
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+}
+
+.research-section__exit {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  margin-left: -12px;
+  z-index: 2;
+}
+
+.research-section__exit-line {
+  width: 56px;
+  height: 24px;
+  display: block;
+}
+
+.research-section__output {
+  padding: 12px 16px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgb(12, 12, 12);
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.research-section__output:hover {
+  border-color: rgb(176, 132, 255);
+  color: rgb(176, 132, 255);
+}
+
+.research-section__caption {
+  position: absolute;
+  padding: 7px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgb(10, 10, 10);
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  line-height: 1;
+  color: rgb(190, 190, 190);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.research-section__caption--core {
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 1024px) {
+  .research-section__stage {
+    max-width: 100%;
+  }
+
+  .research-section__core {
+    width: min(360px, 42vw);
+    height: 300px;
+  }
+
+  .research-section__wires {
+    width: 64px;
+  }
+
+  .research-section__exit-line {
+    width: 36px;
+  }
+}
+
+@media (max-width: 809.98px) {
+  .research-section {
+    padding: 64px 0 72px;
+  }
+
+  .research-section__container {
+    padding: 0 20px;
+  }
+
+  .research-section__header {
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-bottom: 28px;
+  }
+
+  .research-section__columns {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .research-section__stage {
+    flex-direction: column;
+    gap: 20px;
+    min-height: 0;
+  }
+
+  .research-section__feed {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .research-section__wires,
+  .research-section__caption,
+  .research-section__exit-line,
+  .research-section__rail-label {
+    display: none;
+  }
+
+  .research-section__core {
+    width: min(100%, 340px);
+    height: 280px;
+    margin-left: 0;
+  }
+
+  .research-section__exit {
+    margin-left: 0;
+  }
+}

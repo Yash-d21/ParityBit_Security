@@ -1,14 +1,14 @@
 .why-us-section {
   width: 100%;
   align-self: stretch;
-  background: rgb(236, 238, 240);
-  color: rgb(17, 17, 17);
-  padding: 80px 0 96px;
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  padding: 88px 0 104px;
 }
 
 .why-us-section__container {
   width: 100%;
-  max-width: 1300px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 0 30px;
 }
@@ -18,8 +18,8 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 20px;
-  margin-bottom: 48px;
+  gap: 16px;
+  margin-bottom: 56px;
 }
 
 .why-us-section__eyebrow {
@@ -29,7 +29,7 @@
   font-family: "Inter", sans-serif;
   font-size: 14px;
   line-height: 1;
-  color: rgb(17, 17, 17);
+  color: rgb(210, 210, 210);
 }
 
 .why-us-section__eyebrow-icon {
@@ -43,90 +43,113 @@
 .why-us-section__title {
   margin: 0;
   font-family: "Inter Tight Regular", "Inter", sans-serif;
-  font-size: clamp(36px, 4.5vw, 56px);
-  line-height: 1.05;
+  font-size: clamp(32px, 4.6vw, 52px);
+  line-height: 1.08;
   letter-spacing: -0.03em;
-  font-weight: 400;
-  color: rgb(17, 17, 17);
-  white-space: nowrap;
-}
-
-.why-us-section__title-accent {
-  color: rgb(123, 49, 255);
+  font-weight: 500;
+  color: rgb(255, 255, 255);
 }
 
 .why-us-section__intro {
   margin: 0;
-  max-width: 720px;
+  max-width: 760px;
   font-family: "Inter", sans-serif;
   font-size: 16px;
   line-height: 1.7;
-  color: rgb(87, 87, 87);
+  color: rgb(176, 176, 176);
 }
 
-.why-us-section__grid {
+.why-us-section__layout {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
+  grid-template-columns: minmax(280px, 0.92fr) minmax(0, 1.08fr);
+  gap: 56px 72px;
+  align-items: center;
 }
 
-.why-us-section__card {
-  background: rgb(255, 255, 255);
-  border: 1px solid rgb(228, 228, 228);
-  border-radius: 5px;
-  padding: 28px 28px 32px;
-  min-width: 0;
+.why-us-section__visual {
+  display: flex;
+  justify-content: center;
 }
 
-.why-us-section__number {
-  display: block;
-  margin-bottom: 16px;
+.why-us-section__emblem {
+  width: min(100%, 420px);
+  height: auto;
+  overflow: visible;
+}
+
+.why-us-section__blade {
+  cursor: pointer;
+  transition: filter 180ms ease;
+}
+
+.why-us-section__blade.is-active {
+  filter: brightness(1.16);
+}
+
+.why-us-section__lobe-label {
+  fill: rgb(255, 255, 255);
   font-family: "Inter", sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: 0.04em;
-  color: rgb(123, 49, 255);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  pointer-events: none;
 }
 
-.why-us-section__card-title {
-  margin: 0 0 12px;
-  font-family: "Inter", sans-serif;
-  font-size: 18px;
-  line-height: 1.3;
-  font-weight: 600;
-  color: rgb(17, 17, 17);
+.why-us-section__claims {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
 }
 
-.why-us-section__card-desc {
+.why-us-section__claim {
+  padding-left: 18px;
+  border-left: 2px solid transparent;
+  cursor: default;
+  transition: border-color 180ms ease;
+}
+
+.why-us-section__claim.is-active {
+  border-left-color: rgb(123, 49, 255);
+}
+
+.why-us-section__claim-title {
+  margin: 0 0 10px;
+  font-family: "Inter Tight Regular", "Inter", sans-serif;
+  font-size: clamp(24px, 2.4vw, 32px);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+}
+
+.why-us-section__claim-desc {
   margin: 0;
+  max-width: 540px;
   font-family: "Inter", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.65;
-  color: rgb(87, 87, 87);
+  color: rgb(168, 168, 168);
 }
 
 @media (max-width: 809.98px) {
   .why-us-section {
-    padding: 56px 0 72px;
+    padding: 64px 0 80px;
   }
 
   .why-us-section__container {
     padding: 0 20px;
   }
 
-  .why-us-section__title {
-    white-space: normal;
-  }
-
-  .why-us-section__grid {
+  .why-us-section__layout {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 40px;
   }
-}
 
-@media (min-width: 810px) and (max-width: 1379.98px) {
-  .why-us-section__grid {
-    gap: 16px;
+  .why-us-section__emblem {
+    width: min(100%, 320px);
+  }
+
+  .why-us-section__claims {
+    gap: 28px;
   }
 }

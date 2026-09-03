@@ -2,8 +2,7 @@ export type ProductItem = {
   vendor: string;
   name: string;
   subtitle: string;
-  description: string;
-  features: string[];
+  paragraph: string;
   image: string;
 };
 
@@ -16,44 +15,32 @@ export const productsContent = {
       vendor: 'Threat Intelligence by ParityBit',
       name: 'ATLAS',
       subtitle: 'ThreatAtlas',
-      description: 'AI-Driven Threat Intelligence Platform.',
-      features: [
-        'Real-time APT attribution across nation-state and criminal groups',
-        '24/7 dark web and underground surveillance',
-      ],
+      paragraph:
+        'ATLAS is an AI-driven threat intelligence platform. It delivers real-time APT attribution across nation-state and criminal groups, with 24/7 dark web and underground surveillance.',
       image: '/assets/images/products/atlas.png',
     },
     {
       vendor: 'AI Powered SIEM Solution',
       name: 'VECTOR',
       subtitle: 'AI-Powered Unified SOC Platform.',
-      description: '',
-      features: [
-        'One console for detection, tickets, and response',
-        'Auto compliance monitoring across frameworks',
-      ],
+      paragraph:
+        'VECTOR is an AI-powered unified SOC platform. It gives teams one console for detection, tickets, and response, with auto compliance monitoring across frameworks.',
       image: '/assets/images/products/vector.png',
     },
     {
       vendor: 'Intelligence Gathering & Analysis System',
       name: 'Trace',
       subtitle: 'ParityBit Trace',
-      description: 'AI-Powered Investigation & OSINT Platform.',
-      features: [
-        'Plain text conversational investigation queries',
-        'Multi-source deep & dark web correlation',
-      ],
+      paragraph:
+        'Trace is an AI-powered investigation and OSINT platform. Analysts run plain-text conversational investigation queries, with multi-source deep and dark web correlation.',
       image: '/assets/images/products/trace.png',
     },
     {
       vendor: 'Advanced Phishing Simulation & Awareness',
       name: 'ZeroXphish',
       subtitle: 'Advanced Phishing Simulation & Awareness Platform.',
-      description: '',
-      features: [
-        'Tailored phishing campaigns per organization',
-        'High-fidelity landing pages & attack scenarios',
-      ],
+      paragraph:
+        'ZeroXphish is an advanced phishing simulation and awareness platform. It runs tailored phishing campaigns per organization, with high-fidelity landing pages and attack scenarios.',
       image: '/assets/images/products/zeroxphish.png',
     },
   ] satisfies ProductItem[],

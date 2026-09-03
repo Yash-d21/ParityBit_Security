@@ -1,8 +1,157 @@
-import React from 'react';
+import { useState } from 'react';
 import { whyUsContent } from '../content/whyUs';
 import './WhyUsSection.css';
 
+const CX = 200;
+const CY = 200;
+const R = 150;
+
+function polar(deg: number, radius = R) {
+  const rad = (deg * Math.PI) / 180;
+  return {
+    x: CX + radius * Math.cos(rad),
+    y: CY + radius * Math.sin(rad),
+  };
+}
+
+const BLADES = (
+  [
+    {
+      id: 'intel',
+      start: -120,
+      fill: 'rgb(139, 77, 255)',
+      label: { x: 200, y: 148 },
+      lines: ['THREAT', 'INTEL'] as const,
+    },
+    {
+      id: 'defense',
+      start: 0,
+      fill: 'rgb(91, 33, 182)',
+      label: { x: 258, y: 244 },
+      lines: ['SECURE', 'OPS'] as const,
+    },
+    {
+      id: 'soc',
+      start: 120,
+      fill: 'rgb(181, 122, 255)',
+      label: { x: 155, y: 244 },
+      lines: ['IN-HOUSE', 'SOC'] as const,
+    },
+  ] as const
+).map((blade) => {
+  const end = blade.start + 120;
+  const p0 = polar(blade.start);
+  const p1 = polar(end);
+  const head = polar(blade.start, R / 2);
+  const tail = polar(end, R / 2);
+  const sector = `M ${CX} ${CY} L ${p0.x} ${p0.y} A ${R} ${R} 0 0 1 ${p1.x} ${p1.y} Z`;
+
+  return {
+    ...blade,
+    end,
+    head,
+    tail,
+    sector,
+  };
+});
+
+function WhyUsEmblem({
+  activeId,
+  onSelect,
+}: {
+  activeId: string;
+  onSelect: (id: string) => void;
+}) {
+  return (
+    <svg
+      className="why-us-section__emblem"
+      viewBox="0 0 400 400"
+      role="img"
+      aria-label="ParityBit security across in-house SOC, threat intelligence, and secure operations"
+    >
+      <defs>
+        <radialGradient id="why-us-halo" cx="50%" cy="50%" r="50%">
+          <stop offset="58%" stopColor="rgb(123, 49, 255)" stopOpacity="0" />
+          <stop offset="100%" stopColor="rgb(123, 49, 255)" stopOpacity="0.55" />
+        </radialGradient>
+        {BLADES.map((blade) => (
+          <mask
+            key={blade.id}
+            id={`why-us-tomoe-${blade.id}`}
+            maskUnits="userSpaceOnUse"
+          >
+            <rect width="400" height="400" fill="black" />
+            <path d={blade.sector} fill="white" />
+            <circle cx={blade.head.x} cy={blade.head.y} r={R / 2} fill="white" />
+            <circle cx={blade.tail.x} cy={blade.tail.y} r={R / 2} fill="black" />
+          </mask>
+        ))}
+      </defs>
+
+      <circle cx={CX} cy={CY} r="198" fill="url(#why-us-halo)" />
+      <circle
+        cx={CX}
+        cy={CY}
+        r="184"
+        fill="none"
+        stroke="rgba(123, 49, 255, 0.28)"
+        strokeWidth="14"
+      />
+      <circle
+        cx={CX}
+        cy={CY}
+        r="174"
+        fill="none"
+        stroke="rgb(176, 132, 255)"
+        strokeWidth="2.5"
+      />
+      <circle
+        cx={CX}
+        cy={CY}
+        r="164"
+        fill="none"
+        stroke="rgb(123, 49, 255)"
+        strokeWidth="2"
+      />
+      <circle cx={CX} cy={CY} r="156" fill="rgb(5, 5, 5)" />
+
+      {BLADES.map((blade) => (
+        <circle
+          key={blade.id}
+          className={`why-us-section__blade${activeId === blade.id ? ' is-active' : ''}`}
+          cx={CX}
+          cy={CY}
+          r={R}
+          fill={blade.fill}
+          mask={`url(#why-us-tomoe-${blade.id})`}
+          onMouseEnter={() => onSelect(blade.id)}
+        />
+      ))}
+
+      {BLADES.map((blade) => (
+        <text
+          key={`${blade.id}-label`}
+          className={`why-us-section__lobe-label${activeId === blade.id ? ' is-active' : ''}`}
+          x={blade.label.x}
+          y={blade.label.y}
+          textAnchor="middle"
+          dominantBaseline="middle"
+        >
+          <tspan x={blade.label.x} dy="-0.6em">
+            {blade.lines[0]}
+          </tspan>
+          <tspan x={blade.label.x} dy="1.25em">
+            {blade.lines[1]}
+          </tspan>
+        </text>
+      ))}
+    </svg>
+  );
+}
+
 export function WhyUsSection() {
+  const [activeId, setActiveId] = useState(whyUsContent.items[0].id);
+
   return (
     <section
       id="why-us"
@@ -21,24 +170,27 @@ export function WhyUsSection() {
             <span>{whyUsContent.eyebrow}</span>
           </div>
 
-          <h2 className="why-us-section__title">
-            {whyUsContent.titleLead}
-            <span className="why-us-section__title-accent">
-              {whyUsContent.titleAccent}
-            </span>
-          </h2>
-
+          <h2 className="why-us-section__title">{whyUsContent.title}</h2>
           <p className="why-us-section__intro">{whyUsContent.intro}</p>
         </div>
 
-        <div className="why-us-section__grid">
-          {whyUsContent.items.map((item) => (
-            <article key={item.number} className="why-us-section__card">
-              <span className="why-us-section__number">{item.number}</span>
-              <h3 className="why-us-section__card-title">{item.title}</h3>
-              <p className="why-us-section__card-desc">{item.description}</p>
-            </article>
-          ))}
+        <div className="why-us-section__layout">
+          <div className="why-us-section__visual">
+            <WhyUsEmblem activeId={activeId} onSelect={setActiveId} />
+          </div>
+
+          <div className="why-us-section__claims">
+            {whyUsContent.items.map((item) => (
+              <article
+                key={item.id}
+                className={`why-us-section__claim${activeId === item.id ? ' is-active' : ''}`}
+                onMouseEnter={() => setActiveId(item.id)}
+              >
+                <h3 className="why-us-section__claim-title">{item.title}</h3>
+                <p className="why-us-section__claim-desc">{item.description}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,39 +1,36 @@
 export type WhyUsItem = {
-  number: string;
+  id: string;
+  lobe: string;
   title: string;
   description: string;
 };
 
 export const whyUsContent = {
   eyebrow: 'Why us',
-  titleLead: 'Security ',
-  titleAccent: 'without compromise.',
+  title: 'The Future of Security Starts Here',
   intro:
-    'In-house SOCs. Real-time intelligence. Full compliance coverage. Scaleable from SMB to enterprise.',
+    'The AI era is transforming cybersecurity across three critical fronts — and ParityBit secures them all.',
   items: [
     {
-      number: '01',
-      title: 'Tailored for SMBs & MSPs',
+      id: 'soc',
+      lobe: 'IN-HOUSE SOC',
+      title: 'Accelerate the SOC with AI',
       description:
-        'Scalable security without enterprise bloat. Right-sized to your estate and your team.',
+        'Drive SOC transformation with an in-house Canadian team, unified detection, and 24/7 monitoring — so breaches stop faster, without enterprise bloat.',
     },
     {
-      number: '02',
-      title: 'In-House SOCs & Experts',
+      id: 'intel',
+      lobe: 'THREAT INTEL',
+      title: 'Stop AI-accelerated adversaries',
       description:
-        '24/7 monitoring by dedicated professionals: our team, in Canada.',
+        'Real-time APT attribution and underground surveillance so analysts see nation-state and criminal activity early — and every alert ships with a next step.',
     },
     {
-      number: '03',
-      title: 'Actionable threat intelligence',
+      id: 'defense',
+      lobe: 'SECURE OPS',
+      title: 'Scale secure operations',
       description:
-        'Real-time insights stop attacks early. Every alert ships with a next step.',
-    },
-    {
-      number: '04',
-      title: 'Canadian compliance coverage',
-      description:
-        'OSFI B-13, FINTRAC, PIPEDA, ISO 27001, PCI DSS: audit-ready for Canadian fintechs and MSPs. Processes aligned with ISO 27001 & NIST.',
+        'Right-sized for SMBs and MSPs, with Canadian compliance coverage across OSFI B-13, FINTRAC, PIPEDA, ISO 27001, and PCI DSS.',
     },
   ] satisfies WhyUsItem[],
 };

@@ -52,16 +52,7 @@ export function ProductsSection() {
                 <p className="products-section__vendor">{product.vendor}</p>
                 <h3 className="products-section__name">{product.name}</h3>
                 <p className="products-section__subtitle">{product.subtitle}</p>
-                {product.description ? (
-                  <p className="products-section__description">
-                    {product.description}
-                  </p>
-                ) : null}
-                <ul className="products-section__features">
-                  {product.features.map((feature) => (
-                    <li key={feature}>{feature}</li>
-                  ))}
-                </ul>
+                <p className="products-section__paragraph">{product.paragraph}</p>
               </div>
             </article>
           ))}
