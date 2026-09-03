@@ -77,6 +77,12 @@
   overflow: visible;
 }
 
+.why-us-section__rotor,
+.why-us-section__lobe-label-wrap {
+  transform-box: view-box;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 .why-us-section__blade {
   cursor: pointer;
   transition: filter 180ms ease;
@@ -91,8 +97,14 @@
   font-family: "Inter", sans-serif;
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   pointer-events: none;
+  text-transform: uppercase;
+  transition: opacity 180ms ease;
+}
+
+.why-us-section__lobe-label.is-active {
+  opacity: 1;
 }
 
 .why-us-section__claims {
@@ -104,12 +116,21 @@
 .why-us-section__claim {
   padding-left: 18px;
   border-left: 2px solid transparent;
-  cursor: default;
-  transition: border-color 180ms ease;
+  cursor: pointer;
+  transition: border-color 180ms ease, opacity 180ms ease;
+  opacity: 0.72;
 }
 
 .why-us-section__claim.is-active {
   border-left-color: rgb(123, 49, 255);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .why-us-section__rotor,
+  .why-us-section__lobe-label-wrap {
+    transition: none;
+  }
 }
 
 .why-us-section__claim-title {

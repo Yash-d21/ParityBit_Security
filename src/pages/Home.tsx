@@ -10,7 +10,7 @@ import { FramerFooterMenus } from '../components/FramerFooterMenus';
 import { FramerFooterLegal } from '../components/FramerFooterLegal';
 import { CtaSection } from '../components/CtaSection';
 import { BookingCtaSection } from '../components/BookingCtaSection';
-import { FramerFaqSection } from '../components/FramerFaqSection';
+import { FaqSection } from '../components/FaqSection';
 import { ResearchSection } from '../components/ResearchSection';
 
 export const Home: React.FC = () => {
@@ -167,7 +167,6 @@ export const Home: React.FC = () => {
                             </h2>
                           </div>
                         </div>
-                        <Link className="services-section__cta" to="/services">Explore all 8 services</Link>
                       </div>                      <div className="framer-kn8zpw" data-framer-name="Card Wrapper 01">
                         <div className="framer-1e88ao">
                           {/* $ */}
@@ -194,7 +193,7 @@ export const Home: React.FC = () => {
                                           <h4 className="framer-text framer-styles-preset-17nmdi8" data-styles-preset="Pipw65IC4" dir="auto" style={{"--framer-text-alignment": "start", "--framer-text-color": "var(--extracted-1eung3n, var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17)))"}}>- Compliance &amp; Risk</h4>
                                         </div>
                                       </div>                                      <div className="framer-11q5vb5" data-framer-name="Line" style={{"backgroundColor": "var(--token-a9492df4-afd1-4c28-90f0-cf83a6de37e1, rgb(177, 177, 177))", "opacity": "1"}}></div>                                      <div className="framer-of2y41" data-framer-name="Short Description" data-framer-component-type="RichTextContainer" style={{"--extracted-r6o4lv": "var(--token-3c85a5ae-91cb-4727-974c-a277a7768b75, rgb(87, 87, 87))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1"}}>
-                                        <p className="framer-text framer-styles-preset-zsangm" data-styles-preset="VOzck8Hj3" dir="auto" style={{"--framer-text-alignment": "start", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-3c85a5ae-91cb-4727-974c-a277a7768b75, rgb(87, 87, 87)))"}}>Structured patch lifecycle management — vulnerability tracking, testing, deployment, and verification.</p>
+                                        <p className="framer-text framer-styles-preset-zsangm" data-styles-preset="VOzck8Hj3" dir="auto" style={{"--framer-text-alignment": "start", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-3c85a5ae-91cb-4727-974c-a277a7768b75, rgb(87, 87, 87)))"}}>Structured patch lifecycle management: vulnerability tracking, testing, deployment, and verification.</p>
                                       </div>
                                     </div>
                                   </div>                                  <div className="framer-dr2ejp" data-framer-name="Bg" style={{"borderRadius": "5px", "opacity": "1"}}>
@@ -253,6 +252,7 @@ export const Home: React.FC = () => {
 
                           <div className="services-section__intro">
                             <p>Offensive testing, defensive operations, and governance, delivered by operators with the credentials to prove it. Pick a capability or engage the full stack.</p>
+                            <Link className="services-section__cta" to="/services">Explore all 8 services</Link>
                           </div>
 
                         </div>
@@ -359,101 +359,7 @@ export const Home: React.FC = () => {
               </section>
               <ProductsSection />
               <WhyUsSection />
-              <section className="framer-rt14oz" data-framer-name="Testimonial Section">
-                <div className="framer-2afj7h" data-framer-name="Container">
-                  <div className="framer-19wwnnu" data-framer-name="Content">
-                    <div className="ssr-variant hidden-n1lvbu hidden-1bih26h">
-                      <div className="framer-vd1hyq-container" style={{"willChange": "transform", "opacity": "1", "transform": "none"}}>
-                        <div className="framer-anh3M framer-5Yetb framer-2e2wsz framer-v-1rboqzm" data-framer-name="Section Title 02" style={{"opacity": "1"}}>
-                          <div className="framer-1tdhzkh" data-framer-name="Icon" style={{"opacity": "1"}}>
-                            <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
-                              <img decoding="auto" loading="lazy" width="20" height="20" src="/assets/images/WfbxSQyOjo3fWmtKp5iBzgLjYro-baa859fd.svg" alt="Icon" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "contain"}} />
-                            </div>
-                          </div>                          <div className="framer-15xtpsx" data-framer-component-type="RichTextContainer" style={{"--extracted-r6o4lv": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1"}}>
-                            <p className="framer-text framer-styles-preset-p6kp0d" data-styles-preset="RO4XsuvlA" dir="auto" style={{"--framer-text-color": "var(--extracted-r6o4lv, var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255)))"}}>Testimonials</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>                    <div className="ssr-variant hidden-n1lvbu hidden-1bih26h">
-                      <div className="framer-195vz6i-container" style={{"willChange": "transform", "opacity": "1", "transform": "none"}}>
-                        <div className="framer-5pj07 framer-qvsax framer-ZoWwZ framer-u0t8D framer-1ltfiuv framer-v-1ltfiuv" data-framer-name="Desktop Testimonial Tab 01" style={{"maxWidth": "100%", "width": "100%", "opacity": "1"}}>
-                          <div className="framer-1x3ih1q" data-framer-name="Title Wrapper" style={{"opacity": "1"}}>
-                            <div className="framer-1odbqkf" data-framer-name="Title" data-framer-component-type="RichTextContainer" style={{"--extracted-a0htzi": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1"}}>
-                              <h3 className="framer-text framer-styles-preset-1yaw7e1" data-styles-preset="KGv4c2SiW" dir="auto" style={{"--framer-text-alignment": "center", "--framer-text-color": "var(--extracted-a0htzi, var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255)))"}}>"Working with the team transformed the way we approach cybersecurity. Their AI-powered monitoring and rapid response capabilities helped us identify potential threats before they could impact our operations”</h3>
-                            </div>                            <div className="framer-w5tnse" data-framer-name="Icon Wrapper" style={{"opacity": "1"}}>
-                              <div className="framer-1cy1frt" data-framer-name="Icon" style={{"opacity": "1"}}>
-                                <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
-                                  <img decoding="auto" loading="lazy" width="30" height="30" src="/assets/images/LQeUCfuZftG6tYfmc3atC4qTI-5702bde1.svg" alt="Icon" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "contain"}} />
-                                </div>
-                              </div>                              <div className="framer-18hb8l8" data-framer-name="Icon" style={{"opacity": "1"}}>
-                                <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
-                                  <img decoding="auto" loading="lazy" width="30" height="30" src="/assets/images/LQeUCfuZftG6tYfmc3atC4qTI-5702bde1.svg" alt="Icon" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "contain"}} />
-                                </div>
-                              </div>                              <div className="framer-n8udt1" data-framer-name="Icon" style={{"opacity": "1"}}>
-                                <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
-                                  <img decoding="auto" loading="lazy" width="30" height="30" src="/assets/images/LQeUCfuZftG6tYfmc3atC4qTI-5702bde1.svg" alt="Icon" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "contain"}} />
-                                </div>
-                              </div>                              <div className="framer-py8kb4" data-framer-name="Icon" style={{"opacity": "1"}}>
-                                <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
-                                  <img decoding="auto" loading="lazy" width="30" height="30" src="/assets/images/LQeUCfuZftG6tYfmc3atC4qTI-5702bde1.svg" alt="Icon" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "contain"}} />
-                                </div>
-                              </div>                              <div className="framer-7v1za" data-framer-name="Icon" style={{"opacity": "1"}}>
-                                <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
-                                  <img decoding="auto" loading="lazy" width="30" height="30" src="/assets/images/LQeUCfuZftG6tYfmc3atC4qTI-5702bde1.svg" alt="Icon" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "contain"}} />
-                                </div>
-                              </div>
-                            </div>
-                          </div>                          <div className="framer-biz9bb" data-framer-name="Card Wrapper" style={{"opacity": "1"}}>
-                            <div className="framer-44yh9n" data-border="true" data-framer-name="Testimonial Card 01" data-highlight="true" tabIndex={0} style={{"--border-bottom-width": "1px", "--border-color": "var(--token-fbc34c97-65df-4834-a8af-8e6122ee7fe1, rgb(50, 50, 50))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", "backgroundColor": "var(--token-02a8069f-415d-40f8-977b-0faf42646d7a, rgb(32, 32, 32))", "borderRadius": "5px", "opacity": "1"}}>
-                              <div className="framer-zonw3e" data-framer-name="Image & Author Name" style={{"opacity": "1"}}>
-                                <div className="framer-15hsl54" style={{"borderRadius": "100px", "opacity": "1"}}>
-                                  <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
-                                    <img decoding="auto" loading="lazy" width="512" height="512" src="/assets/images/f8qEZYAoQSlBFCf5AFMXV50DTQ-526787cc.avif" alt="Image" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center top", "objectFit": "cover"}} />
-                                  </div>
-                                </div>                                <div className="framer-nmeh59" data-framer-name="Author Name Wrapper" style={{"opacity": "1"}}>
-                                  <div className="framer-1s7jw5a" data-framer-name="Author Name" data-framer-component-type="RichTextContainer" style={{"--extracted-1w1cjl5": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1"}}>
-                                    <h6 className="framer-text framer-styles-preset-1hhc6na" data-styles-preset="psLHE4vrw" dir="auto" style={{"--framer-text-alignment": "start", "--framer-text-color": "var(--extracted-1w1cjl5, var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255)))"}}>Olivia Bennett</h6>
-                                  </div>                                  <div className="framer-17fj7d7" data-framer-name="Designation" data-framer-component-type="RichTextContainer" style={{"--extracted-r6o4lv": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1"}}>
-                                    <p className="framer-text framer-styles-preset-zsangm" data-styles-preset="VOzck8Hj3" dir="auto" style={{"--framer-text-alignment": "start", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255)))"}}>IT Director, NexaBank</p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>                            <div className="framer-1xxp91y" data-border="true" data-framer-name="Testimonial Card 02" data-highlight="true" tabIndex={0} style={{"--border-bottom-width": "1px", "--border-color": "var(--token-fbc34c97-65df-4834-a8af-8e6122ee7fe1, rgb(50, 50, 50))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", "backgroundColor": "rgba(0, 0, 0, 0)", "borderRadius": "5px", "opacity": "1"}}>
-                              <div className="framer-ejq49t" data-framer-name="Image & Author Name" style={{"opacity": "1"}}>
-                                <div className="framer-1hqqlxj" style={{"borderRadius": "100px", "opacity": "1"}}>
-                                  <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
-                                    <img decoding="auto" loading="lazy" width="512" height="512" src="/assets/images/9ejTRD1DOF5ZWKApnFEf9cRKRE-f176fb12.avif" alt="Image" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center top", "objectFit": "cover"}} />
-                                  </div>
-                                </div>                                <div className="framer-awhyxq" data-framer-name="Author Name Wrapper" style={{"opacity": "1"}}>
-                                  <div className="framer-733ulx" data-framer-name="Author Name" data-framer-component-type="RichTextContainer" style={{"--extracted-1w1cjl5": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1"}}>
-                                    <h6 className="framer-text framer-styles-preset-1hhc6na" data-styles-preset="psLHE4vrw" dir="auto" style={{"--framer-text-alignment": "start", "--framer-text-color": "var(--extracted-1w1cjl5, var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255)))"}}>James Walker</h6>
-                                  </div>                                  <div className="framer-8znxdj" data-framer-name="Designation" data-framer-component-type="RichTextContainer" style={{"--extracted-r6o4lv": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1"}}>
-                                    <p className="framer-text framer-styles-preset-zsangm" data-styles-preset="VOzck8Hj3" dir="auto" style={{"--framer-text-alignment": "start", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255)))"}}>CTO, SecureTech</p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>                            <div className="framer-78im9n" data-border="true" data-framer-name="Testimonial Card 03" data-highlight="true" tabIndex={0} style={{"--border-bottom-width": "1px", "--border-color": "var(--token-fbc34c97-65df-4834-a8af-8e6122ee7fe1, rgb(50, 50, 50))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", "backgroundColor": "rgba(0, 0, 0, 0)", "borderRadius": "5px", "opacity": "1"}}>
-                              <div className="framer-ic8nda" data-framer-name="Image & Author Name" style={{"opacity": "1"}}>
-                                <div className="framer-umougy" style={{"borderRadius": "100px", "opacity": "1"}}>
-                                  <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
-                                    <img decoding="auto" loading="lazy" width="512" height="512" src="/assets/images/w45D3yilqnGtu1KLrZlc4Ccjrt0-a2b2ac7c.avif" alt="Image" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center top", "objectFit": "cover"}} />
-                                  </div>
-                                </div>                                <div className="framer-h1n7ro" data-framer-name="Author Name Wrapper" style={{"opacity": "1"}}>
-                                  <div className="framer-197wfyv" data-framer-name="Author Name" data-framer-component-type="RichTextContainer" style={{"--extracted-1w1cjl5": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1"}}>
-                                    <h6 className="framer-text framer-styles-preset-1hhc6na" data-styles-preset="psLHE4vrw" dir="auto" style={{"--framer-text-alignment": "start", "--framer-text-color": "var(--extracted-1w1cjl5, var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255)))"}}>Emma Walker</h6>
-                                  </div>                                  <div className="framer-1fuh3cc" data-framer-name="Designation" data-framer-component-type="RichTextContainer" style={{"--extracted-r6o4lv": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1"}}>
-                                    <p className="framer-text framer-styles-preset-zsangm" data-styles-preset="VOzck8Hj3" dir="auto" style={{"--framer-text-alignment": "start", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255)))"}}>CISO, SafeNet</p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>                  <div className="framer-179m1y0 hidden-1bih26h hidden-n1lvbu" data-framer-name="Line"></div>                  <div className="framer-kt5sb7 hidden-1bih26h hidden-n1lvbu" data-framer-name="Line"></div>
-                </div>
-              </section>              <FramerFaqSection variant="home" />              <ResearchSection />
+              <ResearchSection />              <FaqSection />
             </div>            <div id="overlay"></div>            <div className="framer-n9p53u"></div>            <BookingCtaSection />            <CtaSection />            <footer className="framer-m5pop4" data-framer-name="Footer">
               <div className="ssr-variant hidden-1ckteoo hidden-1vvzmjz">
                 <div className="framer-1nt6my8-container">

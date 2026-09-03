@@ -1,11 +1,10 @@
 export type PartnerLogo = {
   name: string;
   src: string;
-  size: 'chamber' | 'microsoft' | 'google' | 'aws' | 'northforge';
+  size: 'microsoft' | 'google' | 'aws' | 'northforge';
 };
 
 export const partnerLogos: PartnerLogo[] = [
-  { name: 'The Chamber', src: '/assets/partners/the-chamber.png', size: 'chamber' },
   { name: 'Microsoft', src: '/partners/microsoft.svg', size: 'microsoft' },
   { name: 'North Forge', src: '/assets/partners/north-forge.png?v=2', size: 'northforge' },
   { name: 'Google Cloud', src: '/partners/googlecloud.svg', size: 'google' },

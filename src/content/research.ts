@@ -5,7 +5,7 @@ export const researchContent = {
   columns: [
     {
       title: 'Identify actual risk',
-      body: 'Let ATLAS pull threat needles from the alert haystack — correlating nation-state and criminal activity across the deep and dark web.',
+      body: 'Let ATLAS pull threat needles from the alert haystack, correlating nation-state and criminal activity across the deep and dark web.',
       href: '/blogs/securing-cloud-environments-for-modern-enterprises',
     },
     {
@@ -29,19 +29,6 @@ export const researchContent = {
     { name: 'Cloud', hint: 'Workloads' },
     { name: 'Dark web', hint: 'Underground' },
   ],
-  stages: [
-    {
-      id: 'COLLECT',
-      caption: 'Correlating telemetry…',
-    },
-    {
-      id: 'ANALYZE',
-      caption: 'Tracing the campaign…',
-    },
-    {
-      id: 'PUBLISH',
-      caption: 'Assembling the brief…',
-    },
-  ],
+  flowLabel: 'collect → analyse → publish',
   outputLabel: 'Field notes',
 } as const;

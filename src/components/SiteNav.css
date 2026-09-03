@@ -4,8 +4,8 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgb(17, 17, 17);
-  border-bottom: 1px solid rgb(50, 50, 50);
+  background: #000;
+  border-bottom: 1px solid rgb(28, 28, 28);
 }
 
 .site-nav__inner {

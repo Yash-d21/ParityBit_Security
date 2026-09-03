@@ -5,6 +5,8 @@ import './WhyUsSection.css';
 const CX = 200;
 const CY = 200;
 const R = 150;
+/** Shared radius so all three labels sit at equal distance from center */
+const LABEL_R = 70;
 
 function polar(deg: number, radius = R) {
   const rad = (deg * Math.PI) / 180;
@@ -20,21 +22,24 @@ const BLADES = (
       id: 'intel',
       start: -120,
       fill: 'rgb(139, 77, 255)',
-      label: { x: 200, y: 148 },
+      // Top lobe — angle of the visual bulb mass
+      labelAngle: -90,
       lines: ['THREAT', 'INTEL'] as const,
     },
     {
       id: 'defense',
       start: 0,
       fill: 'rgb(91, 33, 182)',
-      label: { x: 258, y: 244 },
+      // Bottom-right lobe
+      labelAngle: 30,
       lines: ['SECURE', 'OPS'] as const,
     },
     {
       id: 'soc',
       start: 120,
       fill: 'rgb(181, 122, 255)',
-      label: { x: 155, y: 244 },
+      // Bottom-left lobe
+      labelAngle: 150,
       lines: ['IN-HOUSE', 'SOC'] as const,
     },
   ] as const
@@ -45,6 +50,7 @@ const BLADES = (
   const head = polar(blade.start, R / 2);
   const tail = polar(end, R / 2);
   const sector = `M ${CX} ${CY} L ${p0.x} ${p0.y} A ${R} ${R} 0 0 1 ${p1.x} ${p1.y} Z`;
+  const label = polar(blade.labelAngle, LABEL_R);
 
   return {
     ...blade,
@@ -52,8 +58,16 @@ const BLADES = (
     head,
     tail,
     sector,
+    label,
   };
 });
+
+const ROTATION_BY_ID: Record<string, number> = {
+  // Bring the active lobe to the top (-90°)
+  intel: 0,
+  defense: -120,
+  soc: 120,
+};
 
 function WhyUsEmblem({
   activeId,
@@ -62,6 +76,8 @@ function WhyUsEmblem({
   activeId: string;
   onSelect: (id: string) => void;
 }) {
+  const rotation = ROTATION_BY_ID[activeId] ?? 0;
+
   return (
     <svg
       className="why-us-section__emblem"
@@ -115,36 +131,49 @@ function WhyUsEmblem({
       />
       <circle cx={CX} cy={CY} r="156" fill="rgb(5, 5, 5)" />
 
-      {BLADES.map((blade) => (
-        <circle
-          key={blade.id}
-          className={`why-us-section__blade${activeId === blade.id ? ' is-active' : ''}`}
-          cx={CX}
-          cy={CY}
-          r={R}
-          fill={blade.fill}
-          mask={`url(#why-us-tomoe-${blade.id})`}
-          onMouseEnter={() => onSelect(blade.id)}
-        />
-      ))}
+      <g
+        className="why-us-section__rotor"
+        style={{
+          transform: `rotate(${rotation}deg)`,
+          transformOrigin: `${CX}px ${CY}px`,
+        }}
+      >
+        {BLADES.map((blade) => (
+          <circle
+            key={blade.id}
+            className={`why-us-section__blade${activeId === blade.id ? ' is-active' : ''}`}
+            cx={CX}
+            cy={CY}
+            r={R}
+            fill={blade.fill}
+            mask={`url(#why-us-tomoe-${blade.id})`}
+            onMouseEnter={() => onSelect(blade.id)}
+          />
+        ))}
 
-      {BLADES.map((blade) => (
-        <text
-          key={`${blade.id}-label`}
-          className={`why-us-section__lobe-label${activeId === blade.id ? ' is-active' : ''}`}
-          x={blade.label.x}
-          y={blade.label.y}
-          textAnchor="middle"
-          dominantBaseline="middle"
-        >
-          <tspan x={blade.label.x} dy="-0.6em">
-            {blade.lines[0]}
-          </tspan>
-          <tspan x={blade.label.x} dy="1.25em">
-            {blade.lines[1]}
-          </tspan>
-        </text>
-      ))}
+        {BLADES.map((blade) => (
+          <g
+            key={`${blade.id}-label`}
+            className="why-us-section__lobe-label-wrap"
+            style={{
+              transform: `rotate(${-rotation}deg)`,
+              transformOrigin: `${blade.label.x}px ${blade.label.y}px`,
+            }}
+          >
+            <text
+              className={`why-us-section__lobe-label${activeId === blade.id ? ' is-active' : ''}`}
+              textAnchor="middle"
+            >
+              <tspan x={blade.label.x} y={blade.label.y - 9}>
+                {blade.lines[0]}
+              </tspan>
+              <tspan x={blade.label.x} y={blade.label.y + 9}>
+                {blade.lines[1]}
+              </tspan>
+            </text>
+          </g>
+        ))}
+      </g>
     </svg>
   );
 }

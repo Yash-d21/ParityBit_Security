@@ -9,21 +9,21 @@ export const whyUsContent = {
   eyebrow: 'Why us',
   title: 'The Future of Security Starts Here',
   intro:
-    'The AI era is transforming cybersecurity across three critical fronts — and ParityBit secures them all.',
+    'The AI era is transforming cybersecurity across three critical fronts, and ParityBit secures them all.',
   items: [
     {
       id: 'soc',
       lobe: 'IN-HOUSE SOC',
       title: 'Accelerate the SOC with AI',
       description:
-        'Drive SOC transformation with an in-house Canadian team, unified detection, and 24/7 monitoring — so breaches stop faster, without enterprise bloat.',
+        'Drive SOC transformation with an in-house Canadian team, unified detection, and 24/7 monitoring, so breaches stop faster, without enterprise bloat.',
     },
     {
       id: 'intel',
       lobe: 'THREAT INTEL',
       title: 'Stop AI-accelerated adversaries',
       description:
-        'Real-time APT attribution and underground surveillance so analysts see nation-state and criminal activity early — and every alert ships with a next step.',
+        'Real-time APT attribution and underground surveillance so analysts see nation-state and criminal activity early, and every alert ships with a next step.',
     },
     {
       id: 'defense',

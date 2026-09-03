@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <>
       <Helmet>
-        <title>Page not found — ParityBit Security</title>
+        <title>Page not found | ParityBit Security</title>
         <meta name="robots" content="noindex" />
       </Helmet>
       <section

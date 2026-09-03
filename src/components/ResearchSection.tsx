@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { researchContent } from '../content/research';
 import './ResearchSection.css';
@@ -117,9 +117,6 @@ function ParticleCloud() {
 }
 
 export function ResearchSection() {
-  const [activeStage, setActiveStage] = useState(researchContent.stages[2].id);
-  const active = researchContent.stages.find((stage) => stage.id === activeStage);
-
   return (
     <section id="research" className="research-section" data-framer-name="Blog Section">
       <div className="research-section__container">
@@ -178,29 +175,7 @@ export function ResearchSection() {
 
           <div className="research-section__core">
             <ParticleCloud />
-            <div className="research-section__pills" role="tablist" aria-label="Research workflow">
-              {researchContent.stages.map((stage) => (
-                <button
-                  key={stage.id}
-                  type="button"
-                  role="tab"
-                  aria-selected={stage.id === activeStage}
-                  className={
-                    stage.id === activeStage
-                      ? 'research-section__pill is-active'
-                      : 'research-section__pill'
-                  }
-                  onClick={() => setActiveStage(stage.id)}
-                >
-                  {stage.id}
-                </button>
-              ))}
-            </div>
-            {active ? (
-              <span className="research-section__caption research-section__caption--core">
-                {active.caption}
-              </span>
-            ) : null}
+            <p className="research-section__flow">{researchContent.flowLabel}</p>
           </div>
 
           <div className="research-section__exit">

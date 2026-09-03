@@ -282,7 +282,7 @@ export const BlogsSecuringCloudEnvironmentsForModernEnterprises: React.FC = () =
                           <div className="framer-1utp7uw" data-framer-name="Code " data-framer-component-type="RichTextContainer" style={{"transform": "none"}}>
                             <h6 className="framer-text framer-styles-preset-1hhc6na" data-styles-preset="psLHE4vrw" dir="auto" style={{"--framer-text-color": "var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17))"}}>“AI-powered monitoring and rapid threat detection significantly improved our cloud security performance, strengthened infrastructure stability, and helped our team respond faster to evolving cyber threats across critical systems.”</h6>
                           </div>                          <div className="framer-64njcz" data-framer-name="Name" data-framer-component-type="RichTextContainer" style={{"transform": "none"}}>
-                            <p className="framer-text framer-styles-preset-zsangm" data-styles-preset="VOzck8Hj3" dir="auto" style={{"--framer-text-color": "var(--token-3c85a5ae-91cb-4727-974c-a277a7768b75, rgb(87, 87, 87))"}}>— Ethan Brooks</p>
+                            <p className="framer-text framer-styles-preset-zsangm" data-styles-preset="VOzck8Hj3" dir="auto" style={{"--framer-text-color": "var(--token-3c85a5ae-91cb-4727-974c-a277a7768b75, rgb(87, 87, 87))"}}>- Ethan Brooks</p>
                           </div>
                         </div>
                       </div>                      <div className="framer-5jutph" data-framer-name="Content 02">

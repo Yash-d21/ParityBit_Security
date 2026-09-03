@@ -174,37 +174,26 @@
   height: 100%;
 }
 
-.research-section__pills {
+.research-section__flow {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  gap: 0;
-  padding: 4px;
-  border-radius: 8px;
-  background: rgb(12, 12, 12);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  margin: 0;
   z-index: 2;
-}
-
-.research-section__pill {
-  appearance: none;
-  border: 0;
-  background: transparent;
-  padding: 8px 12px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: rgba(8, 8, 8, 0.92);
+  border: 1px solid rgba(176, 132, 255, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
   font-family: "Inter", sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: rgb(168, 168, 168);
-  cursor: pointer;
-}
-
-.research-section__pill.is-active {
-  background: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
-  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgb(236, 238, 240);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
 }
 
 .research-section__exit {
@@ -239,27 +228,6 @@
 .research-section__output:hover {
   border-color: rgb(176, 132, 255);
   color: rgb(176, 132, 255);
-}
-
-.research-section__caption {
-  position: absolute;
-  padding: 7px 10px;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgb(10, 10, 10);
-  font-family: "Inter", sans-serif;
-  font-size: 11px;
-  line-height: 1;
-  color: rgb(190, 190, 190);
-  white-space: nowrap;
-  pointer-events: none;
-  z-index: 3;
-}
-
-.research-section__caption--core {
-  left: 50%;
-  bottom: 28px;
-  transform: translateX(-50%);
 }
 
 @media (max-width: 1024px) {
@@ -314,7 +282,6 @@
   }
 
   .research-section__wires,
-  .research-section__caption,
   .research-section__exit-line,
   .research-section__rail-label {
     display: none;

@@ -1,13 +1,35 @@
 /* Auto-generated + manual Framer export fixes */
 
-html, body {
+/*
+  Scroll white-space fix:
+  Framer injects a light gray body background (#eceef0). With a fixed black
+  nav and dark sections, that gray flashes in the app-shell top padding and
+  in any sub-pixel gaps between sections while scrolling. Keep the page chrome
+  dark; light sections already paint their own backgrounds.
+*/
+html,
+html body,
+body,
+#root,
+#main,
+.app-shell,
+[data-layout-template="true"] {
+  background-color: #000 !important;
+  background: #000 !important;
+}
+
+html,
+body {
   overflow-x: clip;
   max-width: 100%;
   margin: 0;
   padding: 0;
+  overscroll-behavior-y: none;
 }
 
-#root, #main, .app-shell {
+#root,
+#main,
+.app-shell {
   width: 100%;
   max-width: 100%;
   min-height: 100vh;
@@ -16,6 +38,22 @@ html, body {
 .app-shell {
   overflow-x: clip;
   padding-top: 72px;
+}
+
+/* Collapse leftover Framer scroll spacers / overlays */
+#overlay,
+#template-overlay,
+.framer-n9p53u,
+.framer-naac3n,
+.framer-f9qt6n,
+.framer-fdbw1r,
+.framer-168nqqv {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex: 0 0 0 !important;
 }
 
 /* Hide duplicated Framer headers — replaced by SiteNav */
@@ -30,15 +68,24 @@ header[data-framer-name="Header "],
   display: flex !important;
   flex-direction: column !important;
   align-items: stretch !important;
+  gap: 0 !important;
   width: 100% !important;
   max-width: 100% !important;
   min-height: 100vh;
   overflow-x: clip;
 }
 
-[data-framer-root] > section, [data-framer-root] > footer {
+[data-framer-root] > section,
+[data-framer-root] > footer,
+[data-layout-template="true"] > section,
+[data-layout-template="true"] > footer,
+.app-shell section,
+.app-shell footer {
   width: 100%;
   max-width: 100%;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  flex-shrink: 0;
 }
 
 nav[data-framer-name] { max-width: 100% !important; width: 100% !important; }
@@ -59,6 +106,9 @@ header[data-framer-name] { width: 100%; max-width: 100%; }
 [style*="will-change"]:not([data-framer-name="Icon Wrapper"]):not(.partner-marquee__track):not([data-infinite-slider-track]) {
   opacity: 1 !important;
   transform: none !important;
+  /* Drop compositor layers that leave 1px gaps between sections while scrolling */
+  will-change: auto !important;
+  backface-visibility: hidden;
 }
 
 /* Preserve centered decorative elements that rely on translate(-50%) */
@@ -289,10 +339,15 @@ p.framer-text > span {
   max-width: 100% !important;
   display: block !important;
   overflow: hidden !important;
+  height: 80px !important;
+  min-height: 80px !important;
+  max-height: 80px !important;
+  flex-shrink: 0 !important;
 }
 
 .partner-marquee__viewport {
   overflow: hidden !important;
+  height: 100% !important;
 }
 
 .partner-marquee__track {
@@ -311,63 +366,72 @@ p.framer-text > span {
   max-width: none !important;
 }
 
-/* Service section — full-width 2-column card grid, CTA below cards */
+/* Service section — 3×2 mosaic; equal cards sized to average (Phishing) content */
+[data-framer-name="Service Section"] {
+  --service-card-height: 560px;
+}
+
 [data-framer-name="Service Section"] [data-framer-name="Content"] {
   display: grid !important;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  grid-template-rows: var(--service-card-height) var(--service-card-height) !important;
+  gap: 20px !important;
   width: 100% !important;
-  align-items: start !important;
+  align-items: stretch !important;
 }
 
 [data-framer-name="Service Section"] [data-framer-name="Title & Card Wrapper"],
-[data-framer-name="Service Section"] [data-framer-name="Button & Card Wrapper"] {
+[data-framer-name="Service Section"] [data-framer-name="Button & Card Wrapper"],
+[data-framer-name="Service Section"] [data-framer-name="Card Wrapper 01"],
+[data-framer-name="Service Section"] [data-framer-name="Card Wrapper 02"],
+[data-framer-name="Service Section"] .framer-1e88ao,
+[data-framer-name="Service Section"] .framer-s7adb0 {
   display: contents !important;
 }
 
 [data-framer-name="Service Section"] [data-framer-name="Title Wrapper"] {
-  grid-column: 1 / -1 !important;
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  align-self: start !important;
+  position: relative !important;
+  z-index: 2 !important;
   width: 100% !important;
   max-width: none !important;
+  margin: 0 !important;
+}
+
+[data-framer-name="Service Section"] .services-section__title-row {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  align-self: start !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  padding-top: 44px !important;
+  margin: 0 !important;
+  pointer-events: none;
+}
+
+[data-framer-name="Service Section"] .services-section__title-row .ssr-variant,
+[data-framer-name="Service Section"] .services-section__title-row [data-framer-name="Title"] {
+  width: 100% !important;
+  pointer-events: auto;
 }
 
 [data-framer-name="Service Section"] [data-framer-name="Title Wrapper"] h2,
 [data-framer-name="Service Section"] .services-section__heading {
-  white-space: nowrap !important;
+  white-space: normal !important;
+  max-width: 14ch !important;
+  font-size: clamp(32px, 3.4vw, 48px) !important;
+  line-height: 1.05 !important;
 }
 
 [data-framer-name="Service Section"] .services-section__heading-accent {
   color: rgb(123, 49, 255) !important;
 }
 
-[data-framer-name="Service Section"] .services-section__title-row {
-  grid-column: 1 / -1 !important;
-  display: flex !important;
-  align-items: flex-end !important;
-  justify-content: space-between !important;
-  gap: 24px;
-  width: 100% !important;
-}
-
-[data-framer-name="Service Section"] .services-section__title-row .ssr-variant {
-  flex: 1 1 auto;
-  min-width: 0;
-}
-
-[data-framer-name="Service Section"] .services-section__title-row [data-framer-name="Title"] {
-  flex: 1 1 auto;
-  min-width: 0;
-}
-
 [data-framer-name="Service Section"] [data-framer-name="Title Wrapper"] h2 span {
   display: inline !important;
-}
-
-[data-framer-name="Service Section"] [data-framer-name="Section Title 02"] [data-framer-name="Icon"] img,
-[data-framer-name="Service Section"] [data-framer-name="Icon"] img[src*="hEdInb3mCJe8MyL1oTSA35AmZY"],
-[data-framer-name="Service Section"] [data-framer-name="Icon"] img[src*="qh9WSzmiZO49WPjU5MLP5yjGNnQ"],
-[data-framer-name="Service Section"] [data-framer-name="Icon"] img[src*="SIb2C40P2SYrdZDpd43ru9IWG2M"] {
-  filter: brightness(0) saturate(100%) invert(24%) sepia(89%) saturate(7491%) hue-rotate(263deg) brightness(95%) contrast(101%);
 }
 
 [data-framer-name="Service Section"] .framer-1lj8eru,
@@ -376,45 +440,170 @@ p.framer-text > span {
   background-color: rgb(123, 49, 255) !important;
 }
 
-[data-framer-name="Service Section"] [data-framer-name="Card Wrapper 01"],
-[data-framer-name="Service Section"] [data-framer-name="Card Wrapper 02"] {
+[data-framer-name="Service Section"] .framer-loezzw,
+[data-framer-name="Service Section"] .framer-afkh84 {
   width: 100% !important;
   min-width: 0 !important;
+  height: 100% !important;
+  position: relative !important;
+  display: flex !important;
+  align-self: stretch !important;
 }
 
-[data-framer-name="Service Section"] [data-framer-name="Card Wrapper 01"] {
-  grid-column: 1 !important;
-}
-
-[data-framer-name="Service Section"] [data-framer-name="Card Wrapper 02"] {
+[data-framer-name="Service Section"] .framer-1e88ao > .framer-loezzw:nth-of-type(1) {
   grid-column: 2 !important;
+  grid-row: 1 !important;
+}
+
+[data-framer-name="Service Section"] .framer-1e88ao > .framer-loezzw:nth-of-type(2) {
+  grid-column: 3 !important;
+  grid-row: 1 !important;
+}
+
+[data-framer-name="Service Section"] .framer-s7adb0 > .framer-afkh84:nth-of-type(1) {
+  grid-column: 1 !important;
+  grid-row: 2 !important;
+}
+
+[data-framer-name="Service Section"] .framer-s7adb0 > .framer-afkh84:nth-of-type(2) {
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+}
+
+[data-framer-name="Service Section"] .framer-loezzw > .ssr-variant,
+[data-framer-name="Service Section"] .framer-afkh84 > .ssr-variant,
+[data-framer-name="Service Section"] .framer-1meaboc-container,
+[data-framer-name="Service Section"] .framer-1hoqsjs-container {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 1 !important;
+  transform: none !important;
+  will-change: auto !important;
+  display: flex !important;
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+}
+
+[data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: var(--service-card-height) !important;
+  max-height: none !important;
+  background-color: rgb(232, 232, 234) !important;
+  border-radius: 5px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  padding: 28px 24px 28px !important;
+  position: relative !important;
+}
+
+[data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] [data-framer-name="Content Wrapper"] {
+  position: relative !important;
+  z-index: 2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 1 auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  width: 100% !important;
+  overflow: visible !important;
+  gap: 16px !important;
+}
+
+[data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] [data-framer-name="Title Wrapper"] {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
+  overflow: visible !important;
+  gap: 14px !important;
+}
+
+[data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] [data-framer-name="Category & Title"] {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  width: 100% !important;
+}
+
+[data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] [data-framer-name="Short Description"] {
+  flex: 0 0 auto !important;
+  min-height: 0 !important;
+  width: 100% !important;
+  overflow: visible !important;
+  margin-top: auto !important;
+}
+
+[data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] [data-framer-name="Short Description"] p {
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  display: block !important;
+  overflow: visible !important;
+  height: auto !important;
+  max-height: none !important;
+  color: rgb(55, 55, 55) !important;
+  --framer-text-color: rgb(55, 55, 55) !important;
+}
+
+/* Service card + detail icons → brand purple (#7B31FF) */
+[data-framer-name="Desktop Service Card "] [data-framer-name="Content Wrapper"] > [data-framer-name="Icon"] img,
+[data-framer-name="Details Card"] > [data-framer-name="Icon & Line"] > [data-framer-name="Icon"] img,
+img[src*="hEdInb3mCJe8MyL1oTSA35AmZY"],
+img[src*="qh9WSzmiZO49WPjU5MLP5yjGNnQ"],
+img[src*="SIb2C40P2SYrdZDpd43ru9IWG2M"],
+img[src*="BiLwEGhOv1EUnb8FqA8ZzcGg"],
+img[src*="GSAZyUIhDT2c10NzlOF0UcsT6c"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(98%) saturate(2476%) hue-rotate(251deg) brightness(95%) contrast(101%) !important;
+}
+
+[data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] [data-framer-name="Bg"] {
+  opacity: 1 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  background: url("/assets/images/service-card-corner-bg.png") top right / cover no-repeat !important;
+}
+
+[data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] [data-framer-name="Bg"] img {
+  opacity: 0 !important;
 }
 
 [data-framer-name="Service Section"] .services-section__intro {
-  width: 100%;
-  margin-top: 4px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
+  grid-column: 3 !important;
+  grid-row: 2 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-end !important;
+  gap: 24px !important;
+  padding: 8px 4px 12px !important;
 }
 
 [data-framer-name="Service Section"] .services-section__intro p {
   margin: 0;
   font-family: "Inter", sans-serif;
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.65;
   color: rgb(255, 255, 255);
   text-align: start;
+  max-width: 34ch;
 }
 
 [data-framer-name="Service Section"] .services-section__cta {
-  flex-shrink: 0;
-  margin-left: auto;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 24px;
+  padding: 14px 22px;
   border-radius: 40px;
   background: rgb(123, 49, 255);
   color: rgb(255, 255, 255);
@@ -431,50 +620,81 @@ p.framer-text > span {
   opacity: 0.9;
 }
 
-[data-framer-name="Service Section"] .framer-1e88ao,
-[data-framer-name="Service Section"] .framer-s7adb0 {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 20px !important;
-  width: 100% !important;
+@media (max-width: 1024px) {
+  [data-framer-name="Service Section"] {
+    --service-card-height: 520px;
+  }
+
+  [data-framer-name="Service Section"] [data-framer-name="Content"] {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto repeat(3, var(--service-card-height)) !important;
+  }
+
+  [data-framer-name="Service Section"] [data-framer-name="Title Wrapper"],
+  [data-framer-name="Service Section"] .services-section__title-row {
+    grid-column: 1 / -1 !important;
+    grid-row: 1 !important;
+    padding-top: 0 !important;
+    height: auto !important;
+  }
+
+  [data-framer-name="Service Section"] .framer-1e88ao > .framer-loezzw:nth-of-type(1),
+  [data-framer-name="Service Section"] .framer-1e88ao > .framer-loezzw:nth-of-type(2),
+  [data-framer-name="Service Section"] .framer-s7adb0 > .framer-afkh84:nth-of-type(1),
+  [data-framer-name="Service Section"] .framer-s7adb0 > .framer-afkh84:nth-of-type(2),
+  [data-framer-name="Service Section"] .services-section__intro {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  [data-framer-name="Service Section"] .services-section__intro {
+    min-height: 0 !important;
+    height: auto !important;
+    justify-content: flex-start !important;
+    grid-column: 1 / -1 !important;
+  }
 }
 
-[data-framer-name="Service Section"] .framer-loezzw,
-[data-framer-name="Service Section"] .framer-afkh84 {
-  width: 100% !important;
-  position: relative !important;
+@media (max-width: 809.98px) {
+  [data-framer-name="Service Section"] {
+    --service-card-height: 480px;
+  }
+
+  [data-framer-name="Service Section"] [data-framer-name="Title Wrapper"] h2,
+  [data-framer-name="Service Section"] .services-section__heading {
+    white-space: normal !important;
+    max-width: none !important;
+  }
+
+  [data-framer-name="Service Section"] [data-framer-name="Content"] {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto repeat(4, var(--service-card-height)) auto !important;
+  }
+
+  [data-framer-name="Service Section"] .services-section__intro {
+    height: auto !important;
+  }
 }
 
-[data-framer-name="Service Section"] .framer-1meaboc-container,
-[data-framer-name="Service Section"] .framer-1hoqsjs-container {
-  position: relative !important;
-  width: 100% !important;
-  opacity: 1 !important;
-  transform: none !important;
-}
-
-[data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] {
-  width: 100% !important;
-}
-
-/* Offensive cards — VAPT & Phishing Simulation: purple box, white text */
+/* Offensive cards stay light like the reference */
 a[data-framer-name="Desktop Service Card "][href="/services/ai-powered-threat-detection-system"],
 a[data-framer-name="Desktop Service Card "][href="/services/rapid-incident-response-management"] {
-  background-color: rgb(123, 49, 255) !important;
+  background-color: rgb(232, 232, 234) !important;
 }
 
 a[data-framer-name="Desktop Service Card "][href="/services/ai-powered-threat-detection-system"] [data-framer-name="Bg"],
 a[data-framer-name="Desktop Service Card "][href="/services/rapid-incident-response-management"] [data-framer-name="Bg"] {
   display: block !important;
   opacity: 1 !important;
-  z-index: 1 !important;
+  z-index: 0 !important;
   pointer-events: none !important;
+  background: url("/assets/images/service-card-corner-bg.png") top right / cover no-repeat !important;
 }
 
 a[data-framer-name="Desktop Service Card "][href="/services/ai-powered-threat-detection-system"] [data-framer-name="Bg"] img,
 a[data-framer-name="Desktop Service Card "][href="/services/rapid-incident-response-management"] [data-framer-name="Bg"] img {
-  opacity: 0.22 !important;
-  mix-blend-mode: soft-light !important;
+  opacity: 0 !important;
+  mix-blend-mode: normal !important;
   filter: none !important;
 }
 
@@ -482,57 +702,25 @@ a[data-framer-name="Desktop Service Card "][href="/services/ai-powered-threat-de
 a[data-framer-name="Desktop Service Card "][href="/services/rapid-incident-response-management"] [data-framer-name="Content Wrapper"] {
   position: relative !important;
   z-index: 5 !important;
-  --extracted-r6o4lv: rgb(255, 255, 255) !important;
-  --extracted-1eung3n: rgb(255, 255, 255) !important;
 }
 
-a[data-framer-name="Desktop Service Card "][href="/services/ai-powered-threat-detection-system"] .framer-text,
-a[data-framer-name="Desktop Service Card "][href="/services/rapid-incident-response-management"] .framer-text,
-a[data-framer-name="Desktop Service Card "][href="/services/ai-powered-threat-detection-system"] [data-framer-component-type="RichTextContainer"],
-a[data-framer-name="Desktop Service Card "][href="/services/rapid-incident-response-management"] [data-framer-component-type="RichTextContainer"] {
-  --extracted-r6o4lv: rgb(255, 255, 255) !important;
-  --extracted-1eung3n: rgb(255, 255, 255) !important;
-  --framer-text-color: rgb(255, 255, 255) !important;
-  color: rgb(255, 255, 255) !important;
+a[data-framer-name="Desktop Service Card "][href="/services/ai-powered-threat-detection-system"] [data-framer-name="Category"] .framer-text,
+a[data-framer-name="Desktop Service Card "][href="/services/ai-powered-threat-detection-system"] [data-framer-name="Title"] .framer-text,
+a[data-framer-name="Desktop Service Card "][href="/services/rapid-incident-response-management"] [data-framer-name="Category"] .framer-text,
+a[data-framer-name="Desktop Service Card "][href="/services/rapid-incident-response-management"] [data-framer-name="Title"] .framer-text {
+  color: rgb(17, 17, 17) !important;
 }
 
 a[data-framer-name="Desktop Service Card "][href="/services/ai-powered-threat-detection-system"] [data-framer-name="Line"],
 a[data-framer-name="Desktop Service Card "][href="/services/rapid-incident-response-management"] [data-framer-name="Line"] {
-  background-color: rgba(255, 255, 255, 0.35) !important;
+  background-color: rgb(177, 177, 177) !important;
 }
 
 a[data-framer-name="Desktop Service Card "][href="/services/ai-powered-threat-detection-system"] .framer-1lj8eru,
-a[data-framer-name="Desktop Service Card "][href="/services/rapid-incident-response-management"] .framer-1lj8eru,
-a[data-framer-name="Desktop Service Card "][href="/services/ai-powered-threat-detection-system"] .framer-9celtj,
-a[data-framer-name="Desktop Service Card "][href="/services/rapid-incident-response-management"] .framer-9celtj {
-  background-color: rgb(255, 255, 255) !important;
+a[data-framer-name="Desktop Service Card "][href="/services/rapid-incident-response-management"] .framer-1lj8eru {
+  background-color: rgb(123, 49, 255) !important;
 }
 
-a[data-framer-name="Desktop Service Card "][href="/services/ai-powered-threat-detection-system"] [data-framer-name="Content Wrapper"] [data-framer-name="Icon"] img,
-a[data-framer-name="Desktop Service Card "][href="/services/rapid-incident-response-management"] [data-framer-name="Content Wrapper"] [data-framer-name="Icon"] img {
-  filter: brightness(0) invert(1) !important;
-}
-
-@media (max-width: 809.98px) {
-  [data-framer-name="Service Section"] [data-framer-name="Title Wrapper"] h2,
-  [data-framer-name="Service Section"] .services-section__heading {
-    white-space: normal !important;
-  }
-
-  [data-framer-name="Service Section"] .services-section__title-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  [data-framer-name="Service Section"] [data-framer-name="Content"] {
-    grid-template-columns: 1fr !important;
-  }
-
-  [data-framer-name="Service Section"] [data-framer-name="Card Wrapper 01"],
-  [data-framer-name="Service Section"] [data-framer-name="Card Wrapper 02"] {
-    grid-column: 1 / -1 !important;
-  }
-}
 
 [data-framer-name="Blog Section"] [data-framer-name="Title & Button Wrapper"] {
   display: flex !important;

@@ -37,6 +37,8 @@ export function ProductsSection() {
                   src={product.image}
                   alt={`${product.name} product illustration`}
                   className="products-section__card-image"
+                  width={1024}
+                  height={1024}
                   loading="lazy"
                   decoding="async"
                 />
