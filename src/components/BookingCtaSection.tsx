@@ -19,16 +19,28 @@ export function BookingCtaSection() {
         </header>
 
         <div className="booking-cta__grid">
-          {booking.cards.map((card) => (
-            <article key={card.title} className="booking-cta__card">
-              <p className="booking-cta__audience">{card.audience}</p>
-              <h3 className="booking-cta__card-title">{card.title}</h3>
-              <p className="booking-cta__card-desc">{card.description}</p>
-              <Link to={card.href} className="booking-cta__button">
-                {card.button}
-              </Link>
-            </article>
-          ))}
+          {booking.cards.map((card, index) => {
+            const isAccent = index === 1;
+
+            return (
+              <article
+                key={card.title}
+                className={`booking-cta__card${isAccent ? ' booking-cta__card--accent' : ''}`}
+              >
+                {isAccent ? (
+                  <div className="booking-cta__card-texture" aria-hidden="true">
+                    <img src={background} alt="" loading="lazy" decoding="async" />
+                  </div>
+                ) : null}
+                <p className="booking-cta__audience">{card.audience}</p>
+                <h3 className="booking-cta__card-title">{card.title}</h3>
+                <p className="booking-cta__card-desc">{card.description}</p>
+                <Link to={card.href} className="booking-cta__button">
+                  {card.button}
+                </Link>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
