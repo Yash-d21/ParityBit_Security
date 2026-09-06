@@ -88,6 +88,52 @@ header[data-framer-name="Header "],
   flex-shrink: 0;
 }
 
+/*
+  One section per viewport.
+  Content-sized sections shrink relative to the CSS viewport when zoomed out,
+  so neighbors peek into view. Lock each major block to at least 100dvh so
+  only one section fills the screen at a time (hero+marquee already share the
+  first viewport). Footer stays content-sized.
+*/
+.about-section,
+[data-framer-name="Service Section"],
+.products-section,
+.why-us-section,
+.research-section,
+.faq-section,
+.booking-cta {
+  min-height: 100dvh;
+  box-sizing: border-box;
+}
+
+/* Vertically center short section content within the full viewport */
+.about-section,
+[data-framer-name="Service Section"],
+.products-section,
+.why-us-section,
+.research-section,
+.faq-section,
+.booking-cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Keep product card art square — never stretch from Framer/global img rules */
+.products-section__card-media {
+  aspect-ratio: 1 / 1 !important;
+}
+
+.products-section__card-image {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  transform: translate(-50%, -50%) !important;
+}
+
 nav[data-framer-name] { max-width: 100% !important; width: 100% !important; }
 
 header[data-framer-name] { width: 100%; max-width: 100%; }
@@ -368,14 +414,47 @@ p.framer-text > span {
 
 /* Service section — 3×2 mosaic; equal cards sized to average (Phishing) content */
 [data-framer-name="Service Section"] {
-  --service-card-height: 560px;
+  --service-section-pad-top: clamp(72px, 8vh, 88px);
+  --service-section-pad-bottom: clamp(24px, 3vh, 40px);
+  --service-grid-gap: 14px;
+  /* Cap card size; shrink further when the viewport is short */
+  --service-card-height: min(
+    320px,
+    calc(
+      (
+          100dvh - var(--service-section-pad-top) - var(--service-section-pad-bottom) -
+            var(--service-grid-gap)
+        ) / 2
+    )
+  );
+  padding: var(--service-section-pad-top) 30px var(--service-section-pad-bottom) !important;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Keep the stepped white bars above the grid, not overlapping cards */
+[data-framer-name="Service Section"] .framer-1o930g {
+  top: 10px !important;
+  width: min(98%, 1422px) !important;
+  max-height: 56px !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+[data-framer-name="Service Section"] > [data-framer-name="Container"] {
+  width: 100% !important;
+  max-width: 1300px !important;
+  margin: 0 auto !important;
+  flex: 0 1 auto !important;
+  position: relative !important;
+  z-index: 2 !important;
 }
 
 [data-framer-name="Service Section"] [data-framer-name="Content"] {
   display: grid !important;
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   grid-template-rows: var(--service-card-height) var(--service-card-height) !important;
-  gap: 20px !important;
+  gap: var(--service-grid-gap) !important;
   width: 100% !important;
   align-items: stretch !important;
 }
@@ -407,7 +486,7 @@ p.framer-text > span {
   display: flex !important;
   flex-direction: column !important;
   width: 100% !important;
-  padding-top: 44px !important;
+  padding-top: 36px !important;
   margin: 0 !important;
   pointer-events: none;
 }
@@ -422,7 +501,7 @@ p.framer-text > span {
 [data-framer-name="Service Section"] .services-section__heading {
   white-space: normal !important;
   max-width: 14ch !important;
-  font-size: clamp(32px, 3.4vw, 48px) !important;
+  font-size: clamp(28px, 2.8vw, 40px) !important;
   line-height: 1.05 !important;
 }
 
@@ -488,16 +567,17 @@ p.framer-text > span {
 [data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] {
   width: 100% !important;
   height: 100% !important;
-  min-height: var(--service-card-height) !important;
-  max-height: none !important;
+  min-height: 0 !important;
+  max-height: var(--service-card-height) !important;
   background-color: rgb(232, 232, 234) !important;
   border-radius: 5px !important;
   display: flex !important;
   flex-direction: column !important;
   overflow: hidden !important;
   box-sizing: border-box !important;
-  padding: 28px 24px 28px !important;
+  padding: 16px 18px 18px !important;
   position: relative !important;
+  gap: 0 !important;
 }
 
 [data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] [data-framer-name="Content Wrapper"] {
@@ -509,8 +589,14 @@ p.framer-text > span {
   height: auto !important;
   min-height: 0 !important;
   width: 100% !important;
-  overflow: visible !important;
-  gap: 16px !important;
+  overflow: hidden !important;
+  gap: 10px !important;
+}
+
+[data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] > [data-framer-name="Content Wrapper"] > [data-framer-name="Icon"] {
+  width: 52px !important;
+  height: 52px !important;
+  flex: 0 0 auto !important;
 }
 
 [data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] [data-framer-name="Title Wrapper"] {
@@ -521,22 +607,31 @@ p.framer-text > span {
   width: 100% !important;
   max-width: none !important;
   height: auto !important;
-  overflow: visible !important;
-  gap: 14px !important;
+  overflow: hidden !important;
+  gap: 10px !important;
 }
 
 [data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] [data-framer-name="Category & Title"] {
   display: flex !important;
   flex-direction: column !important;
-  gap: 8px !important;
+  gap: 4px !important;
   width: 100% !important;
+}
+
+[data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] [data-framer-name="Category & Title"] h4 {
+  font-size: clamp(15px, 1.15vw, 18px) !important;
+  line-height: 1.25 !important;
+}
+
+[data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] [data-framer-name="Category & Title"] [data-framer-name="Title"] {
+  margin-top: 2px !important;
 }
 
 [data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] [data-framer-name="Short Description"] {
   flex: 0 0 auto !important;
   min-height: 0 !important;
   width: 100% !important;
-  overflow: visible !important;
+  overflow: hidden !important;
   margin-top: auto !important;
 }
 
@@ -544,10 +639,14 @@ p.framer-text > span {
   white-space: normal !important;
   overflow-wrap: break-word !important;
   word-break: normal !important;
-  display: block !important;
-  overflow: visible !important;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 3 !important;
+  overflow: hidden !important;
   height: auto !important;
   max-height: none !important;
+  font-size: 13px !important;
+  line-height: 1.45 !important;
   color: rgb(55, 55, 55) !important;
   --framer-text-color: rgb(55, 55, 55) !important;
 }
@@ -585,15 +684,15 @@ img[src*="GSAZyUIhDT2c10NzlOF0UcsT6c"] {
   flex-direction: column !important;
   align-items: flex-start !important;
   justify-content: flex-end !important;
-  gap: 24px !important;
-  padding: 8px 4px 12px !important;
+  gap: 16px !important;
+  padding: 4px 2px 8px !important;
 }
 
 [data-framer-name="Service Section"] .services-section__intro p {
   margin: 0;
   font-family: "Inter", sans-serif;
-  font-size: 16px;
-  line-height: 1.65;
+  font-size: 14px;
+  line-height: 1.5;
   color: rgb(255, 255, 255);
   text-align: start;
   max-width: 34ch;
@@ -603,12 +702,12 @@ img[src*="GSAZyUIhDT2c10NzlOF0UcsT6c"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 22px;
+  padding: 12px 18px;
   border-radius: 40px;
   background: rgb(123, 49, 255);
   color: rgb(255, 255, 255);
   font-family: "Inter", sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   line-height: 1;
   text-decoration: none;
@@ -622,7 +721,11 @@ img[src*="GSAZyUIhDT2c10NzlOF0UcsT6c"] {
 
 @media (max-width: 1024px) {
   [data-framer-name="Service Section"] {
-    --service-card-height: 520px;
+    --service-section-pad-top: 64px;
+    --service-section-pad-bottom: 56px;
+    --service-card-height: 360px;
+    overflow: visible;
+    min-height: auto;
   }
 
   [data-framer-name="Service Section"] [data-framer-name="Content"] {
@@ -653,11 +756,20 @@ img[src*="GSAZyUIhDT2c10NzlOF0UcsT6c"] {
     justify-content: flex-start !important;
     grid-column: 1 / -1 !important;
   }
+
+  [data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] {
+    max-height: none !important;
+    min-height: var(--service-card-height) !important;
+  }
 }
 
 @media (max-width: 809.98px) {
   [data-framer-name="Service Section"] {
-    --service-card-height: 480px;
+    --service-section-pad-top: 56px;
+    --service-section-pad-bottom: 48px;
+    --service-card-height: 320px;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 
   [data-framer-name="Service Section"] [data-framer-name="Title Wrapper"] h2,

@@ -34,12 +34,12 @@ export function ProductsSection() {
             <article key={product.name} className="products-section__card">
               <div className="products-section__card-media">
                 <img
-                  src={product.image}
+                  src={`${product.image}?v=4`}
                   alt={`${product.name} product illustration`}
                   className="products-section__card-image"
                   width={1024}
                   height={1024}
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
                 />
                 <img

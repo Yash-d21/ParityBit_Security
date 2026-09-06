@@ -5,8 +5,13 @@ import './WhyUsSection.css';
 const CX = 200;
 const CY = 200;
 const R = 150;
-/** Shared radius so all three labels sit at equal distance from center */
-const LABEL_R = 70;
+/**
+ * Each lobe is a comma, so its visual centre is the largest circle that fits
+ * inside it, not the sector midpoint. That circle sits just behind the lobe's
+ * leading edge — same offset for all three, since the lobes are identical.
+ */
+const LABEL_R = 84;
+const LABEL_ANGLE_OFFSET = -3;
 
 function polar(deg: number, radius = R) {
   const rad = (deg * Math.PI) / 180;
@@ -22,24 +27,18 @@ const BLADES = (
       id: 'intel',
       start: -120,
       fill: 'rgb(139, 77, 255)',
-      // Top lobe — angle of the visual bulb mass
-      labelAngle: -90,
       lines: ['THREAT', 'INTEL'] as const,
     },
     {
       id: 'defense',
       start: 0,
       fill: 'rgb(91, 33, 182)',
-      // Bottom-right lobe
-      labelAngle: 30,
       lines: ['SECURE', 'OPS'] as const,
     },
     {
       id: 'soc',
       start: 120,
       fill: 'rgb(181, 122, 255)',
-      // Bottom-left lobe
-      labelAngle: 150,
       lines: ['IN-HOUSE', 'SOC'] as const,
     },
   ] as const
@@ -50,7 +49,7 @@ const BLADES = (
   const head = polar(blade.start, R / 2);
   const tail = polar(end, R / 2);
   const sector = `M ${CX} ${CY} L ${p0.x} ${p0.y} A ${R} ${R} 0 0 1 ${p1.x} ${p1.y} Z`;
-  const label = polar(blade.labelAngle, LABEL_R);
+  const label = polar(blade.start + LABEL_ANGLE_OFFSET, LABEL_R);
 
   return {
     ...blade,
@@ -164,10 +163,12 @@ function WhyUsEmblem({
               className={`why-us-section__lobe-label${activeId === blade.id ? ' is-active' : ''}`}
               textAnchor="middle"
             >
-              <tspan x={blade.label.x} y={blade.label.y - 9}>
+              {/* All-caps has no descenders, so both baselines shift down to
+                  sit the block optically centred on the anchor point. */}
+              <tspan x={blade.label.x} y={blade.label.y - 5}>
                 {blade.lines[0]}
               </tspan>
-              <tspan x={blade.label.x} y={blade.label.y + 9}>
+              <tspan x={blade.label.x} y={blade.label.y + 13}>
                 {blade.lines[1]}
               </tspan>
             </text>
