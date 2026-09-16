@@ -92,8 +92,7 @@ header[data-framer-name="Header "],
   One section per viewport.
   Content-sized sections shrink relative to the CSS viewport when zoomed out,
   so neighbors peek into view. Lock each major block to at least 100dvh so
-  only one section fills the screen at a time (hero+marquee already share the
-  first viewport). Footer stays content-sized.
+  only one section fills the screen at a time. Footer stays content-sized.
 */
 .about-section,
 [data-framer-name="Service Section"],
@@ -414,7 +413,7 @@ p.framer-text > span {
 
 /* Service section — 3×2 mosaic; equal cards sized to average (Phishing) content */
 [data-framer-name="Service Section"] {
-  --service-section-pad-top: clamp(72px, 8vh, 88px);
+  --service-section-pad-top: clamp(96px, 11vh, 120px);
   --service-section-pad-bottom: clamp(24px, 3vh, 40px);
   --service-grid-gap: 14px;
   /* Cap card size; shrink further when the viewport is short */
@@ -721,7 +720,7 @@ img[src*="GSAZyUIhDT2c10NzlOF0UcsT6c"] {
 
 @media (max-width: 1024px) {
   [data-framer-name="Service Section"] {
-    --service-section-pad-top: 64px;
+    --service-section-pad-top: 88px;
     --service-section-pad-bottom: 56px;
     --service-card-height: 360px;
     overflow: visible;
@@ -765,7 +764,7 @@ img[src*="GSAZyUIhDT2c10NzlOF0UcsT6c"] {
 
 @media (max-width: 809.98px) {
   [data-framer-name="Service Section"] {
-    --service-section-pad-top: 56px;
+    --service-section-pad-top: 80px;
     --service-section-pad-bottom: 48px;
     --service-card-height: 320px;
     padding-left: 20px !important;

@@ -1,17 +1,16 @@
 .hero-section {
   --hero-grid-cell: 72px;
   --site-nav-h: 72px;
-  --partner-marquee-h: 80px;
   position: relative;
   width: 100%;
   align-self: stretch;
   background: #000;
   color: #fff;
   overflow: hidden;
-  /* Hero + marquee fill the first viewport under the fixed nav */
-  height: calc(100dvh - var(--site-nav-h) - var(--partner-marquee-h));
-  min-height: calc(100dvh - var(--site-nav-h) - var(--partner-marquee-h));
-  max-height: calc(100dvh - var(--site-nav-h) - var(--partner-marquee-h));
+  /* Hero fills the first viewport under the fixed nav */
+  height: calc(100dvh - var(--site-nav-h));
+  min-height: calc(100dvh - var(--site-nav-h));
+  max-height: calc(100dvh - var(--site-nav-h));
   display: flex;
   align-items: stretch;
 }
@@ -195,7 +194,7 @@
   width: 100%;
   height: auto;
   max-width: 640px;
-  max-height: min(520px, calc(100dvh - var(--site-nav-h) - var(--partner-marquee-h) - 220px));
+  max-height: min(520px, calc(100dvh - var(--site-nav-h) - 220px));
   object-fit: contain;
   object-position: center right;
   pointer-events: none;

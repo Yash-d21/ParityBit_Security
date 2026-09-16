@@ -30,7 +30,7 @@ export function AboutSection() {
           aria-label="ParityBit Behavioral Defense Platform"
         >
           {aboutContent.layers.map((layer) => (
-            <div key={layer} className="about-section__layer">
+            <div key={layer} className="about-section__layer about-section__surface">
               {layer}
             </div>
           ))}
@@ -39,7 +39,7 @@ export function AboutSection() {
             {aboutContent.pillars.map((pillar) => (
               <article
                 key={pillar.title}
-                className={`about-section__pillar about-section__pillar--${pillar.accent}`}
+                className="about-section__pillar about-section__surface"
               >
                 <h3>{pillar.title}</h3>
                 <p>{pillar.body}</p>
@@ -47,9 +47,11 @@ export function AboutSection() {
             ))}
           </div>
 
-          <div className="about-section__profile">{aboutContent.profileBar}</div>
+          <div className="about-section__profile about-section__surface">
+            {aboutContent.profileBar}
+          </div>
 
-          <div className="about-section__stack">
+          <div className="about-section__stack about-section__surface">
             <h3 className="about-section__stack-title">
               {aboutContent.platformTitle}
             </h3>
@@ -76,7 +78,7 @@ export function AboutSection() {
                           className="about-section__feed-icon"
                           title={item.label}
                         >
-                          <FeedIcon id={item.id} />
+                          <FeedIcon id={item.id} label={item.label} />
                         </span>
                       ),
                     )}

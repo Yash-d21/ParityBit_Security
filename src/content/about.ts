@@ -28,17 +28,14 @@ export const aboutContent = {
     {
       title: 'Threat intelligence',
       body: 'Detect, investigate, and attribute threats with AI-driven intelligence across modern digital environments.',
-      accent: 'magenta' as const,
     },
     {
       title: 'Security automation',
       body: 'Unify SOC operations, tickets, and response so analysts spend time on decisions, not swivel-chair work.',
-      accent: 'peach' as const,
     },
     {
       title: 'Proactive defense',
       body: 'Phishing simulation, OSINT investigation, and continuous monitoring to stop attacks before they cause damage.',
-      accent: 'orange' as const,
     },
   ],
   profileBar: 'Unique Behavioral Profile',

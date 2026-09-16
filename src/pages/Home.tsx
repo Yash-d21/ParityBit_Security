@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { HeroSection } from '../components/HeroSection';
 import { PartnerMarquee } from '../components/PartnerMarquee';
 import { AboutSection } from '../components/AboutSection';
+import { ServicesMarquee } from '../components/ServicesMarquee';
 import { ProductsSection } from '../components/ProductsSection';
 import { WhyUsSection } from '../components/WhyUsSection';
 import { FramerFooterMenus } from '../components/FramerFooterMenus';
@@ -141,6 +142,7 @@ export const Home: React.FC = () => {
               <HeroSection />
               <PartnerMarquee />
               <AboutSection />
+              <ServicesMarquee />
               <section className="framer-guo2po" data-framer-name="Service Section">
                 <div className="framer-yqfmw" data-framer-name="Container">
                   <div className="framer-12e1tu4" data-framer-name="Content">
