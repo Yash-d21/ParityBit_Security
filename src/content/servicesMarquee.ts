@@ -72,8 +72,9 @@ export const servicesMarqueeItems: ServiceMarqueeItem[] = services.map(
   },
 );
 
-export const servicesMarqueeRows = [
-  servicesMarqueeItems.slice(0, 16),
-  servicesMarqueeItems.slice(16, 32),
-  servicesMarqueeItems.slice(32, 48),
-] as const;
+const ROW_COUNT = 3;
+const PER_ROW = servicesMarqueeItems.length / ROW_COUNT;
+
+export const servicesMarqueeRows = Array.from({ length: ROW_COUNT }, (_, row) =>
+  servicesMarqueeItems.slice(row * PER_ROW, (row + 1) * PER_ROW),
+);

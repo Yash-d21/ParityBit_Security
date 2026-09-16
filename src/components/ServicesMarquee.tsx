@@ -44,13 +44,13 @@ export function ServicesMarquee() {
         {servicesMarqueeRows.map((row, rowIndex) => (
           <InfiniteSlider
             key={`services-marquee-row-${rowIndex}`}
-            gap={14}
-            duration={rowIndex === 1 ? 55 : 48}
-            reverse={rowIndex === 1}
+            gap={10}
+            duration={52 + rowIndex * 4}
+            reverse={rowIndex % 2 === 1}
             className="services-marquee__row"
           >
-            {row.map((item) => (
-              <ServiceCard key={item.id} item={item} />
+            {row.map((item, itemIndex) => (
+              <ServiceCard key={`${item.id}-${itemIndex}`} item={item} />
             ))}
           </InfiniteSlider>
         ))}

@@ -95,6 +95,7 @@ header[data-framer-name="Header "],
   only one section fills the screen at a time. Footer stays content-sized.
 */
 .about-section,
+.services-marquee,
 [data-framer-name="Service Section"],
 .products-section,
 .why-us-section,

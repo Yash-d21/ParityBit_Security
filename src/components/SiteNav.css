@@ -82,15 +82,17 @@
   display: none;
   position: absolute;
   top: calc(100% + 8px);
-  left: 50%;
-  transform: translateX(-50%);
-  min-width: 720px;
+  left: 0;
+  transform: none;
+  min-width: min(720px, calc(100vw - 40px));
+  width: max-content;
   max-width: min(920px, calc(100vw - 40px));
   background: rgb(22, 22, 22);
   border: 1px solid rgb(50, 50, 50);
   border-radius: 16px;
   padding: 24px;
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+  box-sizing: border-box;
 }
 
 .site-nav__item--open .site-nav__panel {

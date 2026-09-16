@@ -87,6 +87,29 @@ export function SiteNav() {
     };
   }, [mobileOpen]);
 
+  useEffect(() => {
+    if (!openMenu || !navRef.current) return;
+
+    const item = navRef.current.querySelector('.site-nav__item--open');
+    const panel = item?.querySelector('.site-nav__panel') as HTMLElement | null;
+    if (!panel) return;
+
+    panel.style.left = '0';
+    panel.style.right = 'auto';
+    panel.style.transform = 'none';
+
+    const margin = 20;
+    const rect = panel.getBoundingClientRect();
+    const overflowRight = rect.right - (window.innerWidth - margin);
+    const overflowLeft = margin - rect.left;
+
+    if (overflowRight > 0) {
+      panel.style.transform = `translateX(-${overflowRight}px)`;
+    } else if (overflowLeft > 0) {
+      panel.style.transform = `translateX(${overflowLeft}px)`;
+    }
+  }, [openMenu]);
+
   return (
     <header className="site-nav" ref={navRef}>
       <div className="site-nav__inner">
