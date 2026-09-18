@@ -76,6 +76,10 @@ function PricingCard({
   labelClass,
   BGComponent,
 }: PricingCardProps) {
+  const ctaClassName =
+    'absolute bottom-4 left-4 right-4 z-20 rounded-full border border-white bg-white py-3 text-center text-sm font-medium text-neutral-900 transition-all duration-200 hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent';
+  const isExternal = /^(https?:|mailto:|tel:)/i.test(href);
+
   return (
     <motion.div
       whileHover="hover"
@@ -99,12 +103,15 @@ function PricingCard({
         </motion.h3>
         <p className="text-sm leading-relaxed text-white/90">{description}</p>
       </div>
-      <Link
-        to={href}
-        className="absolute bottom-4 left-4 right-4 z-20 rounded-full border border-white bg-white py-3 text-center text-sm font-medium text-neutral-900 transition-all duration-200 hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent"
-      >
-        {cta}
-      </Link>
+      {isExternal ? (
+        <a href={href} className={ctaClassName}>
+          {cta}
+        </a>
+      ) : (
+        <Link to={href} className={ctaClassName}>
+          {cta}
+        </Link>
+      )}
       <BGComponent />
     </motion.div>
   );

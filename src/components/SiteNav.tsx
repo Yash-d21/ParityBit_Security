@@ -191,7 +191,7 @@ export function SiteNav() {
           <a href="#sign-in" className="site-nav__signin">
             Sign in
           </a>
-          <Link to="/contact" className="site-nav__briefing" onClick={closeAll}>
+          <Link to="/#end-the-cycle" className="site-nav__briefing" onClick={closeAll}>
             Request briefing
           </Link>
         </div>

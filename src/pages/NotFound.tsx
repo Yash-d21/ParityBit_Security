@@ -79,7 +79,7 @@ export default function NotFound() {
             Back to home
           </Link>
           <Link
-            to="/contact"
+            to="/#end-the-cycle"
             style={{
               display: 'inline-flex',
               alignItems: 'center',

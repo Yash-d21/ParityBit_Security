@@ -1,7 +1,8 @@
 import React, { Suspense } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom';
 import SiteNav from './components/SiteNav';
 import { ScrollToTop } from './components/ScrollToTop';
+import { bookingSectionHref } from './content/cta';
 import {
   About,
   Blogs,
@@ -18,7 +19,6 @@ import {
   CaseStudiesNexabank,
   CaseStudiesVertexhealth,
   CaseStudiesVireon,
-  Contact,
   Home,
   NotFound,
   Pricing,
@@ -51,7 +51,7 @@ export default function App() {
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/contact" element={<Navigate to={bookingSectionHref} replace />} />
             <Route
               path="/services/ai-powered-threat-detection-system"
               element={<ServicesAiPoweredThreatDetectionSystem />}

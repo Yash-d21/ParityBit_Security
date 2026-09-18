@@ -22,7 +22,7 @@ export const navCta = {
   eyebrow: 'Next step',
   title: 'Talk to an operator. Not a BDR.',
   button: 'Request a briefing',
-  href: '/contact',
+  href: '/#end-the-cycle',
 } as const;
 
 export const navMenus: NavMenu[] = [
@@ -176,9 +176,9 @@ export const navMenus: NavMenu[] = [
       {
         title: 'Get in touch',
         items: [
-          { label: 'Contact sales', href: '/contact' },
-          { label: 'Report a breach', href: '/contact' },
-          { label: 'Partner program', href: '/contact' },
+          { label: 'Contact sales', href: '/#end-the-cycle' },
+          { label: 'Report a breach', href: '/#end-the-cycle' },
+          { label: 'Partner program', href: '/#end-the-cycle' },
         ],
       },
     ],

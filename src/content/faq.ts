@@ -2,7 +2,7 @@ export const faqContent = {
   eyebrow: 'Frequently asked questions',
   title: 'Everything you need to know.',
   ctaLabel: 'Talk to an analyst',
-  ctaHref: '/contact',
+  ctaHref: '/#end-the-cycle',
   items: [
     {
       question: 'What cybersecurity services do you provide?',

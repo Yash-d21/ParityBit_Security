@@ -38,7 +38,7 @@ const contactFaq = (
                               </div>                              <div className="framer-1r7yig5" data-framer-name="Short Description" data-framer-component-type="RichTextContainer" style={{"transform": "none"}}>
                                 <p className="framer-text framer-styles-preset-zsangm" data-styles-preset="VOzck8Hj3" dir="auto" style={{"--framer-text-color": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))"}}>Talk to one of our analysts. We&apos;ll respond same business day, or right now if it&apos;s urgent.</p>
                               </div>                              <div className="faq-analyst-cta__button-wrap">
-                                <Link className="faq-analyst-cta__button" to="/contact">talk to an analyst</Link>
+                                <Link className="faq-analyst-cta__button" to="/#end-the-cycle">talk to an analyst</Link>
                               </div>                              <div className="framer-1r7yig5" data-framer-component-type="RichTextContainer" style={{"transform": "none"}}>
                                 <p className="framer-text framer-styles-preset-p6kp0d" data-styles-preset="RO4XsuvlA" dir="auto" style={{"--framer-text-color": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))"}}>
                                   <a className="framer-text framer-styles-preset-18s8ptz" data-styles-preset="Q9ZJ0UWkE" href="tel:+12049637230">+1 (204) 963-7230</a>
@@ -176,7 +176,7 @@ const homeFaq = (
                               </div>                              <div className="framer-1r7yig5" data-framer-name="Short Description" data-framer-component-type="RichTextContainer" style={{"transform": "none"}}>
                                 <p className="framer-text framer-styles-preset-zsangm" data-styles-preset="VOzck8Hj3" dir="auto" style={{"--framer-text-color": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))"}}>Talk to one of our analysts. We&apos;ll respond same business day, or right now if it&apos;s urgent.</p>
                               </div>                              <div className="faq-analyst-cta__button-wrap">
-                                <Link className="faq-analyst-cta__button" to="/contact">talk to an analyst</Link>
+                                <Link className="faq-analyst-cta__button" to="/#end-the-cycle">talk to an analyst</Link>
                               </div>                              <div className="framer-1r7yig5" data-framer-component-type="RichTextContainer" style={{"transform": "none"}}>
                                 <p className="framer-text framer-styles-preset-p6kp0d" data-styles-preset="RO4XsuvlA" dir="auto" style={{"--framer-text-color": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))"}}>
                                   <a className="framer-text framer-styles-preset-18s8ptz" data-styles-preset="Q9ZJ0UWkE" href="tel:+12049637230">+1 (204) 963-7230</a>

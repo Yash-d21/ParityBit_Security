@@ -5,7 +5,7 @@ export const heroContent = {
     'End the cycle of cyber attacks and data breaches. Where traditional security fails, our intelligence-driven approach succeeds, protecting your data, your reputation, and your bottom line.',
   primaryCta: {
     label: 'Request briefing',
-    href: '/contact',
+    href: '/#end-the-cycle',
   },
   secondaryCta: {
     label: 'Explore our services',

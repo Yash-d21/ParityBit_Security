@@ -86,7 +86,7 @@ export const footerContent = {
     { label: 'About', href: '#' },
     // { label: 'Careers', href: '/teams' },
     { label: 'Careers', href: '#' },
-    { label: 'Contact', href: '/contact' },
+    { label: 'Contact', href: '/#end-the-cycle' },
     // { label: 'Privacy', href: '/about' },
     { label: 'Privacy', href: '#' },
     // { label: 'Terms', href: '/about' },

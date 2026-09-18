@@ -126,7 +126,7 @@ export const Home: React.FC = () => {
                       </div>                      {/* $ */}
                       <div className="framer-12thzms-container" style={{"willChange": "transform", "opacity": "1", "transform": "none"}}>
                         {/* $ */}
-                        <Link className="framer-mwUyB framer-5Yetb framer-49lrzb framer-v-o5ptat framer-jq0fxg" data-framer-name="Tertiary Button 01" data-reset="button" data-border="true" to="/contact" style={{"--border-bottom-width": "1px", "--border-color": "var(--token-b064c6d3-6719-4e9a-af1b-ebb80bb18fa0, rgb(228, 228, 228))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", "backgroundColor": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "borderRadius": "40px", "opacity": "1"}}>
+                        <Link className="framer-mwUyB framer-5Yetb framer-49lrzb framer-v-o5ptat framer-jq0fxg" data-framer-name="Tertiary Button 01" data-reset="button" data-border="true" to="/#end-the-cycle" style={{"--border-bottom-width": "1px", "--border-color": "var(--token-b064c6d3-6719-4e9a-af1b-ebb80bb18fa0, rgb(228, 228, 228))", "--border-left-width": "1px", "--border-right-width": "1px", "--border-style": "solid", "--border-top-width": "1px", "backgroundColor": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "borderRadius": "40px", "opacity": "1"}}>
                           <div className="framer-4f6r2a" data-framer-name="Title Wrapper" style={{"opacity": "1"}}>
                             <div className="framer-1nvbnf7" data-framer-name="Title" data-framer-component-type="RichTextContainer" style={{"--extracted-r6o4lv": "var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1"}}>
                               <p className="framer-text framer-styles-preset-p6kp0d" data-styles-preset="RO4XsuvlA" dir="auto" style={{"--framer-text-alignment": "start", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17)))"}}>Request briefing</p>
@@ -187,7 +187,7 @@ export const Home: React.FC = () => {
                           />
                           <div className="services-section__intro">
                             <p>Offensive testing, defensive operations, and governance, delivered by operators with the credentials to prove it. Pick a capability or engage the full stack.</p>
-                            <Link className="services-section__cta" to="/contact">Talk to our sales team</Link>
+                            <Link className="services-section__cta" to="/#end-the-cycle">Talk to our sales team</Link>
                           </div>
                         </div>
                       </div>

@@ -1,3 +1,7 @@
+/** Homepage booking section anchor — Contact / Request briefing scroll here. */
+export const BOOKING_SECTION_ID = 'end-the-cycle';
+export const bookingSectionHref = `/#${BOOKING_SECTION_ID}`;
+
 export const ctaContent = {
   background:
     'https://framerusercontent.com/images/XNC8inO1rOAMLAIPeVltx2m5k.png?width=2600&height=1000',
@@ -12,7 +16,7 @@ export const ctaContent = {
         description:
           'White-label SOC, co-managed engagements, multi-tenant tooling. 30 minutes to find out if our stack fits your book.',
         button: 'Book the call',
-        href: '/contact',
+        href: 'mailto:contact@paritybitsecurity.com',
       },
       {
         audience: 'For financial services',
@@ -20,7 +24,7 @@ export const ctaContent = {
         description:
           'OSFI B-13, FINTRAC, and PIPEDA-aligned posture review. Concrete findings against your obligations, in two business days.',
         button: 'Book the review',
-        href: '/contact',
+        href: 'mailto:contact@paritybitsecurity.com',
       },
       {
         audience: 'Anything else',
@@ -28,7 +32,7 @@ export const ctaContent = {
         description:
           "Platform demo, services scoping, incident response, partner program. Tell us the problem and we'll route to the right operator.",
         button: 'Request the briefing',
-        href: '/contact',
+        href: 'mailto:contact@paritybitsecurity.com',
       },
     ],
   },
