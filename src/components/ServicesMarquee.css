@@ -111,7 +111,7 @@
   aspect-ratio: 16 / 9;
   border-radius: var(--sm-card-radius);
   overflow: hidden;
-  background: #111;
+  background: #000;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.26);
 }
 

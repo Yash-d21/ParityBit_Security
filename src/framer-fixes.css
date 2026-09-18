@@ -16,6 +16,8 @@ body,
 [data-layout-template="true"] {
   background-color: #000 !important;
   background: #000 !important;
+  /* Framer "black" token is #111111 — keep section backgrounds true black */
+  --token-da28af61-a496-40e4-bb87-a33c0601bb96: #000 !important;
 }
 
 html,
@@ -414,6 +416,8 @@ p.framer-text > span {
 
 /* Service section — 3×2 mosaic; equal cards sized to average (Phishing) content */
 [data-framer-name="Service Section"] {
+  background: #000 !important;
+  background-color: #000 !important;
   --service-section-pad-top: clamp(96px, 11vh, 120px);
   --service-section-pad-bottom: clamp(24px, 3vh, 40px);
   --service-grid-gap: 14px;
@@ -1057,11 +1061,13 @@ footer[data-framer-name="Footer"] {
   padding-bottom: 0 !important;
   position: relative !important;
   z-index: 2 !important;
-  background: rgb(17, 17, 17) !important;
+  background: #000 !important;
 }
 
 [data-framer-name="Footer"] .framer-6efsvp,
 [data-framer-name="Footer"] [data-framer-name="Desktop"] {
+  background: #000 !important;
+  background-color: #000 !important;
   padding-top: 48px !important;
   padding-bottom: 48px !important;
 }

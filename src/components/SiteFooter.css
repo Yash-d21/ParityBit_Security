@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   align-self: stretch;
-  background: rgb(17, 17, 17);
+  background: #000;
   color: rgb(255, 255, 255);
   padding: 64px 0 0;
   overflow: hidden;
