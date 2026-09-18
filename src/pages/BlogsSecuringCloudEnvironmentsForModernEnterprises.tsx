@@ -195,7 +195,7 @@ export const BlogsSecuringCloudEnvironmentsForModernEnterprises: React.FC = () =
                           <div className="ssr-variant hidden-ji03tn hidden-1000k1z">
                             <div className="framer-ynboem-container">
                               {/* $ */}
-                              <a className="framer-MKdOM framer-b3m557 framer-v-b3m557 framer-ywd9le" data-framer-name="Social Icon 01" href="https://www.linkedin.com/" target="_blank" style={{"backgroundColor": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "height": "100%", "width": "100%", "borderRadius": "100px", "opacity": "1"}}>
+                              <a className="framer-MKdOM framer-b3m557 framer-v-b3m557 framer-ywd9le" data-framer-name="Social Icon 01" href="https://www.linkedin.com/company/paritybitsecurity/" target="_blank" style={{"backgroundColor": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "height": "100%", "width": "100%", "borderRadius": "100px", "opacity": "1"}}>
                                 <div className="framer-1d9s3us" data-framer-name="Icon" style={{"transform": "translateX(-50%)", "opacity": "1"}}>
                                   <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
                                     <img decoding="auto" width="43" height="43" src="/assets/images/geILmjVi2rHV6Dsa0Yp7OTlG8-c95ac24b.png" alt="Icon" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "contain"}} />
@@ -778,7 +778,7 @@ Advanced security analysis technologies help organizations identify vulnerabilit
 
                             </div>                            <div className="framer-8fdgsf-container" style={{"opacity": "1"}}>
                               {/* $ */}
-                              <a className="framer-MKdOM framer-b3m557 framer-v-p752po framer-ywd9le" data-framer-name="Social Icon 03" href="https://www.linkedin.com/" target="_blank" style={{"backgroundColor": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "height": "100%", "width": "100%", "borderRadius": "100px", "opacity": "1"}}>
+                              <a className="framer-MKdOM framer-b3m557 framer-v-p752po framer-ywd9le" data-framer-name="Social Icon 03" href="https://www.linkedin.com/company/paritybitsecurity/" target="_blank" style={{"backgroundColor": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "height": "100%", "width": "100%", "borderRadius": "100px", "opacity": "1"}}>
                                 <div className="framer-1d9s3us" data-framer-name="Icon" style={{"transform": "translateX(-50%)", "opacity": "1"}}>
                                   <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
                                     <img decoding="auto" width="15" height="15" src="/assets/images/qB5792DCcdXcm8D6OLNC7qMYFE-a3a802ff.svg" alt="Icon" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "contain"}} />

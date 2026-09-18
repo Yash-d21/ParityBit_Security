@@ -423,7 +423,7 @@ p.framer-text > span {
   --service-grid-gap: 14px;
   /* Cap card size; shrink further when the viewport is short */
   --service-card-height: min(
-    320px,
+    380px,
     calc(
       (
           100dvh - var(--service-section-pad-top) - var(--service-section-pad-bottom) -
@@ -601,6 +601,9 @@ p.framer-text > span {
   width: 52px !important;
   height: 52px !important;
   flex: 0 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 [data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] [data-framer-name="Title Wrapper"] {
@@ -618,13 +621,13 @@ p.framer-text > span {
 [data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] [data-framer-name="Category & Title"] {
   display: flex !important;
   flex-direction: column !important;
-  gap: 4px !important;
+  gap: 2px !important;
   width: 100% !important;
 }
 
 [data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] [data-framer-name="Category & Title"] h4 {
-  font-size: clamp(15px, 1.15vw, 18px) !important;
-  line-height: 1.25 !important;
+  font-size: clamp(12px, 0.95vw, 14px) !important;
+  line-height: 1.3 !important;
 }
 
 [data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] [data-framer-name="Category & Title"] [data-framer-name="Title"] {
@@ -645,14 +648,14 @@ p.framer-text > span {
   word-break: normal !important;
   display: -webkit-box !important;
   -webkit-box-orient: vertical !important;
-  -webkit-line-clamp: 3 !important;
+  -webkit-line-clamp: 2 !important;
   overflow: hidden !important;
   height: auto !important;
   max-height: none !important;
   font-size: 13px !important;
   line-height: 1.45 !important;
-  color: rgb(55, 55, 55) !important;
-  --framer-text-color: rgb(55, 55, 55) !important;
+  color: rgb(17, 17, 17) !important;
+  --framer-text-color: rgb(17, 17, 17) !important;
 }
 
 /* Service card + detail icons → brand purple (#7B31FF) */
@@ -664,6 +667,18 @@ img[src*="SIb2C40P2SYrdZDpd43ru9IWG2M"],
 img[src*="BiLwEGhOv1EUnb8FqA8ZzcGg"],
 img[src*="GSAZyUIhDT2c10NzlOF0UcsT6c"] {
   filter: brightness(0) saturate(100%) invert(27%) sepia(98%) saturate(2476%) hue-rotate(251deg) brightness(95%) contrast(101%) !important;
+}
+
+/* AI icon webp — already purple; knock out black matte; size down to match other icons */
+[data-framer-name="Desktop Service Card "] [data-framer-name="Content Wrapper"] > [data-framer-name="Icon"] img[src*="service-icon-ai"],
+[data-framer-name="Details Card"] > [data-framer-name="Icon & Line"] > [data-framer-name="Icon"] img[src*="service-icon-ai"],
+img[src*="service-icon-ai"] {
+  filter: none !important;
+  mix-blend-mode: screen;
+  object-fit: contain !important;
+  width: 80% !important;
+  height: 80% !important;
+  margin: auto !important;
 }
 
 [data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] [data-framer-name="Bg"] {
@@ -727,7 +742,7 @@ img[src*="GSAZyUIhDT2c10NzlOF0UcsT6c"] {
   [data-framer-name="Service Section"] {
     --service-section-pad-top: 88px;
     --service-section-pad-bottom: 56px;
-    --service-card-height: 360px;
+    --service-card-height: 400px;
     overflow: visible;
     min-height: auto;
   }
@@ -1280,6 +1295,11 @@ footer[data-framer-name="Footer"] {
   height: 40px !important;
 }
 
+/* Hide Facebook from footer social row */
+[data-framer-name="Footer"] [data-framer-name="Icon Werapper"] > [class*="container"]:has(a[href*="facebook.com"]) {
+  display: none !important;
+}
+
 /* Hide misplaced Framer decorative lines */
 [data-framer-name="Footer"] .framer-1musm24,
 [data-framer-name="Footer"] .framer-1sfi2p3,
@@ -1329,7 +1349,7 @@ footer[data-framer-name="Footer"] {
   font-size: 13px;
   font-weight: 600;
   line-height: 1.2;
-  color: rgb(255, 255, 255);
+  color: rgb(123, 49, 255);
 }
 
 [data-framer-name="Footer"] .framer-footer-tagline p {
@@ -1337,7 +1357,7 @@ footer[data-framer-name="Footer"] {
   font-family: "Inter", sans-serif;
   font-size: 14px;
   line-height: 1.65;
-  color: rgb(180, 180, 180);
+  color: rgb(255, 255, 255);
 }
 
 [data-framer-name="Footer"] .framer-footer-contact a {
@@ -1350,7 +1370,7 @@ footer[data-framer-name="Footer"] {
 }
 
 [data-framer-name="Footer"] .framer-footer-contact span {
-  color: rgb(180, 180, 180);
+  color: rgb(255, 255, 255);
 }
 
 [data-framer-name="Footer"] .framer-footer-soc {
@@ -1374,7 +1394,7 @@ footer[data-framer-name="Footer"] {
   font-family: "Inter", sans-serif;
   font-size: 13px;
   line-height: 1.5;
-  color: rgb(180, 180, 180);
+  color: rgb(255, 255, 255);
 }
 
 [data-framer-name="Footer"] .framer-footer-legal {
@@ -1388,7 +1408,7 @@ footer[data-framer-name="Footer"] {
   font-family: "Inter", sans-serif;
   font-size: 13px;
   line-height: 1.4;
-  color: rgb(180, 180, 180);
+  color: rgb(255, 255, 255);
   text-decoration: none;
 }
 

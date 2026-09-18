@@ -3,46 +3,68 @@ import { Link } from 'react-router-dom';
 import { footerContent } from '../content/footer';
 
 function FooterMenuLink({ label, href }: { label: string; href: string }) {
-  return (
-    <div className="framer-dkjnk7-container" style={{ opacity: '1' }}>
-      <Link
-        className="framer-ePM9Y framer-u0t8D framer-57x5je framer-v-57x5je framer-z2r6xz"
-        data-framer-name="Footer Menu 01"
-        to={href}
-        style={{ opacity: '1' }}
+  const isExternal = /^https?:\/\//i.test(href);
+  const className =
+    'framer-ePM9Y framer-u0t8D framer-57x5je framer-v-57x5je framer-z2r6xz';
+  const content = (
+    <>
+      <div
+        className="framer-isaoc9"
+        data-framer-component-type="RichTextContainer"
+        style={{
+          '--extracted-r6o4lv': 'var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))',
+          '--framer-link-text-color': 'rgb(0, 153, 255)',
+          '--framer-link-text-decoration': 'underline',
+          transform: 'none',
+          opacity: '1',
+        } as React.CSSProperties}
       >
-        <div
-          className="framer-isaoc9"
-          data-framer-component-type="RichTextContainer"
+        <p
+          className="framer-text framer-styles-preset-zsangm"
+          data-styles-preset="VOzck8Hj3"
+          dir="auto"
           style={{
-            '--extracted-r6o4lv': 'var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))',
-            '--framer-link-text-color': 'rgb(0, 153, 255)',
-            '--framer-link-text-decoration': 'underline',
-            transform: 'none',
-            opacity: '1',
+            '--framer-text-color':
+              'var(--extracted-r6o4lv, var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255)))',
           } as React.CSSProperties}
         >
-          <p
-            className="framer-text framer-styles-preset-zsangm"
-            data-styles-preset="VOzck8Hj3"
-            dir="auto"
-            style={{
-              '--framer-text-color':
-                'var(--extracted-r6o4lv, var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255)))',
-            } as React.CSSProperties}
-          >
-            {label}
-          </p>
-        </div>
-        <div
-          className="framer-1tlss11"
-          data-framer-name="Line"
-          style={{
-            backgroundColor: 'var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))',
-            opacity: '0',
-          }}
-        />
-      </Link>
+          {label}
+        </p>
+      </div>
+      <div
+        className="framer-1tlss11"
+        data-framer-name="Line"
+        style={{
+          backgroundColor: 'var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))',
+          opacity: '0',
+        }}
+      />
+    </>
+  );
+
+  return (
+    <div className="framer-dkjnk7-container" style={{ opacity: '1' }}>
+      {isExternal ? (
+        <a
+          className={className}
+          data-framer-name="Footer Menu 01"
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+          style={{ opacity: '1' }}
+        >
+          {content}
+        </a>
+      ) : (
+        <Link
+          className={className}
+          data-framer-name="Footer Menu 01"
+          to={href}
+          style={{ opacity: '1' }}
+        >
+          {content}
+        </Link>
+      )}
     </div>
   );
 }

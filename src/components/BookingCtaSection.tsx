@@ -1,47 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { SquishyPricing } from '@/components/ui/squishy-pricing';
 import { ctaContent } from '../content/cta';
 import './BookingCtaSection.css';
 
 export function BookingCtaSection() {
-  const { booking, background } = ctaContent;
+  const { booking } = ctaContent;
 
   return (
     <section className="booking-cta" data-framer-name="Booking CTA Section">
-      <div className="booking-cta__bg" aria-hidden="true">
-        <img src={background} alt="" loading="lazy" decoding="async" />
-      </div>
-
       <div className="booking-cta__container">
         <header className="booking-cta__header">
           <h2 className="booking-cta__title">{booking.title}</h2>
           <p className="booking-cta__subtitle">{booking.subtitle}</p>
         </header>
 
-        <div className="booking-cta__grid">
-          {booking.cards.map((card, index) => {
-            const isAccent = index === 1;
-
-            return (
-              <article
-                key={card.title}
-                className={`booking-cta__card${isAccent ? ' booking-cta__card--accent' : ''}`}
-              >
-                {isAccent ? (
-                  <div className="booking-cta__card-texture" aria-hidden="true">
-                    <img src={background} alt="" loading="lazy" decoding="async" />
-                  </div>
-                ) : null}
-                <p className="booking-cta__audience">{card.audience}</p>
-                <h3 className="booking-cta__card-title">{card.title}</h3>
-                <p className="booking-cta__card-desc">{card.description}</p>
-                <Link to={card.href} className="booking-cta__button">
-                  {card.button}
-                </Link>
-              </article>
-            );
-          })}
-        </div>
+        <SquishyPricing cards={booking.cards} />
       </div>
     </section>
   );

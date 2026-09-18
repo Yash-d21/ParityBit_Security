@@ -21,9 +21,9 @@ export const whyUsContent = {
     {
       id: 'intel',
       lobe: 'THREAT INTEL',
-      title: 'Stop AI-accelerated adversaries',
+      title: 'Simulate Real-World Attacks',
       description:
-        'Real-time APT attribution and underground surveillance so analysts see nation-state and criminal activity early, and every alert ships with a next step.',
+        'Conduct controlled red team operations to identify exploitable weaknesses, validate security controls, and measure how effectively your defenses withstand real-world attack techniques.',
     },
     {
       id: 'defense',

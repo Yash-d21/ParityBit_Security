@@ -4,6 +4,42 @@ import { brandLogo } from '../content/brand';
 import { navCta, navMenus, type NavMenu } from '../content/nav';
 import './SiteNav.css';
 
+function isExternalHref(href: string) {
+  return /^https?:\/\//i.test(href);
+}
+
+function NavItemLink({
+  href,
+  className,
+  onNavigate,
+  children,
+}: {
+  href: string;
+  className: string;
+  onNavigate: () => void;
+  children: React.ReactNode;
+}) {
+  if (isExternalHref(href)) {
+    return (
+      <a
+        href={href}
+        className={className}
+        onClick={onNavigate}
+        target="_blank"
+        rel="noreferrer"
+      >
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <Link to={href} className={className} onClick={onNavigate}>
+      {children}
+    </Link>
+  );
+}
+
 function ChevronDown() {
   return (
     <svg className="site-nav__chevron" viewBox="0 0 10 10" fill="none" aria-hidden="true">
@@ -23,12 +59,12 @@ function MenuPanel({ menu, onNavigate }: { menu: NavMenu; onNavigate: () => void
               <ul className="site-nav__links">
                 {section.items.map((item) => (
                   <li key={item.label}>
-                    <Link to={item.href} className="site-nav__link" onClick={onNavigate}>
+                    <NavItemLink href={item.href} className="site-nav__link" onNavigate={onNavigate}>
                       <span className="site-nav__link-label">{item.label}</span>
                       {item.description && (
                         <span className="site-nav__link-desc">{item.description}</span>
                       )}
-                    </Link>
+                    </NavItemLink>
                   </li>
                 ))}
               </ul>
@@ -37,9 +73,13 @@ function MenuPanel({ menu, onNavigate }: { menu: NavMenu; onNavigate: () => void
               <div className="site-nav__featured">
                 <p className="site-nav__featured-title">{section.featured.title}</p>
                 <p className="site-nav__featured-desc">{section.featured.description}</p>
-                <Link to={section.featured.href} className="site-nav__featured-cta" onClick={onNavigate}>
+                <NavItemLink
+                  href={section.featured.href}
+                  className="site-nav__featured-cta"
+                  onNavigate={onNavigate}
+                >
                   {section.featured.cta}
-                </Link>
+                </NavItemLink>
               </div>
             )}
           </div>
@@ -50,9 +90,9 @@ function MenuPanel({ menu, onNavigate }: { menu: NavMenu; onNavigate: () => void
           <p className="site-nav__cta-eyebrow">{navCta.eyebrow}</p>
           <p className="site-nav__cta-title">{navCta.title}</p>
         </div>
-        <Link to={navCta.href} className="site-nav__cta-btn" onClick={onNavigate}>
+        <NavItemLink href={navCta.href} className="site-nav__cta-btn" onNavigate={onNavigate}>
           {navCta.button}
-        </Link>
+        </NavItemLink>
       </div>
     </>
   );
@@ -186,23 +226,27 @@ export function SiteNav() {
                 <div key={section.title} className="site-nav__mobile-section">
                   <p className="site-nav__section-title">{section.title}</p>
                   {section.items?.map((item) => (
-                    <Link
+                    <NavItemLink
                       key={item.label}
-                      to={item.href}
+                      href={item.href}
                       className="site-nav__mobile-link"
-                      onClick={closeAll}
+                      onNavigate={closeAll}
                     >
                       {item.label}
                       {item.description && <small>{item.description}</small>}
-                    </Link>
+                    </NavItemLink>
                   ))}
                   {section.featured && (
                     <div className="site-nav__featured" style={{ marginTop: 12 }}>
                       <p className="site-nav__featured-title">{section.featured.title}</p>
                       <p className="site-nav__featured-desc">{section.featured.description}</p>
-                      <Link to={section.featured.href} className="site-nav__featured-cta" onClick={closeAll}>
+                      <NavItemLink
+                        href={section.featured.href}
+                        className="site-nav__featured-cta"
+                        onNavigate={closeAll}
+                      >
                         {section.featured.cta}
-                      </Link>
+                      </NavItemLink>
                     </div>
                   )}
                 </div>
@@ -212,9 +256,9 @@ export function SiteNav() {
                   <p className="site-nav__cta-eyebrow">{navCta.eyebrow}</p>
                   <p className="site-nav__cta-title">{navCta.title}</p>
                 </div>
-                <Link to={navCta.href} className="site-nav__cta-btn" onClick={closeAll}>
+                <NavItemLink href={navCta.href} className="site-nav__cta-btn" onNavigate={closeAll}>
                   {navCta.button}
-                </Link>
+                </NavItemLink>
               </div>
             </div>
           </div>

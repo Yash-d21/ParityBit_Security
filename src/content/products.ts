@@ -38,9 +38,9 @@ export const productsContent = {
     {
       vendor: 'Advanced Phishing Simulation & Awareness',
       name: 'ZeroXphish',
-      subtitle: 'Advanced Phishing Simulation & Awareness Platform.',
+      subtitle: 'ParityBit ZeroXPhish',
       paragraph:
-        'ZeroXphish is an advanced phishing simulation and awareness platform. It runs tailored phishing campaigns per organization, with high-fidelity landing pages and attack scenarios.',
+        'ZeroXphish is an AI-powered phishing simulation platform. It runs tailored campaigns with high-fidelity landing pages and realistic attack scenarios.',
       image: '/assets/images/products/zeroxphish.png',
     },
   ] satisfies ProductItem[],

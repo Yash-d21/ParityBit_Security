@@ -13,6 +13,8 @@ import { CtaSection } from '../components/CtaSection';
 import { BookingCtaSection } from '../components/BookingCtaSection';
 import { FaqSection } from '../components/FaqSection';
 import { ResearchSection } from '../components/ResearchSection';
+import { HomeServiceCard } from '../components/HomeServiceCard';
+import { homeServiceCards } from '../content/homeServices';
 
 export const Home: React.FC = () => {
   return (
@@ -63,7 +65,8 @@ export const Home: React.FC = () => {
                           </div>                          {/* $ */}
                           <div className="framer-jgrbeo-container" style={{"opacity": "1"}}>
                             {/* $ */}
-                            <Link className="framer-wG3Fc framer-u0t8D framer-qsls34 framer-v-qsls34 framer-eej19x" data-framer-name="Menu Link 01" to="/case-studies" style={{"opacity": "1"}}>
+                            {/* <Link className="framer-wG3Fc framer-u0t8D framer-qsls34 framer-v-qsls34 framer-eej19x" data-framer-name="Menu Link 01" to="/case-studies" style={{"opacity": "1"}}> */}
+                            <Link className="framer-wG3Fc framer-u0t8D framer-qsls34 framer-v-qsls34 framer-eej19x" data-framer-name="Menu Link 01" to="#" style={{"opacity": "1"}}>
                               <div className="framer-1a9srqp" data-framer-name="Home" data-framer-component-type="RichTextContainer" style={{"--extracted-r6o4lv": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "--framer-paragraph-spacing": "0px", "transform": "none", "opacity": "1"}}>
                                 <p className="framer-text framer-styles-preset-zsangm" data-styles-preset="VOzck8Hj3" dir="auto" style={{"--framer-text-color": "var(--extracted-r6o4lv, var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255)))"}}>Solutions</p>
                               </div>                              <div className="framer-1efj4tt" data-framer-name="Line" style={{"backgroundColor": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "opacity": "1"}}></div>
@@ -73,7 +76,8 @@ export const Home: React.FC = () => {
                           {/* $ */}
                           <div className="framer-19co1ve-container" style={{"opacity": "1"}}>
                             {/* $ */}
-                            <Link className="framer-wG3Fc framer-u0t8D framer-qsls34 framer-v-qsls34 framer-eej19x" data-framer-name="Menu Link 01" to="/services" style={{"opacity": "1"}}>
+                            {/* <Link className="framer-wG3Fc framer-u0t8D framer-qsls34 framer-v-qsls34 framer-eej19x" data-framer-name="Menu Link 01" to="/services" style={{"opacity": "1"}}> */}
+                            <Link className="framer-wG3Fc framer-u0t8D framer-qsls34 framer-v-qsls34 framer-eej19x" data-framer-name="Menu Link 01" to="#" style={{"opacity": "1"}}>
                               <div className="framer-1a9srqp" data-framer-name="Home" data-framer-component-type="RichTextContainer" style={{"--extracted-r6o4lv": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "--framer-paragraph-spacing": "0px", "transform": "none", "opacity": "1"}}>
                                 <p className="framer-text framer-styles-preset-zsangm" data-styles-preset="VOzck8Hj3" dir="auto" style={{"--framer-text-color": "var(--extracted-r6o4lv, var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255)))"}}>Services</p>
                               </div>                              <div className="framer-1efj4tt" data-framer-name="Line" style={{"backgroundColor": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "opacity": "1"}}></div>
@@ -83,7 +87,8 @@ export const Home: React.FC = () => {
                           {/* $ */}
                           <div className="framer-131sjn1-container" style={{"opacity": "1"}}>
                             {/* $ */}
-                            <Link className="framer-wG3Fc framer-u0t8D framer-qsls34 framer-v-qsls34 framer-eej19x" data-framer-name="Menu Link 01" to="/about" style={{"opacity": "1"}}>
+                            {/* <Link className="framer-wG3Fc framer-u0t8D framer-qsls34 framer-v-qsls34 framer-eej19x" data-framer-name="Menu Link 01" to="/about" style={{"opacity": "1"}}> */}
+                            <Link className="framer-wG3Fc framer-u0t8D framer-qsls34 framer-v-qsls34 framer-eej19x" data-framer-name="Menu Link 01" to="#" style={{"opacity": "1"}}>
                               <div className="framer-1a9srqp" data-framer-name="Home" data-framer-component-type="RichTextContainer" style={{"--extracted-r6o4lv": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "--framer-paragraph-spacing": "0px", "transform": "none", "opacity": "1"}}>
                                 <p className="framer-text framer-styles-preset-zsangm" data-styles-preset="VOzck8Hj3" dir="auto" style={{"--framer-text-color": "var(--extracted-r6o4lv, var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255)))"}}>Company</p>
                               </div>                              <div className="framer-1efj4tt" data-framer-name="Line" style={{"backgroundColor": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "opacity": "1"}}></div>
@@ -142,7 +147,6 @@ export const Home: React.FC = () => {
               <HeroSection />
               <PartnerMarquee />
               <AboutSection />
-              <ServicesMarquee />
               <section className="framer-guo2po" data-framer-name="Service Section">
                 <div className="framer-yqfmw" data-framer-name="Container">
                   <div className="framer-12e1tu4" data-framer-name="Content">
@@ -171,184 +175,35 @@ export const Home: React.FC = () => {
                         </div>
                       </div>                      <div className="framer-kn8zpw" data-framer-name="Card Wrapper 01">
                         <div className="framer-1e88ao">
-                          {/* $ */}
-                          <div className="framer-loezzw">
-                            {/* $ */}
-                            <div className="ssr-variant hidden-n1lvbu hidden-1bih26h">
-                              <div className="framer-1meaboc-container" style={{"willChange": "transform", "opacity": "0.0628592", "transform": "translateX(66.537px) translateY(99.3369px) scale(0.250287) rotate(17.8057deg) rotateX(37.4856deg) rotateY(-18.7428deg)"}}>
-                                {/* $ */}
-                                <Link className="framer-b2yRS framer-5Yetb framer-RvjoO framer-u0t8D framer-wvswm framer-v-wvswm framer-zylch8" data-framer-name="Desktop Service Card " to="/services/:iPe3hDbTv" style={{"backgroundColor": "var(--token-594d84c5-38ce-4879-b3b4-0e435f0ebf91, rgba(255, 255, 255, 0.8))", "width": "100%", "borderRadius": "5px", "opacity": "1"}}>
-                                  <div className="framer-dbx3bk" data-framer-name="Content Wrapper" style={{"opacity": "1"}}>
-                                    <div className="framer-1y89h9o" data-framer-name="Icon" style={{"opacity": "1"}}>
-                                      <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
-                                        <img decoding="auto" loading="lazy" width="100" height="100" src="/assets/images/hEdInb3mCJe8MyL1oTSA35AmZY-e5e95267.svg" alt="Icon" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "cover"}} />
-                                      </div>
-                                    </div>                                    <div className="framer-1rki90g" data-framer-name="Title Wrapper" style={{"opacity": "1"}}>
-                                      <div className="framer-dhpktq" data-framer-name="Category & Title" style={{"opacity": "1"}}>
-                                        <div className="framer-vm66zc" data-framer-name="Category" style={{"opacity": "1"}}>
-                                          <div className="framer-1lj8eru" style={{"backgroundColor": "var(--token-f9b40a10-3aa2-419d-aa95-59bb9d326ccc, rgb(187, 62, 44))", "borderRadius": "100px", "opacity": "1"}}></div>                                          <div className="framer-q1lhml" data-framer-component-type="RichTextContainer" style={{"--extracted-r6o4lv": "var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1"}}>
-                                            <p className="framer-text framer-styles-preset-p6kp0d" data-styles-preset="RO4XsuvlA" dir="auto" style={{"--framer-text-color": "var(--extracted-r6o4lv, var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17)))"}}>Governance</p>
-                                          </div>
-                                        </div>                                        <div className="framer-1kt8wk1" data-framer-name="Title" data-framer-component-type="RichTextContainer" style={{"--extracted-1eung3n": "var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1"}}>
-                                          <h4 className="framer-text framer-styles-preset-17nmdi8" data-styles-preset="Pipw65IC4" dir="auto" style={{"--framer-text-alignment": "start", "--framer-text-color": "var(--extracted-1eung3n, var(--token-da28af61-a496-40e4-b87-a33c0601bb96, rgb(17, 17, 17)))"}}>- Patch Management</h4>
-                                        </div>                                        <div className="framer-1kt8wk1" data-framer-name="Title" data-framer-component-type="RichTextContainer" style={{"--extracted-1eung3n": "var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1", "marginTop": "8px"}}>
-                                          <h4 className="framer-text framer-styles-preset-17nmdi8" data-styles-preset="Pipw65IC4" dir="auto" style={{"--framer-text-alignment": "start", "--framer-text-color": "var(--extracted-1eung3n, var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17)))"}}>- Compliance &amp; Risk</h4>
-                                        </div>
-                                      </div>                                      <div className="framer-11q5vb5" data-framer-name="Line" style={{"backgroundColor": "var(--token-a9492df4-afd1-4c28-90f0-cf83a6de37e1, rgb(177, 177, 177))", "opacity": "1"}}></div>                                      <div className="framer-of2y41" data-framer-name="Short Description" data-framer-component-type="RichTextContainer" style={{"--extracted-r6o4lv": "var(--token-3c85a5ae-91cb-4727-974c-a277a7768b75, rgb(87, 87, 87))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1"}}>
-                                        <p className="framer-text framer-styles-preset-zsangm" data-styles-preset="VOzck8Hj3" dir="auto" style={{"--framer-text-alignment": "start", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-3c85a5ae-91cb-4727-974c-a277a7768b75, rgb(87, 87, 87)))"}}>Structured patch lifecycle management: vulnerability tracking, testing, deployment, and verification.</p>
-                                      </div>
-                                    </div>
-                                  </div>                                  <div className="framer-dr2ejp" data-framer-name="Bg" style={{"borderRadius": "5px", "opacity": "1"}}>
-                                    <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
-                                      <img decoding="auto" loading="lazy" width="1220" height="1320" sizes="(min-width: 1380px) max((max(min(max((max(min(max(100vw - 60px, 1px), 1300px), 1px) - 30px) / 2, 1px), 835px), 1px) - 20px) / 2, 1px), (max-width: 809.98px) max(min(max(100vw - 40px, 1px), 1300px), 1px), (min-width: 810px) and (max-width: 1379.98px) max((max(min(max(100vw - 60px, 1px), 1300px), 1px) - 20px) / 2, 1px)" srcSet="/assets/images/MAE7Zx5OmWLiAo31N1Eynhcyin4-7ed69742.avif 946w, https://framerusercontent.com/images/MAE7Zx5OmWLiAo31N1Eynhcyin4.png?width=1220&height=1320 1220w" src="https://framerusercontent.com/images/MAE7Zx5OmWLiAo31N1Eynhcyin4.png?width=1220&height=1320" alt="Bg" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "cover"}} />
-                                    </div>
-                                  </div>                                  <div className="framer-t8k852" data-framer-name="Icon" style={{"opacity": "0"}}>
-                                    <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
-                                      <img decoding="auto" loading="lazy" width="60" height="60" src="/assets/images/UVeVaQbgYJutj0Jk0ln2DwyV5o-19271f75.svg" alt="Icon" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "contain"}} />
-                                    </div>
-                                  </div>
-                                </Link>                                {/* /$ */}
-
-                              </div>
-                            </div>                            {/* /$ */}
-
-                          </div>                          <div className="framer-loezzw">
-                            {/* $ */}
-                            <div className="ssr-variant hidden-n1lvbu hidden-1bih26h">
-                              <div className="framer-1meaboc-container" style={{"willChange": "transform", "opacity": "0.0628592", "transform": "translateX(66.537px) translateY(99.3369px) scale(0.250287) rotate(17.8057deg) rotateX(37.4856deg) rotateY(-18.7428deg)"}}>
-                                {/* $ */}
-                                <Link className="framer-b2yRS framer-5Yetb framer-RvjoO framer-u0t8D framer-wvswm framer-v-wvswm framer-zylch8" data-framer-name="Desktop Service Card " to="/services/ai-powered-threat-detection-system" style={{"backgroundColor": "var(--token-594d84c5-38ce-4879-b3b4-0e435f0ebf91, rgba(255, 255, 255, 0.8))", "width": "100%", "borderRadius": "5px", "opacity": "1"}}>
-                                  <div className="framer-dbx3bk" data-framer-name="Content Wrapper" style={{"opacity": "1"}}>
-                                    <div className="framer-1y89h9o" data-framer-name="Icon" style={{"opacity": "1"}}>
-                                      <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
-                                        <img decoding="auto" loading="lazy" width="100" height="100" src="/assets/images/hEdInb3mCJe8MyL1oTSA35AmZY-e5e95267.svg" alt="Icon" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "cover"}} />
-                                      </div>
-                                    </div>                                    <div className="framer-1rki90g" data-framer-name="Title Wrapper" style={{"opacity": "1"}}>
-                                      <div className="framer-dhpktq" data-framer-name="Category & Title" style={{"opacity": "1"}}>
-                                        <div className="framer-vm66zc" data-framer-name="Category" style={{"opacity": "1"}}>
-                                          <div className="framer-1lj8eru" style={{"backgroundColor": "var(--token-f9b40a10-3aa2-419d-aa95-59bb9d326ccc, rgb(187, 62, 44))", "borderRadius": "100px", "opacity": "1"}}></div>                                          <div className="framer-q1lhml" data-framer-component-type="RichTextContainer" style={{"--extracted-r6o4lv": "var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1"}}>
-                                            <p className="framer-text framer-styles-preset-p6kp0d" data-styles-preset="RO4XsuvlA" dir="auto" style={{"--framer-text-color": "var(--extracted-r6o4lv, var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17)))"}}>AI</p>
-                                          </div>
-                                        </div>                                        <div className="framer-1kt8wk1" data-framer-name="Title" data-framer-component-type="RichTextContainer" style={{"--extracted-1eung3n": "var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1"}}>
-                                          <h4 className="framer-text framer-styles-preset-17nmdi8" data-styles-preset="Pipw65IC4" dir="auto" style={{"--framer-text-alignment": "start", "--framer-text-color": "var(--extracted-1eung3n, var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17)))"}}>AI-Powered Threat Detection</h4>
-                                        </div>
-                                      </div>                                      <div className="framer-11q5vb5" data-framer-name="Line" style={{"backgroundColor": "var(--token-a9492df4-afd1-4c28-90f0-cf83a6de37e1, rgb(177, 177, 177))", "opacity": "1"}}></div>                                      <div className="framer-of2y41" data-framer-name="Short Description" data-framer-component-type="RichTextContainer" style={{"--extracted-r6o4lv": "var(--token-3c85a5ae-91cb-4727-974c-a277a7768b75, rgb(87, 87, 87))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1"}}>
-                                        <p className="framer-text framer-styles-preset-zsangm" data-styles-preset="VOzck8Hj3" dir="auto" style={{"--framer-text-alignment": "start", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-3c85a5ae-91cb-4727-974c-a277a7768b75, rgb(87, 87, 87)))"}}>AI-driven detection and analysis that surfaces real threats faster across endpoints, networks, and cloud environments.</p>
-                                      </div>
-                                    </div>
-                                  </div>                                  <div className="framer-dr2ejp" data-framer-name="Bg" style={{"borderRadius": "5px", "opacity": "1"}}>
-                                    <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
-                                      <img decoding="auto" loading="lazy" width="1220" height="1320" sizes="(min-width: 1380px) max((max(min(max((max(min(max(100vw - 60px, 1px), 1300px), 1px) - 30px) / 2, 1px), 835px), 1px) - 20px) / 2, 1px), (max-width: 809.98px) max(min(max(100vw - 40px, 1px), 1300px), 1px), (min-width: 810px) and (max-width: 1379.98px) max((max(min(max(100vw - 60px, 1px), 1300px), 1px) - 20px) / 2, 1px)" srcSet="/assets/images/MAE7Zx5OmWLiAo31N1Eynhcyin4-7ed69742.avif 946w, https://framerusercontent.com/images/MAE7Zx5OmWLiAo31N1Eynhcyin4.png?width=1220&height=1320 1220w" src="https://framerusercontent.com/images/MAE7Zx5OmWLiAo31N1Eynhcyin4.png?width=1220&height=1320" alt="Bg" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "cover"}} />
-                                    </div>
-                                  </div>                                  <div className="framer-t8k852" data-framer-name="Icon" style={{"opacity": "0"}}>
-                                    <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
-                                      <img decoding="auto" loading="lazy" width="60" height="60" src="/assets/images/UVeVaQbgYJutj0Jk0ln2DwyV5o-19271f75.svg" alt="Icon" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "contain"}} />
-                                    </div>
-                                  </div>
-                                </Link>                                {/* /$ */}
-
-                              </div>
-                            </div>                            {/* /$ */}
-
-                          </div>                          {/* /$ */}
-
+                          <HomeServiceCard
+                            card={homeServiceCards.find((card) => card.category === 'Governance, Risk & Compliance')!}
+                            wrapperClassName="framer-loezzw"
+                            containerClassName="framer-1meaboc-container"
+                          />
+                          <HomeServiceCard
+                            card={homeServiceCards.find((card) => card.category === 'AI')!}
+                            wrapperClassName="framer-loezzw"
+                            containerClassName="framer-1meaboc-container"
+                          />
                           <div className="services-section__intro">
                             <p>Offensive testing, defensive operations, and governance, delivered by operators with the credentials to prove it. Pick a capability or engage the full stack.</p>
-                            <Link className="services-section__cta" to="/services">Explore all 8 services</Link>
+                            <Link className="services-section__cta" to="/contact">Talk to our sales team</Link>
                           </div>
-
                         </div>
                       </div>
                     </div>                    <div className="framer-1dvwtna" data-framer-name="Button & Card Wrapper">
                       <div className="framer-p0u3x6" data-framer-name="Card Wrapper 02">
                         <div className="framer-s7adb0">
-                          {/* $ */}
-                          <div className="framer-afkh84">
-                            {/* $ */}
-                            <div className="ssr-variant hidden-n1lvbu hidden-1bih26h">
-                              <div className="framer-1hoqsjs-container" style={{"willChange": "transform", "opacity": "0.0628592", "transform": "translateX(-80.5941px) translateY(-65.5999px) scale(0.344001) rotate(-5.62284deg) rotateX(-23.4285deg) rotateY(21.5542deg)"}}>
-                                {/* $ */}
-                                <Link className="framer-b2yRS framer-5Yetb framer-RvjoO framer-u0t8D framer-wvswm framer-v-wvswm framer-zylch8" data-framer-name="Desktop Service Card " to="/services/rapid-incident-response-management" style={{"backgroundColor": "var(--token-594d84c5-38ce-4879-b3b4-0e435f0ebf91, rgba(255, 255, 255, 0.8))", "width": "100%", "borderRadius": "5px", "opacity": "1"}}>
-                                  <div className="framer-dbx3bk" data-framer-name="Content Wrapper" style={{"opacity": "1"}}>
-                                    <div className="framer-1y89h9o" data-framer-name="Icon" style={{"opacity": "1"}}>
-                                      <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
-                                        <img decoding="auto" loading="lazy" width="100" height="100" src="/assets/images/qh9WSzmiZO49WPjU5MLP5yjGNnQ-6ffb0c75.svg" alt="Icon" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "cover"}} />
-                                      </div>
-                                    </div>                                    <div className="framer-1rki90g" data-framer-name="Title Wrapper" style={{"opacity": "1"}}>
-                                      <div className="framer-dhpktq" data-framer-name="Category & Title" style={{"opacity": "1"}}>
-                                        <div className="framer-vm66zc" data-framer-name="Category" style={{"opacity": "1"}}>
-                                          <div className="framer-1lj8eru" style={{"backgroundColor": "var(--token-f9b40a10-3aa2-419d-aa95-59bb9d326ccc, rgb(187, 62, 44))", "borderRadius": "100px", "opacity": "1"}}></div>                                          <div className="framer-q1lhml" data-framer-component-type="RichTextContainer" style={{"--extracted-r6o4lv": "var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1"}}>
-                                            <p className="framer-text framer-styles-preset-p6kp0d" data-styles-preset="RO4XsuvlA" dir="auto" style={{"--framer-text-color": "var(--extracted-r6o4lv, var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17)))"}}>Offensive</p>
-                                          </div>
-                                        </div>                                        <div className="framer-1kt8wk1" data-framer-name="Title" data-framer-component-type="RichTextContainer" style={{"--extracted-1eung3n": "var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1"}}>
-                                          <h4 className="framer-text framer-styles-preset-17nmdi8" data-styles-preset="Pipw65IC4" dir="auto" style={{"--framer-text-alignment": "start", "--framer-text-color": "var(--extracted-1eung3n, var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17)))"}}>- Phishing Simulation</h4>
-                                        </div>                                        <div className="framer-1kt8wk1" data-framer-name="Title" data-framer-component-type="RichTextContainer" style={{"--extracted-1eung3n": "var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1", "marginTop": "8px"}}>
-                                          <h4 className="framer-text framer-styles-preset-17nmdi8" data-styles-preset="Pipw65IC4" dir="auto" style={{"--framer-text-alignment": "start", "--framer-text-color": "var(--extracted-1eung3n, var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17)))"}}>- VAPT</h4>
-                                        </div>
-                                      </div>                                      <div className="framer-11q5vb5" data-framer-name="Line" style={{"backgroundColor": "var(--token-a9492df4-afd1-4c28-90f0-cf83a6de37e1, rgb(177, 177, 177))", "opacity": "1"}}></div>                                      <div className="framer-of2y41" data-framer-name="Short Description" data-framer-component-type="RichTextContainer" style={{"--extracted-r6o4lv": "var(--token-3c85a5ae-91cb-4727-974c-a277a7768b75, rgb(87, 87, 87))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1"}}>
-                                        <p className="framer-text framer-styles-preset-zsangm" data-styles-preset="VOzck8Hj3" dir="auto" style={{"--framer-text-alignment": "start", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-3c85a5ae-91cb-4727-974c-a277a7768b75, rgb(87, 87, 87)))"}}>Phishing simulations and VAPT engagements that find what attackers would — across people, apps, and infrastructure.</p>
-                                      </div>
-                                    </div>
-                                  </div>                                  <div className="framer-dr2ejp" data-framer-name="Bg" style={{"borderRadius": "5px", "opacity": "1"}}>
-                                    <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
-                                      <img decoding="auto" loading="lazy" width="1220" height="1320" sizes="(min-width: 1380px) max((max(min(max((max(min(max(100vw - 60px, 1px), 1300px), 1px) - 30px) / 2, 1px), 835px), 1px) - 20px) / 2, 1px), (max-width: 809.98px) max(min(max(100vw - 40px, 1px), 1300px), 1px), (min-width: 810px) and (max-width: 1379.98px) max((max(min(max(100vw - 60px, 1px), 1300px), 1px) - 20px) / 2, 1px)" srcSet="/assets/images/MAE7Zx5OmWLiAo31N1Eynhcyin4-7ed69742.avif 946w, https://framerusercontent.com/images/MAE7Zx5OmWLiAo31N1Eynhcyin4.png?width=1220&height=1320 1220w" src="https://framerusercontent.com/images/MAE7Zx5OmWLiAo31N1Eynhcyin4.png?width=1220&height=1320" alt="Bg" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "cover"}} />
-                                    </div>
-                                  </div>                                  <div className="framer-t8k852" data-framer-name="Icon" style={{"opacity": "0"}}>
-                                    <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
-                                      <img decoding="auto" loading="lazy" width="60" height="60" src="/assets/images/UVeVaQbgYJutj0Jk0ln2DwyV5o-19271f75.svg" alt="Icon" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "contain"}} />
-                                    </div>
-                                  </div>
-                                </Link>                                {/* /$ */}
-
-                              </div>
-                            </div>                            {/* /$ */}
-
-                          </div>                          <div className="framer-afkh84">
-                            {/* $ */}
-                            <div className="ssr-variant hidden-n1lvbu hidden-1bih26h">
-                              <div className="framer-1hoqsjs-container" style={{"willChange": "transform", "opacity": "0.0628592", "transform": "translateX(-80.5941px) translateY(-65.5999px) scale(0.344001) rotate(-5.62284deg) rotateX(-23.4285deg) rotateY(21.5542deg)"}}>
-                                {/* $ */}
-                                <Link className="framer-b2yRS framer-5Yetb framer-RvjoO framer-u0t8D framer-wvswm framer-v-wvswm framer-zylch8" data-framer-name="Desktop Service Card " to="/services/intelligent-threat-monitoring" style={{"backgroundColor": "var(--token-594d84c5-38ce-4879-b3b4-0e435f0ebf91, rgba(255, 255, 255, 0.8))", "width": "100%", "borderRadius": "5px", "opacity": "1"}}>
-                                  <div className="framer-dbx3bk" data-framer-name="Content Wrapper" style={{"opacity": "1"}}>
-                                    <div className="framer-1y89h9o" data-framer-name="Icon" style={{"opacity": "1"}}>
-                                      <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
-                                        <img decoding="auto" loading="lazy" width="100" height="100" src="/assets/images/SIb2C40P2SYrdZDpd43ru9IWG2M-871825af.svg" alt="Icon" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "cover"}} />
-                                      </div>
-                                    </div>                                    <div className="framer-1rki90g" data-framer-name="Title Wrapper" style={{"opacity": "1"}}>
-                                      <div className="framer-dhpktq" data-framer-name="Category & Title" style={{"opacity": "1"}}>
-                                        <div className="framer-vm66zc" data-framer-name="Category" style={{"opacity": "1"}}>
-                                          <div className="framer-1lj8eru" style={{"backgroundColor": "var(--token-f9b40a10-3aa2-419d-aa95-59bb9d326ccc, rgb(187, 62, 44))", "borderRadius": "100px", "opacity": "1"}}></div>                                          <div className="framer-q1lhml" data-framer-component-type="RichTextContainer" style={{"--extracted-r6o4lv": "var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1"}}>
-                                            <p className="framer-text framer-styles-preset-p6kp0d" data-styles-preset="RO4XsuvlA" dir="auto" style={{"--framer-text-color": "var(--extracted-r6o4lv, var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17)))"}}>Defensive</p>
-                                          </div>
-                                        </div>                                        <div className="framer-1kt8wk1" data-framer-name="Title" data-framer-component-type="RichTextContainer" style={{"--extracted-1eung3n": "var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1"}}>
-                                          <h4 className="framer-text framer-styles-preset-17nmdi8" data-styles-preset="Pipw65IC4" dir="auto" style={{"--framer-text-alignment": "start", "--framer-text-color": "var(--extracted-1eung3n, var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17)))"}}>- Dark Web Monitoring</h4>
-                                        </div>                                        <div className="framer-1kt8wk1" data-framer-name="Title" data-framer-component-type="RichTextContainer" style={{"--extracted-1eung3n": "var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1", "marginTop": "8px"}}>
-                                          <h4 className="framer-text framer-styles-preset-17nmdi8" data-styles-preset="Pipw65IC4" dir="auto" style={{"--framer-text-alignment": "start", "--framer-text-color": "var(--extracted-1eung3n, var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17)))"}}>- Cloud Security</h4>
-                                        </div>                                        <div className="framer-1kt8wk1" data-framer-name="Title" data-framer-component-type="RichTextContainer" style={{"--extracted-1eung3n": "var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1", "marginTop": "8px"}}>
-                                          <h4 className="framer-text framer-styles-preset-17nmdi8" data-styles-preset="Pipw65IC4" dir="auto" style={{"--framer-text-alignment": "start", "--framer-text-color": "var(--extracted-1eung3n, var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17)))"}}>- Segmentation &amp; Hardening</h4>
-                                        </div>                                        <div className="framer-1kt8wk1" data-framer-name="Title" data-framer-component-type="RichTextContainer" style={{"--extracted-1eung3n": "var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1", "marginTop": "8px"}}>
-                                          <h4 className="framer-text framer-styles-preset-17nmdi8" data-styles-preset="Pipw65IC4" dir="auto" style={{"--framer-text-alignment": "start", "--framer-text-color": "var(--extracted-1eung3n, var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17)))"}}>- Email Security</h4>
-                                        </div>
-                                      </div>                                      <div className="framer-11q5vb5" data-framer-name="Line" style={{"backgroundColor": "var(--token-a9492df4-afd1-4c28-90f0-cf83a6de37e1, rgb(177, 177, 177))", "opacity": "1"}}></div>                                      <div className="framer-of2y41" data-framer-name="Short Description" data-framer-component-type="RichTextContainer" style={{"--extracted-r6o4lv": "var(--token-3c85a5ae-91cb-4727-974c-a277a7768b75, rgb(87, 87, 87))", "--framer-link-text-color": "rgb(0, 153, 255)", "--framer-link-text-decoration": "underline", "transform": "none", "opacity": "1"}}>
-                                        <p className="framer-text framer-styles-preset-zsangm" data-styles-preset="VOzck8Hj3" dir="auto" style={{"--framer-text-alignment": "start", "--framer-text-color": "var(--extracted-r6o4lv, var(--token-3c85a5ae-91cb-4727-974c-a277a7768b75, rgb(87, 87, 87)))"}}>Continuous monitoring of dark web sources and underground forums to detect exposed credentials, leaked data, and emerging threats.</p>
-                                      </div>
-                                    </div>
-                                  </div>                                  <div className="framer-dr2ejp" data-framer-name="Bg" style={{"borderRadius": "5px", "opacity": "1"}}>
-                                    <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
-                                      <img decoding="auto" loading="lazy" width="1220" height="1320" sizes="(min-width: 1380px) max((max(min(max((max(min(max(100vw - 60px, 1px), 1300px), 1px) - 30px) / 2, 1px), 835px), 1px) - 20px) / 2, 1px), (max-width: 809.98px) max(min(max(100vw - 40px, 1px), 1300px), 1px), (min-width: 810px) and (max-width: 1379.98px) max((max(min(max(100vw - 60px, 1px), 1300px), 1px) - 20px) / 2, 1px)" srcSet="/assets/images/MAE7Zx5OmWLiAo31N1Eynhcyin4-7ed69742.avif 946w, https://framerusercontent.com/images/MAE7Zx5OmWLiAo31N1Eynhcyin4.png?width=1220&height=1320 1220w" src="https://framerusercontent.com/images/MAE7Zx5OmWLiAo31N1Eynhcyin4.png?width=1220&height=1320" alt="Bg" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "cover"}} />
-                                    </div>
-                                  </div>                                  <div className="framer-t8k852" data-framer-name="Icon" style={{"opacity": "0"}}>
-                                    <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
-                                      <img decoding="auto" loading="lazy" width="60" height="60" src="/assets/images/UVeVaQbgYJutj0Jk0ln2DwyV5o-19271f75.svg" alt="Icon" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "contain"}} />
-                                    </div>
-                                  </div>
-                                </Link>                                {/* /$ */}
-
-                              </div>
-                            </div>                            {/* /$ */}
-
-                          </div>                          {/* /$ */}
-
+                          <HomeServiceCard
+                            card={homeServiceCards.find((card) => card.category === 'Offensive')!}
+                            wrapperClassName="framer-afkh84"
+                            containerClassName="framer-1hoqsjs-container"
+                          />
+                          <HomeServiceCard
+                            card={homeServiceCards.find((card) => card.category === 'Defensive')!}
+                            wrapperClassName="framer-afkh84"
+                            containerClassName="framer-1hoqsjs-container"
+                          />
                         </div>
                       </div>
                     </div>
@@ -361,6 +216,7 @@ export const Home: React.FC = () => {
                   </div>
                 </div>
               </section>
+              <ServicesMarquee />
               <ProductsSection />
               <WhyUsSection />
               <ResearchSection />              <FaqSection />
@@ -425,7 +281,7 @@ export const Home: React.FC = () => {
 
                             </div>                            <div className="framer-8fdgsf-container" style={{"opacity": "1"}}>
                               {/* $ */}
-                              <a className="framer-MKdOM framer-b3m557 framer-v-p752po framer-ywd9le" data-framer-name="Social Icon 03" href="https://www.linkedin.com/" target="_blank" style={{"backgroundColor": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "height": "100%", "width": "100%", "borderRadius": "100px", "opacity": "1"}}>
+                              <a className="framer-MKdOM framer-b3m557 framer-v-p752po framer-ywd9le" data-framer-name="Social Icon 03" href="https://www.linkedin.com/company/paritybitsecurity/" target="_blank" style={{"backgroundColor": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "height": "100%", "width": "100%", "borderRadius": "100px", "opacity": "1"}}>
                                 <div className="framer-1d9s3us" data-framer-name="Icon" style={{"transform": "translateX(-50%)", "opacity": "1"}}>
                                   <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
                                     <img decoding="auto" width="15" height="15" src="/assets/images/qB5792DCcdXcm8D6OLNC7qMYFE-a3a802ff.svg" alt="Icon" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "contain"}} />

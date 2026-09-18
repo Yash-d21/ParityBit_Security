@@ -40,7 +40,7 @@ export const aboutContent = {
   ],
   profileBar: 'Unique Behavioral Profile',
   platformTitle: 'Adaptive AI',
-  platformSubtitle: 'Our proprietary AI technology',
+  platformSubtitle: 'Our proprietary tech is compatible with',
   feeds: [
     {
       title: 'Frontier AI, MCP, & SaaS Data',

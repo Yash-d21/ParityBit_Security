@@ -9,7 +9,8 @@ export const heroContent = {
   },
   secondaryCta: {
     label: 'Explore our services',
-    href: '/services',
+    // href: '/services',
+    href: '#',
   },
   visualSrc: '/assets/images/hero-visual.png?v=3',
   visualAlt: 'Neon molecular core network visualization',

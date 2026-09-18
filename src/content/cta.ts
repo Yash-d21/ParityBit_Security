@@ -15,7 +15,7 @@ export const ctaContent = {
         href: '/contact',
       },
       {
-        audience: 'For fintech & financial services',
+        audience: 'For financial services',
         title: 'Book a Risk Review',
         description:
           'OSFI B-13, FINTRAC, and PIPEDA-aligned posture review. Concrete findings against your obligations, in two business days.',
