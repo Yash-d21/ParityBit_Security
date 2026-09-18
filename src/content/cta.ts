@@ -16,7 +16,6 @@ export const ctaContent = {
         description:
           'White-label SOC, co-managed engagements, multi-tenant tooling. 30 minutes to find out if our stack fits your book.',
         button: 'Book the call',
-        href: 'mailto:contact@paritybitsecurity.com',
       },
       {
         audience: 'For financial services',
@@ -24,7 +23,6 @@ export const ctaContent = {
         description:
           'OSFI B-13, FINTRAC, and PIPEDA-aligned posture review. Concrete findings against your obligations, in two business days.',
         button: 'Book the review',
-        href: 'mailto:contact@paritybitsecurity.com',
       },
       {
         audience: 'Anything else',
@@ -32,7 +30,6 @@ export const ctaContent = {
         description:
           "Platform demo, services scoping, incident response, partner program. Tell us the problem and we'll route to the right operator.",
         button: 'Request the briefing',
-        href: 'mailto:contact@paritybitsecurity.com',
       },
     ],
   },

@@ -1,5 +1,4 @@
-import { type ComponentType } from 'react';
-import { Link } from 'react-router-dom';
+import { type ComponentType, type FormEvent, useEffect, useId, useState } from 'react';
 import { motion } from 'framer-motion';
 
 export type SquishyCardData = {
@@ -7,7 +6,6 @@ export type SquishyCardData = {
   title: string;
   description: string;
   button: string;
-  href: string;
 };
 
 type SquishyPricingProps = {
@@ -18,25 +16,54 @@ const cardThemes = [
   {
     background: 'bg-[#1a1028]',
     labelClass: 'text-[#a78bfa]',
+    formTone: 'black' as const,
     BGComponent: BGComponent1,
   },
   {
     background: 'bg-[#7B31FF]',
     labelClass: 'text-white',
+    formTone: 'white' as const,
     BGComponent: BGComponent2,
   },
   {
     background: 'bg-[#1a1028]',
     labelClass: 'text-[#a78bfa]',
+    formTone: 'black' as const,
     BGComponent: BGComponent3,
   },
 ] as const;
 
+const BOOKING_EMAIL = 'contact@paritybitsecurity.com';
+const CARD_HEIGHT = 448;
+const EASE = [0.22, 1, 0.36, 1] as const;
+
+function columnsFor(expandedIndex: number | null) {
+  if (expandedIndex === null) return '1fr 1fr 1fr';
+  if (expandedIndex === 0) return '2.5fr 0.5fr 0.5fr';
+  if (expandedIndex === 1) return '0.5fr 2.5fr 0.5fr';
+  return '0.5fr 0.5fr 2.5fr';
+}
+
 export function SquishyPricing({ cards }: SquishyPricingProps) {
+  const [expandedTitle, setExpandedTitle] = useState<string | null>(null);
+  const expandedIndex = expandedTitle
+    ? cards.findIndex((card) => card.title === expandedTitle)
+    : -1;
+  const anyExpanded = expandedIndex >= 0;
+
   return (
-    <div className="mx-auto flex w-full max-w-[1300px] flex-wrap justify-center gap-5">
+    <motion.div
+      initial={false}
+      animate={{ gridTemplateColumns: columnsFor(anyExpanded ? expandedIndex : null) }}
+      transition={{ duration: 0.55, ease: EASE }}
+      className="mx-auto grid w-full max-w-[1300px] gap-5"
+      style={{ gridTemplateRows: `${CARD_HEIGHT}px` }}
+    >
       {cards.map((card, index) => {
         const theme = cardThemes[index % cardThemes.length];
+        const expanded = expandedTitle === card.title;
+        const compacted = anyExpanded && !expanded;
+
         return (
           <PricingCard
             key={card.title}
@@ -44,14 +71,19 @@ export function SquishyPricing({ cards }: SquishyPricingProps) {
             title={card.title}
             description={card.description}
             cta={card.button}
-            href={card.href}
             background={theme.background}
             labelClass={theme.labelClass}
+            formTone={theme.formTone}
             BGComponent={theme.BGComponent}
+            expanded={expanded}
+            compacted={compacted}
+            anyExpanded={anyExpanded}
+            onExpand={() => setExpandedTitle(card.title)}
+            onCollapse={() => setExpandedTitle(null)}
           />
         );
       })}
-    </div>
+    </motion.div>
   );
 }
 
@@ -60,10 +92,31 @@ type PricingCardProps = {
   title: string;
   description: string;
   cta: string;
-  href: string;
   background: string;
   labelClass: string;
+  formTone: 'black' | 'white';
   BGComponent: ComponentType;
+  expanded: boolean;
+  compacted: boolean;
+  anyExpanded: boolean;
+  onExpand: () => void;
+  onCollapse: () => void;
+};
+
+type BookingFormState = {
+  name: string;
+  email: string;
+  company: string;
+  phone: string;
+  message: string;
+};
+
+const emptyForm: BookingFormState = {
+  name: '',
+  email: '',
+  company: '',
+  phone: '',
+  message: '',
 };
 
 function PricingCard({
@@ -71,47 +124,286 @@ function PricingCard({
   title,
   description,
   cta,
-  href,
   background,
   labelClass,
+  formTone,
   BGComponent,
+  expanded,
+  compacted,
+  anyExpanded,
+  onExpand,
+  onCollapse,
 }: PricingCardProps) {
+  const formId = useId();
+  const [form, setForm] = useState<BookingFormState>(emptyForm);
+  const [submitted, setSubmitted] = useState(false);
+  const formIsWhite = formTone === 'white';
+
+  useEffect(() => {
+    if (!expanded) {
+      setForm(emptyForm);
+      setSubmitted(false);
+    }
+  }, [expanded]);
+
   const ctaClassName =
-    'absolute bottom-4 left-4 right-4 z-20 rounded-full border border-white bg-white py-3 text-center text-sm font-medium text-neutral-900 transition-all duration-200 hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent';
-  const isExternal = /^(https?:|mailto:|tel:)/i.test(href);
+    'relative z-20 w-full rounded-full border border-white bg-white py-3 text-center text-sm font-medium text-neutral-900 transition-all duration-200 hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent';
+
+  const formSubmitClassName = formIsWhite
+    ? 'relative z-20 w-full rounded-full border border-transparent bg-[#7B31FF] py-3 text-center text-sm font-medium text-white transition-all duration-200 hover:bg-[#6a28e0] focus:outline-none focus:ring-2 focus:ring-[#7B31FF]/50'
+    : 'relative z-20 w-full rounded-full border border-white bg-white py-3 text-center text-sm font-medium text-neutral-900 transition-all duration-200 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-white/50';
+
+  const formPanelClassName = formIsWhite
+    ? 'rounded-xl border border-black/10 bg-white'
+    : 'rounded-xl border border-white/15 bg-black';
+
+  const formLabelClassName = formIsWhite
+    ? 'mb-0.5 text-xs font-semibold uppercase tracking-[0.06em] text-neutral-500'
+    : 'mb-0.5 text-xs font-semibold uppercase tracking-[0.06em] text-white/60';
+
+  const formBodyClassName = formIsWhite
+    ? 'text-sm leading-relaxed text-neutral-700'
+    : 'text-sm leading-relaxed text-white/85';
+
+  const fieldClassName = formIsWhite
+    ? 'w-full rounded-lg border border-black/10 bg-white px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 outline-none transition focus:border-black/25'
+    : 'w-full rounded-lg border border-white/15 bg-black px-3 py-2 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-white/35';
+
+  function updateField<K extends keyof BookingFormState>(key: K, value: string) {
+    setForm((prev) => ({ ...prev, [key]: value }));
+  }
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const subject = encodeURIComponent(title);
+    const body = encodeURIComponent(
+      [
+        `Request: ${title}`,
+        `Audience: ${label}`,
+        '',
+        `Name: ${form.name.trim()}`,
+        `Email: ${form.email.trim()}`,
+        `Company: ${form.company.trim()}`,
+        `Phone: ${form.phone.trim()}`,
+        '',
+        form.message.trim() || '(No message)',
+      ].join('\n'),
+    );
+    window.location.href = `mailto:${BOOKING_EMAIL}?subject=${subject}&body=${body}`;
+    setSubmitted(true);
+  }
 
   return (
     <motion.div
-      whileHover="hover"
-      transition={{ duration: 1, ease: 'backInOut' }}
-      variants={{ hover: { scale: 1.05 } }}
-      className={`relative h-[28rem] w-full max-w-sm shrink-0 overflow-hidden rounded-xl p-8 font-[Inter,sans-serif] shadow-lg transition-shadow hover:shadow-xl sm:w-80 ${background}`}
+      whileHover={expanded || compacted || anyExpanded ? undefined : 'hover'}
+      variants={{ hover: { scale: 1.03 } }}
+      transition={{ duration: 0.8, ease: 'backInOut' }}
+      className={`relative min-w-0 overflow-hidden rounded-xl font-[Inter,sans-serif] shadow-lg ${background} ${
+        compacted ? 'cursor-pointer p-5' : 'p-7 sm:p-8'
+      }`}
+      style={{ height: CARD_HEIGHT }}
+      onClick={compacted ? onExpand : undefined}
+      onKeyDown={
+        compacted
+          ? (event) => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                onExpand();
+              }
+            }
+          : undefined
+      }
+      role={compacted ? 'button' : undefined}
+      tabIndex={compacted ? 0 : undefined}
+      aria-label={compacted ? `Open ${title}` : undefined}
     >
-      <div className="relative z-10 text-white">
-        <span
-          className={`mb-4 block text-xs font-semibold uppercase tracking-[0.05em] ${labelClass}`}
+      <div className="relative z-10 h-full min-h-0 text-white">
+        <motion.div
+          initial={false}
+          animate={{
+            opacity: !expanded && !compacted ? 1 : 0,
+          }}
+          transition={{ duration: 0.25, ease: EASE }}
+          className="absolute inset-0 flex flex-col"
+          style={{ pointerEvents: !expanded && !compacted ? 'auto' : 'none' }}
+          aria-hidden={expanded || compacted}
         >
-          {label}
-        </span>
-        <motion.h3
-          initial={{ scale: 0.92 }}
-          variants={{ hover: { scale: 1 } }}
-          transition={{ duration: 1, ease: 'backInOut' }}
-          className="mb-4 origin-top-left font-['Inter_Tight_Regular',Inter,sans-serif] text-[1.75rem] font-medium leading-tight tracking-[-0.02em]"
+          <span
+            className={`mb-4 block text-xs font-semibold uppercase tracking-[0.05em] ${labelClass}`}
+          >
+            {label}
+          </span>
+          <motion.h3
+            variants={{ hover: { scale: 1 } }}
+            initial={{ scale: 0.96 }}
+            transition={{ duration: 0.8, ease: 'backInOut' }}
+            className="mb-4 origin-top-left font-['Inter_Tight_Regular',Inter,sans-serif] text-[1.75rem] font-medium leading-tight tracking-[-0.02em]"
+          >
+            {title}
+          </motion.h3>
+          <p className="mb-6 text-sm leading-relaxed text-white/90">{description}</p>
+          <div className="mt-auto">
+            <button
+              type="button"
+              className={ctaClassName}
+              onClick={(event) => {
+                event.stopPropagation();
+                onExpand();
+              }}
+            >
+              {cta}
+            </button>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={false}
+          animate={{ opacity: compacted ? 1 : 0 }}
+          transition={{ duration: 0.25, ease: EASE, delay: compacted ? 0.1 : 0 }}
+          className="absolute inset-0 flex flex-col justify-between"
+          style={{ pointerEvents: compacted ? 'auto' : 'none' }}
+          aria-hidden={!compacted}
         >
-          {title}
-        </motion.h3>
-        <p className="text-sm leading-relaxed text-white/90">{description}</p>
+          <div>
+            <span
+              className={`mb-3 block text-[11px] font-semibold uppercase tracking-[0.05em] ${labelClass}`}
+            >
+              {label}
+            </span>
+            <h3 className="font-['Inter_Tight_Regular',Inter,sans-serif] text-lg font-medium leading-snug tracking-[-0.02em]">
+              {title}
+            </h3>
+          </div>
+          <span className="text-sm font-medium text-white/80">{cta} →</span>
+        </motion.div>
+
+        <motion.div
+          initial={false}
+          animate={{ opacity: expanded ? 1 : 0 }}
+          transition={{ duration: 0.28, ease: EASE, delay: expanded ? 0.12 : 0 }}
+          className="absolute inset-0 grid min-h-0 grid-cols-1 gap-6 md:grid-cols-2 md:gap-8"
+          style={{ pointerEvents: expanded ? 'auto' : 'none' }}
+          aria-hidden={!expanded}
+        >
+          <div className="flex min-w-0 flex-col">
+            <span
+              className={`mb-3 block text-xs font-semibold uppercase tracking-[0.05em] ${labelClass}`}
+            >
+              {label}
+            </span>
+            <h3 className="mb-3 font-['Inter_Tight_Regular',Inter,sans-serif] text-[1.6rem] font-medium leading-tight tracking-[-0.02em]">
+              {title}
+            </h3>
+            <p className="mb-4 max-w-[34ch] text-sm leading-relaxed text-white/90">
+              {description}
+            </p>
+            <button
+              type="button"
+              className="mt-auto w-fit rounded-full border border-white/40 bg-transparent px-5 py-2.5 text-sm font-medium text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/50"
+              onClick={(event) => {
+                event.stopPropagation();
+                onCollapse();
+              }}
+            >
+              Back to options
+            </button>
+          </div>
+
+          <div className="flex min-h-0 min-w-0 flex-col">
+            {submitted ? (
+              <div className={`flex h-full flex-col justify-between gap-4 p-4 ${formPanelClassName}`}>
+                <p className={formBodyClassName}>
+                  Thanks — your mail client should open with this request. If it
+                  doesn&apos;t, email us at {BOOKING_EMAIL}.
+                </p>
+                <button type="button" className={formSubmitClassName} onClick={onCollapse}>
+                  Close
+                </button>
+              </div>
+            ) : (
+              <form
+                className={`flex h-full min-h-0 flex-col gap-2 overflow-auto p-4 ${formPanelClassName}`}
+                onSubmit={handleSubmit}
+                onClick={(event) => event.stopPropagation()}
+              >
+                <p className={formLabelClassName}>
+                  Your details
+                </p>
+                <label className="sr-only" htmlFor={`${formId}-name`}>
+                  Name
+                </label>
+                <input
+                  id={`${formId}-name`}
+                  name="name"
+                  type="text"
+                  required
+                  autoComplete="name"
+                  placeholder="Full name"
+                  className={fieldClassName}
+                  value={form.name}
+                  onChange={(event) => updateField('name', event.target.value)}
+                />
+                <label className="sr-only" htmlFor={`${formId}-email`}>
+                  Email
+                </label>
+                <input
+                  id={`${formId}-email`}
+                  name="email"
+                  type="email"
+                  required
+                  autoComplete="email"
+                  placeholder="Work email"
+                  className={fieldClassName}
+                  value={form.email}
+                  onChange={(event) => updateField('email', event.target.value)}
+                />
+                <label className="sr-only" htmlFor={`${formId}-company`}>
+                  Company
+                </label>
+                <input
+                  id={`${formId}-company`}
+                  name="company"
+                  type="text"
+                  required
+                  autoComplete="organization"
+                  placeholder="Company"
+                  className={fieldClassName}
+                  value={form.company}
+                  onChange={(event) => updateField('company', event.target.value)}
+                />
+                <label className="sr-only" htmlFor={`${formId}-phone`}>
+                  Phone
+                </label>
+                <input
+                  id={`${formId}-phone`}
+                  name="phone"
+                  type="tel"
+                  autoComplete="tel"
+                  placeholder="Phone (optional)"
+                  className={fieldClassName}
+                  value={form.phone}
+                  onChange={(event) => updateField('phone', event.target.value)}
+                />
+                <label className="sr-only" htmlFor={`${formId}-message`}>
+                  Message
+                </label>
+                <textarea
+                  id={`${formId}-message`}
+                  name="message"
+                  rows={2}
+                  placeholder="What should we cover?"
+                  className={`${fieldClassName} resize-none`}
+                  value={form.message}
+                  onChange={(event) => updateField('message', event.target.value)}
+                />
+                <button type="submit" className={`mt-auto ${formSubmitClassName}`}>
+                  Send request
+                </button>
+              </form>
+            )}
+          </div>
+        </motion.div>
       </div>
-      {isExternal ? (
-        <a href={href} className={ctaClassName}>
-          {cta}
-        </a>
-      ) : (
-        <Link to={href} className={ctaClassName}>
-          {cta}
-        </Link>
-      )}
       <BGComponent />
     </motion.div>
   );
@@ -127,7 +419,7 @@ function BGComponent1() {
       xmlns="http://www.w3.org/2000/svg"
       variants={{ hover: { scale: 1.5 } }}
       transition={{ duration: 1, ease: 'backInOut' }}
-      className="absolute inset-0 z-0 h-full w-full"
+      className="pointer-events-none absolute inset-0 z-0 h-full w-full"
       aria-hidden="true"
     >
       <motion.circle
@@ -161,7 +453,7 @@ function BGComponent2() {
       xmlns="http://www.w3.org/2000/svg"
       variants={{ hover: { scale: 1.05 } }}
       transition={{ duration: 1, ease: 'backInOut' }}
-      className="absolute inset-0 z-0 h-full w-full"
+      className="pointer-events-none absolute inset-0 z-0 h-full w-full"
       aria-hidden="true"
     >
       <motion.rect
@@ -198,7 +490,7 @@ function BGComponent3() {
       xmlns="http://www.w3.org/2000/svg"
       variants={{ hover: { scale: 1.25 } }}
       transition={{ duration: 1, ease: 'backInOut' }}
-      className="absolute inset-0 z-0 h-full w-full"
+      className="pointer-events-none absolute inset-0 z-0 h-full w-full"
       aria-hidden="true"
     >
       <motion.path

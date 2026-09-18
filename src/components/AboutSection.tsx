@@ -14,7 +14,7 @@ export function AboutSection() {
               aria-hidden="true"
               className="about-section__eyebrow-icon"
             />
-            <span>{aboutContent.eyebrow}</span>
+            <strong>{aboutContent.eyebrow}</strong>
           </p>
 
           <h2 className="about-section__title">

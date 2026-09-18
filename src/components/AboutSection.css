@@ -32,10 +32,17 @@
   justify-content: center;
   gap: 8px;
   margin: 0;
-  font-family: "Inter", sans-serif;
-  font-size: 13px;
+  font-family: "Inter Tight Bold", "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
   line-height: 1;
   color: rgb(17, 17, 17);
+}
+
+.about-section__eyebrow span,
+.about-section__eyebrow strong {
+  font-family: inherit;
+  font-weight: 700;
 }
 
 .about-section__eyebrow-icon {
@@ -101,7 +108,7 @@
 
 .about-section__pillars {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
   align-items: stretch;
 }
@@ -113,7 +120,7 @@
   justify-content: center;
   gap: 12px;
   min-height: 152px;
-  padding: 30px 24px;
+  padding: 28px 18px;
   border-radius: 14px;
   text-align: center;
 }
@@ -129,7 +136,7 @@
 
 .about-section__pillar p {
   margin: 0;
-  max-width: 34ch;
+  max-width: 32ch;
   font-family: "Inter", sans-serif;
   font-size: 13.5px;
   line-height: 1.45;
@@ -295,6 +302,10 @@
 }
 
 @media (min-width: 810px) and (max-width: 1024px) {
+  .about-section__pillars {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .about-section__feed-icons {
     gap: 6px;
   }

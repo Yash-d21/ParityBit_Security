@@ -1,0 +1,23 @@
+.home-service-card__item {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  transform: translateX(0);
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.28s ease;
+}
+
+.home-service-card__item-text {
+  transition: color 0.28s ease;
+}
+
+.home-service-card__item:hover {
+  transform: translateX(10px) !important;
+}
+
+.home-service-card__item:hover .home-service-card__item-text {
+  --framer-text-color: rgb(123, 49, 255) !important;
+  --extracted-1eung3n: rgb(123, 49, 255) !important;
+  color: rgb(123, 49, 255) !important;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import type { HomeServiceCard as HomeServiceCardData } from '../content/homeServices';
+import './HomeServiceCard.css';
 
 type Props = {
   card: HomeServiceCardData;
@@ -92,18 +93,17 @@ export function HomeServiceCard({ card, wrapperClassName, containerClassName }: 
                   {card.items.map((item) => (
                     <div
                       key={item}
-                      className="framer-1kt8wk1"
+                      className="framer-1kt8wk1 home-service-card__item"
                       data-framer-name="Title"
                       data-framer-component-type="RichTextContainer"
                       style={{
                         '--extracted-1eung3n':
                           'var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17))',
-                        transform: 'none',
                         opacity: '1',
                       } as React.CSSProperties}
                     >
                       <h4
-                        className="framer-text framer-styles-preset-17nmdi8"
+                        className="framer-text framer-styles-preset-17nmdi8 home-service-card__item-text"
                         data-styles-preset="Pipw65IC4"
                         dir="auto"
                         style={{

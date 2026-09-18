@@ -72,9 +72,10 @@ export const servicesMarqueeItems: ServiceMarqueeItem[] = services.map(
   },
 );
 
-const ROW_COUNT = 3;
-const PER_ROW = servicesMarqueeItems.length / ROW_COUNT;
+const ROW_COUNT = 4;
+const PER_ROW = Math.ceil(servicesMarqueeItems.length / ROW_COUNT);
 
+/** Unique items per row — no cross-row duplicates (loop clones only for seamless scroll). */
 export const servicesMarqueeRows = Array.from({ length: ROW_COUNT }, (_, row) =>
   servicesMarqueeItems.slice(row * PER_ROW, (row + 1) * PER_ROW),
 );

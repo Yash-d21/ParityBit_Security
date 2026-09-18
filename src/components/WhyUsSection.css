@@ -26,10 +26,17 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: "Inter", sans-serif;
+  font-family: "Inter Tight Bold", "Inter", sans-serif;
   font-size: 14px;
+  font-weight: 700;
   line-height: 1;
   color: rgb(255, 255, 255);
+}
+
+.why-us-section__eyebrow span,
+.why-us-section__eyebrow strong {
+  font-family: inherit;
+  font-weight: 700;
 }
 
 .why-us-section__eyebrow-icon {

@@ -47,6 +47,7 @@ export function ServicesMarquee() {
             gap={10}
             duration={52 + rowIndex * 4}
             reverse={rowIndex % 2 === 1}
+            pauseOnHover
             className="services-marquee__row"
           >
             {row.map((item, itemIndex) => (

@@ -150,8 +150,8 @@ header[data-framer-name] { width: 100%; max-width: 100%; }
 }
 
 /* Framer scroll/appear animations don't run outside Framer runtime — reset stuck states */
-[style*="willChange"]:not([data-framer-name="Icon Wrapper"]):not(.partner-marquee__track):not([data-infinite-slider-track]),
-[style*="will-change"]:not([data-framer-name="Icon Wrapper"]):not(.partner-marquee__track):not([data-infinite-slider-track]) {
+[style*="willChange"]:not([data-framer-name="Icon Wrapper"]):not(.partner-marquee__track):not([data-infinite-slider-track]):not(.home-service-card__item),
+[style*="will-change"]:not([data-framer-name="Icon Wrapper"]):not(.partner-marquee__track):not([data-infinite-slider-track]):not(.home-service-card__item) {
   opacity: 1 !important;
   transform: none !important;
   /* Drop compositor layers that leave 1px gaps between sections while scrolling */
@@ -481,6 +481,10 @@ p.framer-text > span {
   width: 100% !important;
   max-width: none !important;
   margin: 0 !important;
+}
+
+[data-framer-name="Service Section"] [data-framer-name="Section Title 02"] .framer-text {
+  font-weight: 700 !important;
 }
 
 [data-framer-name="Service Section"] .services-section__title-row {

@@ -37,6 +37,10 @@ export const aboutContent = {
       title: 'Proactive defense',
       body: 'Phishing simulation, OSINT investigation, and continuous monitoring to stop attacks before they cause damage.',
     },
+    {
+      title: 'IT ops services',
+      body: 'Configure firewalls, manage devices, troubleshoot integrations, and deliver monthly-to-annual ops reports.',
+    },
   ],
   profileBar: 'Unique Behavioral Profile',
   platformTitle: 'Adaptive AI',

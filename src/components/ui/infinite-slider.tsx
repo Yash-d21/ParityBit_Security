@@ -8,6 +8,7 @@ type InfiniteSliderProps = {
   gap?: number;
   duration?: number;
   durationOnHover?: number;
+  pauseOnHover?: boolean;
   direction?: 'horizontal' | 'vertical';
   reverse?: boolean;
   className?: string;
@@ -18,6 +19,7 @@ export function InfiniteSlider({
   gap = 16,
   duration = 25,
   durationOnHover,
+  pauseOnHover = false,
   direction = 'horizontal',
   reverse = false,
   className,
@@ -26,14 +28,21 @@ export function InfiniteSlider({
   const [ref, { width, height }] = useMeasure();
   const translation = useMotionValue(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const [key, setKey] = useState(0);
 
   useEffect(() => {
-    let controls;
+    let controls: ReturnType<typeof animate> | undefined;
     const size = direction === 'horizontal' ? width : height;
+    if (!size) return;
+
     const contentSize = size + gap;
     const from = reverse ? -contentSize / 2 : 0;
     const to = reverse ? 0 : -contentSize / 2;
+
+    if (isPaused) {
+      return;
+    }
 
     if (isTransitioning) {
       controls = animate(translation, [translation.get(), to], {
@@ -58,7 +67,7 @@ export function InfiniteSlider({
       });
     }
 
-    return controls?.stop;
+    return () => controls?.stop();
   }, [
     key,
     translation,
@@ -67,25 +76,38 @@ export function InfiniteSlider({
     height,
     gap,
     isTransitioning,
+    isPaused,
     direction,
     reverse,
   ]);
 
-  const hoverProps = durationOnHover
-    ? {
-        onHoverStart: () => {
-          setIsTransitioning(true);
-          setCurrentDuration(durationOnHover);
-        },
-        onHoverEnd: () => {
-          setIsTransitioning(true);
-          setCurrentDuration(duration);
-        },
-      }
-    : {};
-
   return (
-    <div className={cn('overflow-hidden', className)}>
+    <div
+      className={cn('overflow-hidden', className)}
+      onMouseEnter={
+        pauseOnHover
+          ? () => setIsPaused(true)
+          : durationOnHover
+            ? () => {
+                setIsTransitioning(true);
+                setCurrentDuration(durationOnHover);
+              }
+            : undefined
+      }
+      onMouseLeave={
+        pauseOnHover
+          ? () => {
+              setIsPaused(false);
+              setIsTransitioning(true);
+            }
+          : durationOnHover
+            ? () => {
+                setIsTransitioning(true);
+                setCurrentDuration(duration);
+              }
+            : undefined
+      }
+    >
       <motion.div
         className="flex w-max"
         data-infinite-slider-track
@@ -97,7 +119,6 @@ export function InfiniteSlider({
           flexDirection: direction === 'horizontal' ? 'row' : 'column',
         }}
         ref={ref}
-        {...hoverProps}
       >
         {children}
         {children}
