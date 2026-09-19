@@ -66,7 +66,7 @@ export const Home: React.FC = () => {
                           <div className="framer-jgrbeo-container" style={{"opacity": "1"}}>
                             {/* $ */}
                             {/* <Link className="framer-wG3Fc framer-u0t8D framer-qsls34 framer-v-qsls34 framer-eej19x" data-framer-name="Menu Link 01" to="/case-studies" style={{"opacity": "1"}}> */}
-                            <Link className="framer-wG3Fc framer-u0t8D framer-qsls34 framer-v-qsls34 framer-eej19x" data-framer-name="Menu Link 01" to="#" style={{"opacity": "1"}}>
+                            <Link className="framer-wG3Fc framer-u0t8D framer-qsls34 framer-v-qsls34 framer-eej19x" data-framer-name="Menu Link 01" to="/#top" style={{"opacity": "1"}}>
                               <div className="framer-1a9srqp" data-framer-name="Home" data-framer-component-type="RichTextContainer" style={{"--extracted-r6o4lv": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "--framer-paragraph-spacing": "0px", "transform": "none", "opacity": "1"}}>
                                 <p className="framer-text framer-styles-preset-zsangm" data-styles-preset="VOzck8Hj3" dir="auto" style={{"--framer-text-color": "var(--extracted-r6o4lv, var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255)))"}}>Solutions</p>
                               </div>                              <div className="framer-1efj4tt" data-framer-name="Line" style={{"backgroundColor": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "opacity": "1"}}></div>
@@ -77,7 +77,7 @@ export const Home: React.FC = () => {
                           <div className="framer-19co1ve-container" style={{"opacity": "1"}}>
                             {/* $ */}
                             {/* <Link className="framer-wG3Fc framer-u0t8D framer-qsls34 framer-v-qsls34 framer-eej19x" data-framer-name="Menu Link 01" to="/services" style={{"opacity": "1"}}> */}
-                            <Link className="framer-wG3Fc framer-u0t8D framer-qsls34 framer-v-qsls34 framer-eej19x" data-framer-name="Menu Link 01" to="#" style={{"opacity": "1"}}>
+                            <Link className="framer-wG3Fc framer-u0t8D framer-qsls34 framer-v-qsls34 framer-eej19x" data-framer-name="Menu Link 01" to="/#services" style={{"opacity": "1"}}>
                               <div className="framer-1a9srqp" data-framer-name="Home" data-framer-component-type="RichTextContainer" style={{"--extracted-r6o4lv": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "--framer-paragraph-spacing": "0px", "transform": "none", "opacity": "1"}}>
                                 <p className="framer-text framer-styles-preset-zsangm" data-styles-preset="VOzck8Hj3" dir="auto" style={{"--framer-text-color": "var(--extracted-r6o4lv, var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255)))"}}>Services</p>
                               </div>                              <div className="framer-1efj4tt" data-framer-name="Line" style={{"backgroundColor": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "opacity": "1"}}></div>
@@ -88,7 +88,7 @@ export const Home: React.FC = () => {
                           <div className="framer-131sjn1-container" style={{"opacity": "1"}}>
                             {/* $ */}
                             {/* <Link className="framer-wG3Fc framer-u0t8D framer-qsls34 framer-v-qsls34 framer-eej19x" data-framer-name="Menu Link 01" to="/about" style={{"opacity": "1"}}> */}
-                            <Link className="framer-wG3Fc framer-u0t8D framer-qsls34 framer-v-qsls34 framer-eej19x" data-framer-name="Menu Link 01" to="#" style={{"opacity": "1"}}>
+                            <Link className="framer-wG3Fc framer-u0t8D framer-qsls34 framer-v-qsls34 framer-eej19x" data-framer-name="Menu Link 01" to="/#top" style={{"opacity": "1"}}>
                               <div className="framer-1a9srqp" data-framer-name="Home" data-framer-component-type="RichTextContainer" style={{"--extracted-r6o4lv": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "--framer-paragraph-spacing": "0px", "transform": "none", "opacity": "1"}}>
                                 <p className="framer-text framer-styles-preset-zsangm" data-styles-preset="VOzck8Hj3" dir="auto" style={{"--framer-text-color": "var(--extracted-r6o4lv, var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255)))"}}>Company</p>
                               </div>                              <div className="framer-1efj4tt" data-framer-name="Line" style={{"backgroundColor": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))", "opacity": "1"}}></div>
@@ -147,7 +147,7 @@ export const Home: React.FC = () => {
               <HeroSection />
               <PartnerMarquee />
               <AboutSection />
-              <section className="framer-guo2po" data-framer-name="Service Section">
+              <section id="services" className="framer-guo2po" data-framer-name="Service Section">
                 <div className="framer-yqfmw" data-framer-name="Container">
                   <div className="framer-12e1tu4" data-framer-name="Content">
                     <div className="framer-1pqd42c" data-framer-name="Title & Card Wrapper">

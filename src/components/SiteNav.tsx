@@ -188,9 +188,9 @@ export function SiteNav() {
         </ul>
 
         <div className="site-nav__actions">
-          <a href="#sign-in" className="site-nav__signin">
+          <Link to="/#top" className="site-nav__signin" onClick={closeAll}>
             Sign in
-          </a>
+          </Link>
           <Link to="/#end-the-cycle" className="site-nav__briefing" onClick={closeAll}>
             Request briefing
           </Link>

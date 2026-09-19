@@ -418,6 +418,7 @@ p.framer-text > span {
 [data-framer-name="Service Section"] {
   background: #000 !important;
   background-color: #000 !important;
+  scroll-margin-top: 72px;
   --service-section-pad-top: clamp(96px, 11vh, 120px);
   --service-section-pad-bottom: clamp(24px, 3vh, 40px);
   --service-grid-gap: 14px;

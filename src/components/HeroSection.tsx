@@ -4,7 +4,7 @@ import './HeroSection.css';
 
 export function HeroSection() {
   return (
-    <section className="hero-section" aria-label="Hero">
+    <section id="top" className="hero-section" aria-label="Hero">
       <div className="hero-section__bg" aria-hidden="true">
         <div className="hero-section__grid-plane">
           <div className="hero-section__grid-lines" />

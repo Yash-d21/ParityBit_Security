@@ -1,3 +1,5 @@
+import { homeAnchors } from './homeAnchors';
+
 export const heroContent = {
   title: 'Cybersecurity that actually',
   titleAccent: 'works.',
@@ -5,12 +7,11 @@ export const heroContent = {
     'End the cycle of cyber attacks and data breaches. Where traditional security fails, our intelligence-driven approach succeeds, protecting your data, your reputation, and your bottom line.',
   primaryCta: {
     label: 'Request briefing',
-    href: '/#end-the-cycle',
+    href: homeAnchors.briefing,
   },
   secondaryCta: {
     label: 'Explore our services',
-    // href: '/services',
-    href: '#',
+    href: homeAnchors.services,
   },
   visualSrc: '/assets/images/hero-visual.png?v=3',
   visualAlt: 'Neon molecular core network visualization',

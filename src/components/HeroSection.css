@@ -13,6 +13,7 @@
   max-height: calc(100dvh - var(--site-nav-h));
   display: flex;
   align-items: stretch;
+  scroll-margin-top: var(--site-nav-h);
 }
 
 .hero-section__bg {

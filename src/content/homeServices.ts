@@ -12,7 +12,7 @@ export const homeServiceCards: HomeServiceCard[] = [
   {
     category: 'Offensive',
     // href: '/services/rapid-incident-response-management',
-    href: '#',
+    href: '/#services',
     icon: '/assets/images/qh9WSzmiZO49WPjU5MLP5yjGNnQ-6ffb0c75.svg',
     items: [
       'Vulnerability Assessment & Penetration Testing (VAPT)',
@@ -27,7 +27,7 @@ export const homeServiceCards: HomeServiceCard[] = [
   {
     category: 'Defensive',
     // href: '/services/intelligent-threat-monitoring',
-    href: '#',
+    href: '/#services',
     icon: '/assets/images/SIb2C40P2SYrdZDpd43ru9IWG2M-871825af.svg',
     items: [
       'Managed SOC & SIEM Monitoring',
@@ -42,7 +42,7 @@ export const homeServiceCards: HomeServiceCard[] = [
   {
     category: 'AI',
     // href: '/services/ai-powered-threat-detection-system',
-    href: '#',
+    href: '/#services',
     icon: '/assets/images/service-icon-ai.webp',
     iconObjectFit: 'contain',
     items: [
@@ -58,7 +58,7 @@ export const homeServiceCards: HomeServiceCard[] = [
   {
     category: 'Governance, Risk & Compliance',
     // href: '/services',
-    href: '#',
+    href: '/#services',
     icon: '/assets/images/hEdInb3mCJe8MyL1oTSA35AmZY-e5e95267.svg',
     items: [
       'Compliance Management & Readiness',

@@ -4,6 +4,7 @@
   background: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   padding: 88px 0 96px;
+  scroll-margin-top: 72px;
 }
 
 .research-section__container {
