@@ -5,6 +5,7 @@ import {
   useState,
   type FormEvent,
   type KeyboardEvent,
+  type MouseEvent as ReactMouseEvent,
 } from 'react';
 import { InfiniteSlider } from '@/components/ui/infinite-slider';
 import {
@@ -93,6 +94,28 @@ function SearchResults({
           ))}
         </div>
       </div>
+
+      {result.relatedServices.length ? (
+        <div className="services-marquee__related-services">
+          <p className="services-marquee__related-heading">Related services</p>
+          <ul className="services-marquee__related-list">
+            {result.relatedServices.map((item) => (
+              <li key={item.id}>
+                <button
+                  type="button"
+                  className="services-marquee__related-link"
+                  onClick={() => onPick(item.id)}
+                >
+                  <span className="services-marquee__related-arrow" aria-hidden="true">
+                    ↳
+                  </span>
+                  <span className="services-marquee__related-title">{item.title}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
     </div>
   );
 }
@@ -100,13 +123,44 @@ function SearchResults({
 export function ServicesMarquee() {
   const inputId = useId();
   const sectionRef = useRef<HTMLElement>(null);
+  const rowsRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+  const closeTimerRef = useRef<number | null>(null);
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [placeholder, setPlaceholder] = useState('Search capabilities…');
   const [result, setResult] = useState<ServiceSearchResult | null>(null);
   const [empty, setEmpty] = useState(false);
+
+  const cancelClose = () => {
+    if (closeTimerRef.current != null) {
+      window.clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+  };
+
+  const closeSearch = () => {
+    cancelClose();
+    setOpen(false);
+    setPlaceholder('Search capabilities…');
+  };
+
+  const scheduleClose = () => {
+    cancelClose();
+    closeTimerRef.current = window.setTimeout(() => {
+      closeTimerRef.current = null;
+      setOpen(false);
+      setPlaceholder('Search capabilities…');
+    }, 140);
+  };
+
+  const isInsideMarqueeOrSearch = (node: Node | null) => {
+    if (!node) return false;
+    return Boolean(
+      rowsRef.current?.contains(node) || panelRef.current?.contains(node),
+    );
+  };
 
   useEffect(() => {
     if (!open) return;
@@ -135,13 +189,13 @@ export function ServicesMarquee() {
     if (!open) return;
 
     const onPointerDown = (event: MouseEvent) => {
-      if (!sectionRef.current?.contains(event.target as Node)) {
-        setOpen(false);
+      if (!isInsideMarqueeOrSearch(event.target as Node)) {
+        closeSearch();
       }
     };
 
     const onKeyDown = (event: globalThis.KeyboardEvent) => {
-      if (event.key === 'Escape') setOpen(false);
+      if (event.key === 'Escape') closeSearch();
     };
 
     document.addEventListener('mousedown', onPointerDown);
@@ -152,7 +206,10 @@ export function ServicesMarquee() {
     };
   }, [open]);
 
+  useEffect(() => () => cancelClose(), []);
+
   const openSearch = (opts?: { prompt?: boolean; seedId?: string }) => {
+    cancelClose();
     setOpen(true);
     if (opts?.prompt) {
       setPlaceholder(HOVER_PROMPT);
@@ -166,17 +223,6 @@ export function ServicesMarquee() {
     }
   };
 
-  const toggleSearch = () => {
-    setOpen((prev) => {
-      if (prev) {
-        setPlaceholder('Search capabilities…');
-        return false;
-      }
-      setPlaceholder('Search capabilities…');
-      return true;
-    });
-  };
-
   const onSubmit = (event: FormEvent) => {
     event.preventDefault();
     const next = searchServices(query);
@@ -187,11 +233,19 @@ export function ServicesMarquee() {
   const pickService = (id: string) => {
     const service = getServiceById(id);
     if (!service) return;
+    cancelClose();
     setQuery(service.title);
     setResult(searchServices(service.title));
     setEmpty(false);
     setOpen(true);
     inputRef.current?.focus();
+  };
+
+  const onMarqueeZoneLeave = (event: ReactMouseEvent<HTMLElement>) => {
+    const next = event.relatedTarget as Node | null;
+    if (!isInsideMarqueeOrSearch(next)) {
+      scheduleClose();
+    }
   };
 
   return (
@@ -202,7 +256,7 @@ export function ServicesMarquee() {
       data-framer-name="Services Marquee"
       aria-labelledby="services-marquee-heading"
     >
-      <header className="services-marquee__header" ref={panelRef}>
+      <header className="services-marquee__header">
         <p className="services-marquee__eyebrow">
           <img
             src="/assets/images/WfbxSQyOjo3fWmtKp5iBzgLjYro-baa859fd.svg"
@@ -220,70 +274,66 @@ export function ServicesMarquee() {
             Security across every{' '}
             <span className="services-marquee__title-accent">layer.</span>
           </h2>
-
-          <div className={`services-marquee__search${open ? ' is-open' : ''}`}>
-            <button
-              type="button"
-              className="services-marquee__search-toggle"
-              aria-expanded={open}
-              aria-controls={inputId}
-              aria-label={open ? 'Close capability search' : 'Search capabilities'}
-              onClick={toggleSearch}
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" strokeWidth="1.8" />
-                <path
-                  d="M16.2 16.2 L20 20"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </button>
-
-            <form className="services-marquee__search-field" onSubmit={onSubmit} role="search">
-              <label className="visually-hidden" htmlFor={inputId}>
-                Search services
-              </label>
-              <input
-                id={inputId}
-                ref={inputRef}
-                type="search"
-                value={query}
-                placeholder={placeholder}
-                autoComplete="off"
-                spellCheck={false}
-                onChange={(event) => setQuery(event.target.value)}
-              />
-              {query ? (
-                <button
-                  type="button"
-                  className="services-marquee__search-clear"
-                  aria-label="Clear search"
-                  onClick={() => {
-                    setQuery('');
-                    setResult(null);
-                    setEmpty(false);
-                    inputRef.current?.focus();
-                  }}
-                >
-                  ×
-                </button>
-              ) : null}
-            </form>
-          </div>
         </div>
-
-        {open && result ? <SearchResults result={result} onPick={pickService} /> : null}
-        {open && empty ? (
-          <p className="services-marquee__empty">
-            No exact match. Try a short form like <em>VAPT</em>, <em>EDR</em>, or <em>SOC</em>.
-          </p>
-        ) : null}
       </header>
 
-      <div className="services-marquee__rows">
+      {open ? (
+        <div className="services-marquee__search-overlay" role="search">
+          <div
+            className="services-marquee__search-panel"
+            ref={panelRef}
+            onMouseEnter={cancelClose}
+            onMouseLeave={onMarqueeZoneLeave}
+          >
+            <div className="services-marquee__search is-open">
+              <form className="services-marquee__search-field" onSubmit={onSubmit}>
+                <label className="visually-hidden" htmlFor={inputId}>
+                  Search services
+                </label>
+                <input
+                  id={inputId}
+                  ref={inputRef}
+                  type="search"
+                  value={query}
+                  placeholder={placeholder}
+                  autoComplete="off"
+                  spellCheck={false}
+                  onChange={(event) => setQuery(event.target.value)}
+                />
+                {query ? (
+                  <button
+                    type="button"
+                    className="services-marquee__search-clear"
+                    aria-label="Clear search"
+                    onClick={() => {
+                      setQuery('');
+                      setResult(null);
+                      setEmpty(false);
+                      inputRef.current?.focus();
+                    }}
+                  >
+                    ×
+                  </button>
+                ) : null}
+              </form>
+            </div>
+
+            {result ? <SearchResults result={result} onPick={pickService} /> : null}
+            {empty ? (
+              <p className="services-marquee__empty">
+                No exact match. Try a short form like <em>VAPT</em>, <em>EDR</em>, or <em>SOC</em>.
+              </p>
+            ) : null}
+          </div>
+        </div>
+      ) : null}
+
+      <div
+        className="services-marquee__rows"
+        ref={rowsRef}
+        onMouseEnter={cancelClose}
+        onMouseLeave={onMarqueeZoneLeave}
+      >
         {servicesMarqueeRows.map((row, rowIndex) => (
           <InfiniteSlider
             key={`services-marquee-row-${rowIndex}`}

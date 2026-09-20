@@ -278,6 +278,7 @@ export const searchableServices: SearchableService[] = servicesMarqueeItems.map(
 export type ServiceSearchResult = {
   primary: SearchableService;
   relatedImages: SearchableService[];
+  relatedServices: SearchableService[];
   correctedFrom?: string;
 };
 
@@ -380,7 +381,7 @@ export function searchServices(query: string): ServiceSearchResult | null {
   if (!ranked.length) return null;
 
   const primary = ranked[0].service;
-  const related = resolveRelated(primary, 2);
+  const related = resolveRelated(primary, 3);
   const titleNorm = normalize(primary.title);
   const queryNorm = normalize(trimmed);
   const aliasHit = primary.aliases.some((alias) => normalize(alias) === queryNorm);
@@ -392,6 +393,7 @@ export function searchServices(query: string): ServiceSearchResult | null {
   return {
     primary,
     relatedImages: related.slice(0, 2),
+    relatedServices: related.slice(0, 3),
     correctedFrom,
   };
 }
