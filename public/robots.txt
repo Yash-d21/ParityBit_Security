@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://paritybitsecurity.com/sitemap.xml
+Sitemap: https://paritybit-security.vercel.app/sitemap.xml
