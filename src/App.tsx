@@ -12,13 +12,6 @@ import {
   BlogsSecuringCloudEnvironmentsForModernEnterprises,
   BlogsWhyZeroTrustSecurityMattersToday,
   BlogsWhyZeroTrustSecurityMattersToday2,
-  CaseStudies,
-  CaseStudiesCloudsync,
-  CaseStudiesFinsecure,
-  CaseStudiesMedicoreSystems,
-  CaseStudiesNexabank,
-  CaseStudiesVertexhealth,
-  CaseStudiesVireon,
   Home,
   NotFound,
   Pricing,
@@ -48,7 +41,8 @@ export default function App() {
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/case-studies" element={<Navigate to="/" replace />} />
+            <Route path="/case-studies/*" element={<Navigate to="/" replace />} />
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Navigate to={bookingSectionHref} replace />} />
@@ -78,13 +72,7 @@ export default function App() {
               element={<BlogsPreventingThreatsThroughEarlyDetection />}
             />
             <Route path="/teams" element={<Teams />} />
-            <Route path="/case-studies/nexabank" element={<CaseStudiesNexabank />} />
             <Route path="/pricing" element={<Pricing />} />
-            <Route path="/case-studies/cloudsync" element={<CaseStudiesCloudsync />} />
-            <Route path="/case-studies/vertexhealth" element={<CaseStudiesVertexhealth />} />
-            <Route path="/case-studies/vireon" element={<CaseStudiesVireon />} />
-            <Route path="/case-studies/medicore-systems" element={<CaseStudiesMedicoreSystems />} />
-            <Route path="/case-studies/finsecure" element={<CaseStudiesFinsecure />} />
             <Route
               path="/services/advanced-cloud-security-protection"
               element={<ServicesAdvancedCloudSecurityProtection />}

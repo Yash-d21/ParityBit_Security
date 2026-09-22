@@ -4,7 +4,6 @@ export const Home = lazy(() => import('./pages/Home'));
 export const About = lazy(() => import('./pages/About'));
 export const Services = lazy(() => import('./pages/Services'));
 export const Blogs = lazy(() => import('./pages/Blogs'));
-export const CaseStudies = lazy(() => import('./pages/CaseStudies'));
 export const Pricing = lazy(() => import('./pages/Pricing'));
 export const Teams = lazy(() => import('./pages/Teams'));
 export const NotFound = lazy(() => import('./pages/NotFound'));
@@ -43,10 +42,3 @@ export const BlogsWhyZeroTrustSecurityMattersToday2 = lazy(
 export const BlogsBuildingSaferNetworksWithZeroTrust = lazy(
   () => import('./pages/BlogsBuildingSaferNetworksWithZeroTrust'),
 );
-
-export const CaseStudiesNexabank = lazy(() => import('./pages/CaseStudiesNexabank'));
-export const CaseStudiesCloudsync = lazy(() => import('./pages/CaseStudiesCloudsync'));
-export const CaseStudiesVertexhealth = lazy(() => import('./pages/CaseStudiesVertexhealth'));
-export const CaseStudiesVireon = lazy(() => import('./pages/CaseStudiesVireon'));
-export const CaseStudiesMedicoreSystems = lazy(() => import('./pages/CaseStudiesMedicoreSystems'));
-export const CaseStudiesFinsecure = lazy(() => import('./pages/CaseStudiesFinsecure'));
