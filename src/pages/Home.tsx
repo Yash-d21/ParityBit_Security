@@ -20,10 +20,26 @@ export const Home: React.FC = () => {
   return (
     <>
       <Helmet>
-          <meta charSet="utf-8" />          <meta name="viewport" content="width=device-width" />          <meta name="generator" content="Framer 6ae8a13" />          <title>ParityBit Security: Cybersecurity that actually works.</title>          <meta name="description" content="Intelligence-driven cybersecurity services and AI-native platforms for modern digital environments." />                    <link href="/favicon.png" rel="icon" type="image/png" />          <link rel="apple-touch-icon" href="/favicon.png" />          <meta property="og:type" content="website" />          <meta property="og:title" content="ParityBit Security: Cybersecurity that actually works." />          <meta property="og:description" content="Intelligence-driven cybersecurity services and AI-native platforms for modern digital environments." />          <meta property="og:image" content="https://paritybit-security.vercel.app/assets/images/hero-visual.png?v=3" />          <meta name="twitter:card" content="summary_large_image" />          <meta name="twitter:title" content="ParityBit Security: Cybersecurity that actually works." />          <meta name="twitter:description" content="Intelligence-driven cybersecurity services and AI-native platforms for modern digital environments." />          <meta name="twitter:image" content="https://paritybit-security.vercel.app/assets/images/hero-visual.png?v=3" />          <link rel="canonical" href="/" />          <meta property="og:url" content="https://paritybit-security.vercel.app/" />          <meta name="robots" content="max-image-preview:large" />      </Helmet>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width" />
+          <title>ParityBit Security: Cybersecurity that actually works.</title>
+          <meta name="description" content="Intelligence-driven cybersecurity services and AI-native platforms for modern digital environments." />
+          <link href="/favicon.png" rel="icon" type="image/png" />
+          <link rel="apple-touch-icon" href="/favicon.png" />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content="ParityBit Security: Cybersecurity that actually works." />
+          <meta property="og:description" content="Intelligence-driven cybersecurity services and AI-native platforms for modern digital environments." />
+          <meta property="og:image" content="https://paritybitsecurity.com/assets/images/hero-visual.png?v=3" />
+          <meta property="og:url" content="https://paritybitsecurity.com/" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="ParityBit Security: Cybersecurity that actually works." />
+          <meta name="twitter:description" content="Intelligence-driven cybersecurity services and AI-native platforms for modern digital environments." />
+          <meta name="twitter:image" content="https://paritybitsecurity.com/assets/images/hero-visual.png?v=3" />
+          <link rel="canonical" href="https://paritybitsecurity.com/" />
+          <meta name="robots" content="max-image-preview:large" />      </Helmet>
         {/*  Start of bodyStart  */}
         {/*  End of bodyStart  */}
-        <div id="main" data-framer-hydrate-v2={"{\"routeId\":\"augiA20Il\",\"localeId\":\"default\",\"breakpoints\":[{\"hash\":\"72rtr7\",\"mediaQuery\":\"(min-width: 1380px)\"},{\"hash\":\"1bih26h\",\"mediaQuery\":\"(min-width: 810px) and (max-width: 1379.98px)\"},{\"hash\":\"n1lvbu\",\"mediaQuery\":\"(max-width: 809.98px)\"},{\"hash\":\"1ckteoo\",\"mediaQuery\":\"(max-width: 809.98px)\"},{\"hash\":\"1vvzmjz\",\"mediaQuery\":\"(min-width: 810px) and (max-width: 1379.98px)\"},{\"hash\":\"1kz64z5\",\"mediaQuery\":\"(min-width: 1380px)\"}]}"} data-framer-ssr-released-at="2026-08-29T17:40:31.976Z" data-framer-page-optimized-at="2026-08-31T19:12:59.043Z" data-framer-generated-page="">
+        <div id="main" data-framer-hydrate-v2={"{\"routeId\":\"augiA20Il\",\"localeId\":\"default\",\"breakpoints\":[{\"hash\":\"72rtr7\",\"mediaQuery\":\"(min-width: 1380px)\"},{\"hash\":\"1bih26h\",\"mediaQuery\":\"(min-width: 810px) and (max-width: 1379.98px)\"},{\"hash\":\"n1lvbu\",\"mediaQuery\":\"(max-width: 809.98px)\"},{\"hash\":\"1ckteoo\",\"mediaQuery\":\"(max-width: 809.98px)\"},{\"hash\":\"1vvzmjz\",\"mediaQuery\":\"(min-width: 810px) and (max-width: 1379.98px)\"},{\"hash\":\"1kz64z5\",\"mediaQuery\":\"(min-width: 1380px)\"}]}"}>
           {/* $ */}
           <style data-framer-html-style="" dangerouslySetInnerHTML={{ __html: ":root body { background: var(--token-9f20ee12-4472-4d44-a80a-6b06de7d0fec, rgb(236, 238, 240)); }" }} />
           <div className="framer-PF8NH framer-KTGJj framer-1kz64z5" data-layout-template="true" style={{"minHeight": "100vh", "width": "auto"}}>
@@ -211,7 +227,7 @@ export const Home: React.FC = () => {
                 </div>                <div className="ssr-variant">
                   <div className="framer-1o930g" style={{"transform": "translateX(-50%)"}}>
                     <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
-                      <img decoding="auto" loading="lazy" width="1422" height="61" sizes="(min-width: 1380px) calc(100vw * 0.9797), (max-width: 809.98px) calc(100vw * 0.9795), (min-width: 810px) and (max-width: 1379.98px) calc(100vw * 0.9802)" srcSet="https://framerusercontent.com/images/q7JkgQFdDjvXundaJxQ48iY3L0.svg?scale-down-to=512&width=1422&height=61 512w, https://framerusercontent.com/images/q7JkgQFdDjvXundaJxQ48iY3L0.svg?scale-down-to=1024&width=1422&height=61 1024w, /assets/images/q7JkgQFdDjvXundaJxQ48iY3L0-0d22e084.svg 1422w" src="/assets/images/q7JkgQFdDjvXundaJxQ48iY3L0-0d22e084.svg" alt="Image" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "contain"}} />
+                      <img decoding="auto" loading="lazy" width="1422" height="61" sizes="(min-width: 1380px) calc(100vw * 0.9797), (max-width: 809.98px) calc(100vw * 0.9795), (min-width: 810px) and (max-width: 1379.98px) calc(100vw * 0.9802)" srcSet="/assets/images/q7JkgQFdDjvXundaJxQ48iY3L0-0d22e084.svg 1422w" src="/assets/images/q7JkgQFdDjvXundaJxQ48iY3L0-0d22e084.svg" alt="Image" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "contain"}} />
                     </div>
                   </div>
                 </div>
@@ -315,46 +331,16 @@ export const Home: React.FC = () => {
                       </div>                      <div className="framer-1sfi2p3" data-framer-name="Line" style={{"backgroundColor": "var(--token-f8bb4eca-2fd3-4dd3-a9fc-f2d7e3a06680, rgb(37, 37, 37))", "opacity": "1"}}></div>                      <div className="framer-ux73kz" data-framer-name="Line" style={{"backgroundColor": "var(--token-f8bb4eca-2fd3-4dd3-a9fc-f2d7e3a06680, rgb(37, 37, 37))", "opacity": "1"}}></div>
                     </div>                    <div className="framer-1j9o3qj" style={{"transform": "translateX(-50%)", "opacity": "1"}}>
                       <div style={{"position": "absolute", "borderRadius": "inherit", "cornerShape": "inherit", "top": "0", "right": "0", "bottom": "0", "left": "0"}} data-framer-background-image-wrapper="true">
-                        <img decoding="auto" loading="lazy" width="1300" height="61" sizes="(min-width: 1380px) 1300px, (max-width: 809.98px) calc(max(min(100vw, 1380px), 1px) * 0.9), (min-width: 810px) and (max-width: 1379.98px) calc(max(min(100vw, 1380px), 1px) * 0.9198)" srcSet="https://framerusercontent.com/images/b8mulzOlrN7PtGqORoizmta3Q.svg?scale-down-to=512&width=1300&height=61 512w, https://framerusercontent.com/images/b8mulzOlrN7PtGqORoizmta3Q.svg?scale-down-to=1024&width=1300&height=61 1024w, /assets/images/b8mulzOlrN7PtGqORoizmta3Q-425ce3c5.svg 1300w" src="/assets/images/b8mulzOlrN7PtGqORoizmta3Q-425ce3c5.svg" alt="Image" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "cover"}} />
+                        <img decoding="auto" loading="lazy" width="1300" height="61" sizes="(min-width: 1380px) 1300px, (max-width: 809.98px) calc(max(min(100vw, 1380px), 1px) * 0.9), (min-width: 810px) and (max-width: 1379.98px) calc(max(min(100vw, 1380px), 1px) * 0.9198)" srcSet="/assets/images/b8mulzOlrN7PtGqORoizmta3Q-425ce3c5.svg 1300w" src="/assets/images/b8mulzOlrN7PtGqORoizmta3Q-425ce3c5.svg" alt="Image" style={{"display": "block", "width": "100%", "height": "100%", "borderRadius": "inherit", "cornerShape": "inherit", "objectPosition": "center", "objectFit": "cover"}} />
                       </div>
                     </div>
                   </footer>
                 </div>
               </div>
             </footer>
-          </div>          <div id="template-overlay"></div>          {/* /$ */}
+          </div>
 
-        </div>        <div id="__framer-badge-container">
-          {/* $ */}
-          {/* $ */}
-          {/* $ */}
-          <a className="framer-6jWyo framer-n0ccwk framer-v-n0ccwk framer-bmpgw8 __framer-badge" data-framer-appear-id="n0ccwk" data-framer-name="Light" data-nosnippet="true" style={{"willChange": "transform", "pointerEvents": "auto", "opacity": "1", "transform": "none"}} href="https://www.framer.com" rel="noopener" title="Create a free website with Framer, the website builder loved by startups, designers and agencies.">
-            <div className="framer-13yxzio" data-framer-name="Backdrop" style={{"backgroundColor": "rgb(255, 255, 255)", "borderRadius": "10px", "boxShadow": "rgba(0, 0, 0, 0.17) 0px 0.602187px 1.56569px -1.5px, rgba(0, 0, 0, 0.14) 0px 2.28853px 5.95019px -3px, rgba(0, 0, 0, 0.02) 0px 10px 26px -4.5px", "opacity": "1"}}></div>            <div className="framer-19yaanm" data-framer-name="Content" style={{"transform": "translate(-50%, -50%)", "opacity": "1"}}>
-              <div className="framer-1kflzx5" style={{"opacity": "1"}}>
-                <div data-framer-name="Logo" className="framer-hcsc7 framer-e50co" style={{"--1bd4d3i": "rgb(0, 0, 0)", "--otdjsv": "rgb(0, 0, 0)", "transform": "translateX(-50%)", "opacity": "1"}}></div>
-              </div>              {/* $ */}
-              <p style={{"position": "absolute", "transform": "scale(0.001)"}}>Create a free website with Framer, the website builder loved by startups, designers and agencies.</p>              <div data-framer-name="Text" className="framer-g7oZR framer-1um7t9d" style={{"--1bd4d3i": "rgb(0, 0, 0)", "--otdjsv": "rgb(0, 0, 0)", "opacity": "1"}}></div>              {/* /$ */}
-
-            </div>            <div className="framer-j4ugry" data-framer-name="Bottom" style={{"mask": "linear-gradient(180deg, rgba(0,0,0,0) 65%, rgba(0,0,0,1) 100%) add", "WebkitMask": "linear-gradient(180deg, rgba(0,0,0,0) 65%, rgba(0,0,0,1) 100%) add", "borderBottomLeftRadius": "11px", "borderBottomRightRadius": "11px", "borderTopLeftRadius": "11px", "borderTopRightRadius": "11px", "boxShadow": "inset 0px 0px 0px 1px rgb(0, 0, 0)", "opacity": "0.06"}}></div>            <div className="framer-jnuwbw" data-framer-name="Border" style={{"borderBottomLeftRadius": "11px", "borderBottomRightRadius": "11px", "borderTopLeftRadius": "11px", "borderTopRightRadius": "11px", "boxShadow": "inset 0px 0px 0px 1px rgb(0, 0, 0)", "opacity": "0.04"}}></div>
-          </a>          {/* /$ */}
-          {/* /$ */}
-          {/* /$ */}
-
-        </div>        <link rel="modulepreload" fetchPriority="low" href="/assets/js/rolldown-runtime.Dh6celcD-bf9a1501.js" />        <link rel="modulepreload" fetchPriority="low" href="/assets/js/react.C-ElAfOR-edd49510.js" />        <link rel="modulepreload" fetchPriority="low" href="/assets/js/motion.HEV9fBAY-38091759.js" />        <link rel="modulepreload" fetchPriority="low" href="/assets/js/framer.CKwjhC4e-d8869afe.js" />        <link rel="modulepreload" fetchPriority="low" href="/assets/js/shared-lib.CVyxccQ9-2b3c8ded.js" />        <link rel="modulepreload" fetchPriority="low" href="/assets/js/hlrj8531Q.CvEBVzKB-86078a31.js" />        <link rel="modulepreload" fetchPriority="low" href="/assets/js/Q9ZJ0UWkE.LOlEJau--1c4d5800.js" />        <link rel="modulepreload" fetchPriority="low" href="/assets/js/JpvdyPe4z.CtLRcOBQ-4db1f684.js" />        <link rel="modulepreload" fetchPriority="low" href="/assets/js/QkhRLIu9M.CYU1QiMh-787c54f1.js" />        <link rel="modulepreload" fetchPriority="low" href="/assets/js/Asl4I7beJ.COHwROIu-67f34b87.js" />        <link rel="modulepreload" fetchPriority="low" href="/assets/js/HKgJMSJ3O.DH7Sd299-e31de3e8.js" />        <link rel="modulepreload" fetchPriority="low" href="/assets/js/5OufxAXAbCLA16P5PMhdPVLhes24T1JW7IyMyeOGvrY.CGCanYGi-c7b8112c.js" />        <link rel="modulepreload" fetchPriority="low" href="/assets/js/PixelMaksReveal_prod.D4WtdGqf-3ba9d95f.js" />        <link rel="modulepreload" fetchPriority="low" href="/assets/js/KGv4c2SiW.CQeq-vdA-3fad2e0c.js" />        <link rel="modulepreload" fetchPriority="low" href="/assets/js/Mx5CHd36S.Ba9E6xeC-caa76ef9.js" />        <link rel="modulepreload" fetchPriority="low" href="/assets/js/oFxIyRUup.DcXKXmJt-5b25ffa2.js" />        <link rel="modulepreload" fetchPriority="low" href="/assets/js/UD_Iv5vTr.ClIbgj-a-aa2803e9.js" />        <link rel="modulepreload" fetchPriority="low" href="/assets/js/Pipw65IC4.DD6lzlTr-dc7614a5.js" />        <link rel="modulepreload" fetchPriority="low" href="/assets/js/Ee8TFvhDu.Bf3yOykY-f939161f.js" />        <link rel="modulepreload" fetchPriority="low" href="/assets/js/WVbWmw5Oj.-h3aEGIl-a15a0963.js" />        <link rel="modulepreload" fetchPriority="low" href="/assets/js/XGGn8nZcy.BV4p3LAz-d62dd43b.js" />        <link rel="modulepreload" fetchPriority="low" href="/assets/js/zrcutg0rq.keqtoWOC-30adef3f.js" />        <link rel="modulepreload" fetchPriority="low" href="/assets/js/a0ls9yWIP.DBY9z0pW-2a5a836a.js" />        <link rel="modulepreload" fetchPriority="low" href="/assets/js/oFMX4LaoH.CyYpTMB6-751b8435.js" />        <link rel="modulepreload" fetchPriority="low" href="/assets/js/V2IgbLbwpPkvM2LL4aM1l3mS7GqtajM-tRIxzVVAnV0.DdFt_Qf0-2d8c717a.js" />        <div id="svg-templates" style={{"position": "absolute", "overflow": "hidden", "bottom": "0", "left": "0", "width": "0", "height": "0", "zIndex": "0", "contain": "strict"}} aria-hidden="true">
-
-          <svg viewBox="0 0 14 14" id="svg12390392361">
-            <path d="M 3 5.5 L 7 9.5 L 11 5.5" fill="transparent" strokeWidth="2" stroke={"var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255)) /* {\"name\":\"White\"} */"} strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-
-        </div>        {/*  Start of bodyEnd  */}
-        {/*  End of bodyEnd  */}
-        <div id="__framer-editorbar-container" dir="ltr" style={{"right": "10px", "top": "calc(-15px + 50vh)", "transform": "translate(0px, 0px)", "transition": "transform 100ms cubic-bezier(0.2, 0, 0, 1)", "cursor": "pointer"}}>
-          <span aria-label="Edit Framer Content" id="__framer-editorbar-label" style={{"right": "40px"}}>Edit Content</span>          <button type="button" aria-labelledby="__framer-editorbar-label" id="__framer-editorbar-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none">
-              <path d="M8.75 2.25a1.77 1.77 0 0 1 2.5 0h0c.69.69.69 1.81 0 2.5l-7 7h-2.5v-2.5Z" fill="transparent" strokeWidth="1.5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />              <path d="M8 11.75h3.75" fill="transparent" strokeWidth="1.5" stroke="currentColor" strokeLinecap="round" />
-            </svg>
-          </button>
-        </div>        <iframe id="__framer-editorbar" src="https://framer.com/edit?framerSiteId=333da09ba4ecf61664ebf4f04d8319e92296db7bd264c1d04ffc80fb769b3369&source=focused-minimalist-684257.framer.app&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Atrue%7D&loadStart=1788262898016" aria-hidden="true" allow="autoplay" tabIndex={-1} className="status_visually_hidden"></iframe>
+        </div>
     </>
   );
 };

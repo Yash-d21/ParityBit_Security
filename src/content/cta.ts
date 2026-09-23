@@ -4,7 +4,7 @@ export const bookingSectionHref = `/#${BOOKING_SECTION_ID}`;
 
 export const ctaContent = {
   background:
-    'https://framerusercontent.com/images/XNC8inO1rOAMLAIPeVltx2m5k.png?width=2600&height=1000',
+    '/assets/images/XNC8inO1rOAMLAIPeVltx2m5k-c924505e.avif',
   booking: {
     title: 'End the cycle. Today.',
     subtitle:
