@@ -2,7 +2,9 @@
 
 Marketing site for **ParityBit Security** — intelligence-driven cybersecurity services and AI-native platforms (ATLAS, VECTOR, Trace, ZeroXphish).
 
-Built with **React 18**, **TypeScript**, **Vite**, and **Tailwind CSS**, on top of a Framer export that has been progressively refactored into content-driven React components.
+**Production domain:** [https://paritybitsecurity.com](https://paritybitsecurity.com)
+
+Built with **React 18**, **TypeScript**, **Vite**, and **Tailwind CSS**.
 
 ## Live stack
 
@@ -10,10 +12,10 @@ Built with **React 18**, **TypeScript**, **Vite**, and **Tailwind CSS**, on top 
 |-------|------|
 | Framework | React 18 + React Router 6 |
 | Build | Vite 6 |
-| Styling | Tailwind CSS 3, custom CSS, Framer export styles |
-| Animation | Framer Motion |
-| SEO | react-helmet-async |
-| Hosting | Vercel (static SPA) |
+| Styling | Tailwind CSS 3, custom CSS, inlined layout styles |
+| Animation | Motion (`framer-motion`) |
+| SEO | react-helmet-async; canonical / OG / robots / sitemap use `paritybitsecurity.com` |
+| Hosting | Static SPA (company production on `paritybitsecurity.com`) |
 
 ## Getting started
 
@@ -49,57 +51,52 @@ npm run preview
 npm run typecheck
 ```
 
-## Deploy to Vercel
+## Deploy (company production)
 
-This repo is configured for zero-config Vercel deployment.
+Hand this repository to the company GitHub / hosting account and deploy the Vite static build.
 
-1. Push the repository to GitHub (or GitLab/Bitbucket).
-2. Import the project in [Vercel](https://vercel.com/new).
-3. Use these settings (auto-detected for Vite):
+Suggested settings:
 
 | Setting | Value |
 |---------|-------|
-| Framework Preset | Vite |
-| Build Command | `npm run build` |
-| Output Directory | `dist` |
-| Install Command | `npm install` |
+| Framework | Vite |
+| Build command | `npm run build` |
+| Output directory | `dist` |
+| Install command | `npm install` |
 
-`vercel.json` includes SPA rewrites so client-side routes (`/about`, `/services`, `/blogs/...`) work on refresh and direct links.
+`vercel.json` (if deploying on Vercel) includes:
 
-### Custom domain
+- SPA rewrite to `index.html` (keeps `robots.txt` / `sitemap.xml` public)
+- Redirect `www.paritybitsecurity.com` → `https://paritybitsecurity.com`
 
-After deployment, add your domain in Vercel → **Project → Settings → Domains**. No code changes are required for routing.
+Attach **`paritybitsecurity.com`** (and optionally `www`) as the production domain on the company project. Canonicals, Open Graph, `robots.txt`, and `sitemap.xml` already point at that domain — no personal `*.vercel.app` URLs in the shipped app.
 
 ## Project structure
 
 ```
 src/
-├── components/       # Custom UI (nav, sections, FAQ, marquee, etc.)
+├── components/       # UI (nav, sections, FAQ, marquee, booking, footer)
 ├── content/          # Copy and data (nav, products, footer, partners…)
-├── pages/            # Route pages (Home is hybrid; others are Framer exports)
-├── routes.tsx        # Lazy-loaded route modules
-├── framer-fixes.css  # Layout/animation overrides for Framer markup
+├── pages/            # Home landing page
+├── routes.tsx        # Lazy-loaded routes
+├── framer-fixes.css  # Layout overrides for exported markup class names
 └── App.tsx           # Router + global shell
 
 public/
-├── assets/images/    # Logos, product art, Framer SVGs
+├── assets/images/    # Logos, product art, SVGs
 ├── assets/fonts/     # Local font files
-└── partners/         # Partner logos
+├── partners/         # Partner logos
+├── robots.txt        # Sitemap → https://paritybitsecurity.com/sitemap.xml
+└── sitemap.xml       # Official domain URLs
 ```
 
-## Key routes
+## Routes
 
-| Path | Page |
-|------|------|
-| `/` | Homepage (custom sections + Framer shell) |
-| `/about` | About |
-| `/services` | Services overview |
-| `/contact` | Contact + FAQ |
-| `/blogs` | Research library |
-| `/case-studies` | Case studies |
-| `/pricing` | Pricing |
-| `/teams` | Team |
-| `*` | 404 page |
+| Path | Behavior |
+|------|----------|
+| `/` | Homepage |
+| `/contact` | Redirects to the homepage booking section |
+| `*` | Redirects to `/` |
 
 ## Content updates
 
@@ -108,23 +105,22 @@ Most marketing copy lives in `src/content/`:
 - `nav.ts` — navigation and dropdowns
 - `products.ts` — ATLAS, VECTOR, Trace, ZeroXphish
 - `footer.ts` — footer links, newsletter, legal
-- `about.ts`, `partners.ts`, `cta.ts`, `whyUs.ts`
+- `about.ts`, `partners.ts`, `cta.ts`, `whyUs.ts`, `homeServices.ts`
 
-Homepage custom sections are composed in `src/pages/Home.tsx` and pull from these data files.
+Homepage sections are composed in `src/pages/Home.tsx` and pull from these data files.
 
 ## Architecture notes
 
-- **Hybrid Framer export:** Inner pages are large Framer-generated JSX files. The homepage mixes Framer layout with custom React sections (`AboutSection`, `ProductsSection`, `PartnerMarquee`, etc.).
-- **Global nav:** `SiteNav` replaces duplicated Framer headers (hidden via `framer-fixes.css`).
-- **Framer runtime removed:** The legacy Uncage/Framer JS runtime was removed from `index.html` to avoid loading a second copy of React in production.
-- **Code splitting:** Routes are lazy-loaded in `src/routes.tsx` to reduce the initial bundle.
-- **Large `index.html`:** Framer SSR CSS is inlined in `index.html` (~4MB). This is expected for now and gzip-compresses well; future work could externalize styles.
+- **Single landing page:** Only `/` is served as a full page; other paths redirect home.
+- **Global nav:** `SiteNav` is the primary header.
+- **SEO:** Meta, canonical, OG, Twitter, robots, and sitemap use `https://paritybitsecurity.com`.
+- **Code splitting:** Routes are lazy-loaded in `src/routes.tsx`.
+- **Large `index.html`:** Layout CSS is inlined in `index.html` (~4MB). Expected for now; gzip-compresses well.
 
 ## Known limitations
 
-- Some inner pages still reference Framer CDN assets and old `og:url` metadata.
 - Newsletter forms are UI-only (no backend wired).
-- `captured-raw*.html` files in the repo root are export artifacts and are not used at runtime.
+- Some platform links (Atlas / Vector / Trace / ZeroXphish) point at product URLs on the official domain.
 
 ## Scripts
 
