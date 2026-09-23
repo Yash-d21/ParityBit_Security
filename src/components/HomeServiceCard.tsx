@@ -12,7 +12,7 @@ type Props = {
 export function HomeServiceCard({ card, wrapperClassName, containerClassName }: Props) {
   return (
     <div className={wrapperClassName}>
-      <div className="ssr-variant hidden-n1lvbu hidden-1bih26h">
+      <div className="ssr-variant">
         <div className={containerClassName} style={{ opacity: '1', transform: 'none' }}>
           <Link
             className="framer-b2yRS framer-5Yetb framer-RvjoO framer-u0t8D framer-wvswm framer-v-wvswm framer-zylch8"

@@ -747,22 +747,34 @@ img[src*="service-icon-ai"] {
   [data-framer-name="Service Section"] {
     --service-section-pad-top: 88px;
     --service-section-pad-bottom: 56px;
-    --service-card-height: 400px;
-    overflow: visible;
-    min-height: auto;
+    --service-card-height: auto;
+    overflow: visible !important;
+    min-height: 0 !important;
+    height: auto !important;
+    justify-content: flex-start !important;
   }
 
   [data-framer-name="Service Section"] [data-framer-name="Content"] {
     grid-template-columns: 1fr 1fr !important;
-    grid-template-rows: auto repeat(3, var(--service-card-height)) !important;
+    grid-template-rows: auto !important;
+    grid-auto-rows: auto !important;
   }
 
   [data-framer-name="Service Section"] [data-framer-name="Title Wrapper"],
   [data-framer-name="Service Section"] .services-section__title-row {
     grid-column: 1 / -1 !important;
-    grid-row: 1 !important;
+    grid-row: auto !important;
     padding-top: 0 !important;
     height: auto !important;
+    position: relative !important;
+  }
+
+  [data-framer-name="Service Section"] [data-framer-name="Title Wrapper"] {
+    margin-bottom: 8px !important;
+  }
+
+  [data-framer-name="Service Section"] .services-section__title-row {
+    margin-bottom: 8px !important;
   }
 
   [data-framer-name="Service Section"] .framer-1e88ao > .framer-loezzw:nth-of-type(1),
@@ -779,19 +791,37 @@ img[src*="service-icon-ai"] {
     height: auto !important;
     justify-content: flex-start !important;
     grid-column: 1 / -1 !important;
+    padding: 12px 0 4px !important;
+  }
+
+  [data-framer-name="Service Section"] .framer-loezzw,
+  [data-framer-name="Service Section"] .framer-afkh84 {
+    height: auto !important;
+    min-height: 0 !important;
   }
 
   [data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] {
     max-height: none !important;
-    min-height: var(--service-card-height) !important;
+    min-height: 280px !important;
+    height: auto !important;
+  }
+
+  [data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] [data-framer-name="Content Wrapper"],
+  [data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] [data-framer-name="Title Wrapper"],
+  [data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] [data-framer-name="Short Description"] {
+    overflow: visible !important;
+  }
+
+  [data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] [data-framer-name="Short Description"] p {
+    -webkit-line-clamp: unset !important;
+    display: block !important;
   }
 }
 
 @media (max-width: 809.98px) {
   [data-framer-name="Service Section"] {
-    --service-section-pad-top: 80px;
+    --service-section-pad-top: 72px;
     --service-section-pad-bottom: 48px;
-    --service-card-height: 320px;
     padding-left: 20px !important;
     padding-right: 20px !important;
   }
@@ -800,15 +830,32 @@ img[src*="service-icon-ai"] {
   [data-framer-name="Service Section"] .services-section__heading {
     white-space: normal !important;
     max-width: none !important;
+    font-size: clamp(26px, 7vw, 34px) !important;
   }
 
   [data-framer-name="Service Section"] [data-framer-name="Content"] {
     grid-template-columns: 1fr !important;
-    grid-template-rows: auto repeat(4, var(--service-card-height)) auto !important;
+    grid-template-rows: auto !important;
   }
 
   [data-framer-name="Service Section"] .services-section__intro {
     height: auto !important;
+  }
+
+  [data-framer-name="Service Section"] .services-section__intro p {
+    max-width: none;
+  }
+
+  [data-framer-name="Service Section"] .services-section__cta {
+    width: 100%;
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
+  }
+
+  [data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] {
+    min-height: 0 !important;
+    padding: 18px 16px 20px !important;
   }
 }
 
@@ -1065,8 +1112,16 @@ a[data-framer-name="Desktop Service Card "][href="/services/rapid-incident-respo
 /* Hide Framer chrome that adds space below the page */
 #__framer-badge-container,
 #__framer-editorbar-container,
-#__framer-editorbar {
+#__framer-editorbar,
+#svg-templates,
+#template-overlay {
   display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
 }
 
 [data-framer-name="Footer"].framer-m5pop4,
@@ -1082,6 +1137,9 @@ footer[data-framer-name="Footer"] {
   position: relative !important;
   z-index: 2 !important;
   background: #000 !important;
+  flex: 0 0 auto !important;
+  min-height: 0 !important;
+  height: auto !important;
 }
 
 [data-framer-name="Footer"] .framer-6efsvp,
@@ -1346,6 +1404,8 @@ footer[data-framer-name="Footer"] {
   flex-direction: column;
   gap: 10px;
   min-width: 0;
+  overflow: visible;
+  width: 100%;
 }
 
 [data-framer-name="Footer"] .framer-footer-col-title {
@@ -1355,6 +1415,26 @@ footer[data-framer-name="Footer"] {
   font-weight: 600;
   line-height: 1.2;
   color: rgb(123, 49, 255);
+}
+
+[data-framer-name="Footer"] .framer-footer-link {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+[data-framer-name="Footer"] .framer-footer-link:hover {
+  text-decoration: underline;
 }
 
 [data-framer-name="Footer"] .framer-footer-tagline p {
@@ -1389,8 +1469,10 @@ footer[data-framer-name="Footer"] {
   align-items: flex-end;
   justify-content: center;
   gap: 10px;
-  flex: 1 1 320px;
+  flex: 0 1 auto;
   min-width: 0;
+  min-height: 0;
+  height: auto;
   text-align: right;
 }
 
@@ -1426,24 +1508,76 @@ footer[data-framer-name="Footer"] {
 }
 
 @media (max-width: 1024px) {
-  [data-framer-name="Footer"] [data-framer-name="Logo & Menu Wrapper"] {
+  [data-framer-name="Footer"] [data-framer-name="Logo & Menu Wrapper"],
+  [data-framer-name="Footer"] .framer-1r0y6a7 {
     grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
     gap: 40px !important;
+  }
+
+  [data-framer-name="Footer"] [data-framer-name="Logo & Form Wrapper"],
+  [data-framer-name="Footer"] .framer-13t3nes {
+    max-width: none !important;
+    grid-column: 1 !important;
+    grid-row: auto !important;
   }
 
   [data-framer-name="Footer"] .framer-1drtwko {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+
+  [data-framer-name="Footer"] [data-framer-name="Content"] {
+    overflow: visible !important;
+  }
+
+  [data-framer-name="Footer"] [data-framer-name="Container"],
+  [data-framer-name="Footer"] .framer-1fikf2s {
+    overflow: visible !important;
   }
 }
 
 @media (max-width: 809.98px) {
-  [data-framer-name="Footer"] .framer-1drtwko {
-    grid-template-columns: 1fr !important;
+  [data-framer-name="Footer"].framer-m5pop4,
+  footer[data-framer-name="Footer"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
-  [data-framer-name="Footer"] [data-framer-name="Icon & Text"] {
+  [data-framer-name="Footer"] [data-framer-name="Desktop"],
+  [data-framer-name="Footer"] .framer-6efsvp {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  [data-framer-name="Footer"] .framer-1drtwko {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 28px 20px !important;
+  }
+
+  [data-framer-name="Footer"] [data-framer-name="Logo"] {
+    width: 180px !important;
+    height: 48px !important;
+  }
+
+  [data-framer-name="Footer"] [data-framer-name="Logo"] img,
+  [data-framer-name="Logo Wrapper"] [data-framer-name="Logo"] img {
+    height: 48px !important;
+  }
+
+  [data-framer-name="Footer"] [data-framer-name="Icon & Text"],
+  [data-framer-name="Footer"] .framer-oso9cw {
     flex-direction: column !important;
     align-items: flex-start !important;
+    flex: 0 0 auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding-bottom: 0 !important;
   }
 
   [data-framer-name="Footer"] .framer-footer-legal-row {
@@ -1451,5 +1585,8 @@ footer[data-framer-name="Footer"] {
     align-items: flex-start;
     justify-content: flex-start;
     width: 100%;
+    text-align: left;
+    flex: 0 0 auto;
+    height: auto;
   }
 }

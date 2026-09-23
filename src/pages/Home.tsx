@@ -152,7 +152,7 @@ export const Home: React.FC = () => {
                   <div className="framer-12e1tu4" data-framer-name="Content">
                     <div className="framer-1pqd42c" data-framer-name="Title & Card Wrapper">
                       <div className="framer-xwmm96" data-framer-name="Title Wrapper">
-                        <div className="ssr-variant hidden-n1lvbu hidden-1bih26h">
+                        <div className="ssr-variant">
                           <div className="framer-1dusofv-container" style={{"willChange": "transform", "opacity": "1", "transform": "none"}}>
                             <div className="framer-anh3M framer-5Yetb framer-2e2wsz framer-v-1rboqzm" data-framer-name="Section Title 02" style={{"opacity": "1"}}>
                               <div className="framer-1tdhzkh" data-framer-name="Icon" style={{"opacity": "1"}}>
@@ -166,7 +166,7 @@ export const Home: React.FC = () => {
                           </div>
                         </div>
                       </div>                      <div className="services-section__title-row">
-                        <div className="ssr-variant hidden-n1lvbu hidden-1bih26h">
+                        <div className="ssr-variant">
                           <div className="framer-npjpbi" data-framer-name="Title" data-framer-component-type="RichTextContainer" style={{"transform": "none"}}>
                             <h2 className="framer-text framer-styles-preset-1e5fy5g services-section__heading" data-styles-preset="Asl4I7beJ" dir="auto" style={{"--framer-text-alignment": "start", "--framer-text-color": "var(--token-909d902c-90c0-4b01-83b6-87323e344b4a, rgb(255, 255, 255))"}}>
                               End-to-end security. One <span className="services-section__heading-accent">partner.</span>
@@ -185,10 +185,6 @@ export const Home: React.FC = () => {
                             wrapperClassName="framer-loezzw"
                             containerClassName="framer-1meaboc-container"
                           />
-                          <div className="services-section__intro">
-                            <p>Offensive testing, defensive operations, and governance, delivered by operators with the credentials to prove it. Pick a capability or engage the full stack.</p>
-                            <Link className="services-section__cta" to="/#end-the-cycle">Talk to our sales team</Link>
-                          </div>
                         </div>
                       </div>
                     </div>                    <div className="framer-1dvwtna" data-framer-name="Button & Card Wrapper">
@@ -207,6 +203,10 @@ export const Home: React.FC = () => {
                         </div>
                       </div>
                     </div>
+                    <div className="services-section__intro">
+                      <p>Offensive testing, defensive operations, and governance, delivered by operators with the credentials to prove it. Pick a capability or engage the full stack.</p>
+                      <Link className="services-section__cta" to="/#end-the-cycle">Talk to our sales team</Link>
+                    </div>
                   </div>                  <div className="framer-7kg99k hidden-1bih26h hidden-n1lvbu" data-framer-name="Line"></div>                  <div className="framer-a9hy1o hidden-1bih26h hidden-n1lvbu" data-framer-name="Line"></div>
                 </div>                <div className="ssr-variant">
                   <div className="framer-1o930g" style={{"transform": "translateX(-50%)"}}>
@@ -221,7 +221,7 @@ export const Home: React.FC = () => {
               <WhyUsSection />
               <ResearchSection />              <FaqSection />
             </div>            <div id="overlay"></div>            <div className="framer-n9p53u"></div>            <BookingCtaSection />            <CtaSection />            <footer className="framer-m5pop4" data-framer-name="Footer">
-              <div className="ssr-variant hidden-1ckteoo hidden-1vvzmjz">
+              <div className="ssr-variant">
                 <div className="framer-1nt6my8-container">
                   <footer className="framer-s1Cqe framer-ZoWwZ framer-5Yetb framer-Vg09K framer-sage8 framer-6efsvp framer-v-6efsvp" data-framer-name="Desktop" style={{"backgroundColor": "var(--token-da28af61-a496-40e4-bb87-a33c0601bb96, rgb(17, 17, 17))", "width": "100%", "opacity": "1"}}>
                     <div className="framer-1fikf2s" data-framer-name="Container" style={{"opacity": "1"}}>

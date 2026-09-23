@@ -198,8 +198,8 @@ export function SiteNav() {
 
         <button
           type="button"
-          className="site-nav__toggle"
-          aria-label="Toggle menu"
+          className={`site-nav__toggle${mobileOpen ? ' site-nav__toggle--open' : ''}`}
+          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen(!mobileOpen)}
         >
@@ -209,56 +209,65 @@ export function SiteNav() {
         </button>
       </div>
 
-      <div className="site-nav__mobile" hidden={!mobileOpen}>
+      <div
+        className={`site-nav__mobile${mobileOpen ? ' site-nav__mobile--open' : ''}`}
+        id="site-nav-mobile"
+        aria-hidden={!mobileOpen}
+      >
         {navMenus.map((menu) => (
           <div key={menu.label} className="site-nav__mobile-group">
             <button
               type="button"
-              className="site-nav__mobile-trigger"
+              className={`site-nav__mobile-trigger${mobileSection === menu.label ? ' site-nav__mobile-trigger--open' : ''}`}
               aria-expanded={mobileSection === menu.label}
               onClick={() => setMobileSection(mobileSection === menu.label ? null : menu.label)}
             >
               {menu.label}
               <ChevronDown />
             </button>
-            <div className="site-nav__mobile-panel" hidden={mobileSection !== menu.label}>
-              {menu.sections.map((section) => (
-                <div key={section.title} className="site-nav__mobile-section">
-                  <p className="site-nav__section-title">{section.title}</p>
-                  {section.items?.map((item) => (
-                    <NavItemLink
-                      key={item.label}
-                      href={item.href}
-                      className="site-nav__mobile-link"
-                      onNavigate={closeAll}
-                    >
-                      {item.label}
-                      {item.description && <small>{item.description}</small>}
-                    </NavItemLink>
-                  ))}
-                  {section.featured && (
-                    <div className="site-nav__featured" style={{ marginTop: 12 }}>
-                      <p className="site-nav__featured-title">{section.featured.title}</p>
-                      <p className="site-nav__featured-desc">{section.featured.description}</p>
+            <div
+              className={`site-nav__mobile-panel${mobileSection === menu.label ? ' site-nav__mobile-panel--open' : ''}`}
+              aria-hidden={mobileSection !== menu.label}
+            >
+              <div className="site-nav__mobile-panel-inner">
+                {menu.sections.map((section) => (
+                  <div key={section.title} className="site-nav__mobile-section">
+                    <p className="site-nav__section-title">{section.title}</p>
+                    {section.items?.map((item) => (
                       <NavItemLink
-                        href={section.featured.href}
-                        className="site-nav__featured-cta"
+                        key={item.label}
+                        href={item.href}
+                        className="site-nav__mobile-link"
                         onNavigate={closeAll}
                       >
-                        {section.featured.cta}
+                        {item.label}
+                        {item.description && <small>{item.description}</small>}
                       </NavItemLink>
-                    </div>
-                  )}
+                    ))}
+                    {section.featured && (
+                      <div className="site-nav__featured" style={{ marginTop: 12 }}>
+                        <p className="site-nav__featured-title">{section.featured.title}</p>
+                        <p className="site-nav__featured-desc">{section.featured.description}</p>
+                        <NavItemLink
+                          href={section.featured.href}
+                          className="site-nav__featured-cta"
+                          onNavigate={closeAll}
+                        >
+                          {section.featured.cta}
+                        </NavItemLink>
+                      </div>
+                    )}
+                  </div>
+                ))}
+                <div className="site-nav__cta-block" style={{ marginTop: 12, paddingTop: 16 }}>
+                  <div className="site-nav__cta-text">
+                    <p className="site-nav__cta-eyebrow">{navCta.eyebrow}</p>
+                    <p className="site-nav__cta-title">{navCta.title}</p>
+                  </div>
+                  <NavItemLink href={navCta.href} className="site-nav__cta-btn" onNavigate={closeAll}>
+                    {navCta.button}
+                  </NavItemLink>
                 </div>
-              ))}
-              <div className="site-nav__cta-block" style={{ marginTop: 12, paddingTop: 16 }}>
-                <div className="site-nav__cta-text">
-                  <p className="site-nav__cta-eyebrow">{navCta.eyebrow}</p>
-                  <p className="site-nav__cta-title">{navCta.title}</p>
-                </div>
-                <NavItemLink href={navCta.href} className="site-nav__cta-btn" onNavigate={closeAll}>
-                  {navCta.button}
-                </NavItemLink>
               </div>
             </div>
           </div>

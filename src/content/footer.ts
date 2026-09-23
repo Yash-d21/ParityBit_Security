@@ -58,7 +58,7 @@ export const footerContent = {
         { label: 'Offensive', href: homeAnchors.services },
         { label: 'Defensive', href: homeAnchors.services },
         { label: 'AI', href: homeAnchors.services },
-        { label: 'Governance, Risk & Compliance', href: homeAnchors.services },
+        { label: 'Governance & risk', href: homeAnchors.services },
         { label: 'All services', href: homeAnchors.services },
       ],
     },
