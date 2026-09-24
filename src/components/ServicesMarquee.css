@@ -496,6 +496,8 @@
   object-position: center;
   pointer-events: none;
   user-select: none;
+  background: inherit;
+  content-visibility: auto;
 }
 
 @media (max-width: 809.98px) {

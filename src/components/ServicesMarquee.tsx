@@ -46,7 +46,16 @@ function ServiceCard({
       tabIndex={0}
       aria-label={`Search for ${item.title}`}
     >
-      <img src={item.src} alt={item.title} loading="lazy" draggable={false} />
+      <img
+        src={item.src}
+        alt={item.title}
+        width={640}
+        height={360}
+        loading="eager"
+        decoding="async"
+        fetchPriority="low"
+        draggable={false}
+      />
     </article>
   );
 }
@@ -73,7 +82,13 @@ function SearchResults({
           className={`services-marquee__result-primary services-marquee__card--${result.primary.tone}`}
           onClick={() => onPick(result.primary.id)}
         >
-          <img src={result.primary.src} alt={result.primary.title} />
+          <img
+            src={result.primary.src}
+            alt={result.primary.title}
+            width={640}
+            height={360}
+            decoding="async"
+          />
           <span className="services-marquee__result-label">
             <span className="services-marquee__result-module">{result.primary.module}</span>
             {result.primary.title}
@@ -89,7 +104,13 @@ function SearchResults({
               onClick={() => onPick(item.id)}
               aria-label={item.title}
             >
-              <img src={item.src} alt={item.title} />
+              <img
+                src={item.src}
+                alt={item.title}
+                width={640}
+                height={360}
+                decoding="async"
+              />
             </button>
           ))}
         </div>
@@ -207,6 +228,41 @@ export function ServicesMarquee() {
   }, [open]);
 
   useEffect(() => () => cancelClose(), []);
+
+  // Marquee sits in overflow:hidden + CSS transforms, so native lazy-load
+  // often never fires. Preload once when the section nears the viewport.
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    let started = false;
+    const preload = () => {
+      if (started) return;
+      started = true;
+      for (const item of servicesMarqueeRows.flat()) {
+        const img = new Image();
+        img.decoding = 'async';
+        img.src = item.src;
+      }
+    };
+
+    if (typeof IntersectionObserver === 'undefined') {
+      preload();
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          preload();
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '400px 0px' },
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
   const openSearch = (opts?: { prompt?: boolean; seedId?: string }) => {
     cancelClose();

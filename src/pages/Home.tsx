@@ -29,12 +29,12 @@ export const Home: React.FC = () => {
           <meta property="og:type" content="website" />
           <meta property="og:title" content="ParityBit Security: Cybersecurity that actually works." />
           <meta property="og:description" content="Intelligence-driven cybersecurity services and AI-native platforms for modern digital environments." />
-          <meta property="og:image" content="https://paritybitsecurity.com/assets/images/hero-visual.png?v=3" />
+          <meta property="og:image" content="https://paritybitsecurity.com/assets/images/hero-visual.webp?v=4" />
           <meta property="og:url" content="https://paritybitsecurity.com/" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="ParityBit Security: Cybersecurity that actually works." />
           <meta name="twitter:description" content="Intelligence-driven cybersecurity services and AI-native platforms for modern digital environments." />
-          <meta name="twitter:image" content="https://paritybitsecurity.com/assets/images/hero-visual.png?v=3" />
+          <meta name="twitter:image" content="https://paritybitsecurity.com/assets/images/hero-visual.webp?v=4" />
           <link rel="canonical" href="https://paritybitsecurity.com/" />
           <meta name="robots" content="max-image-preview:large" />      </Helmet>
         {/*  Start of bodyStart  */}

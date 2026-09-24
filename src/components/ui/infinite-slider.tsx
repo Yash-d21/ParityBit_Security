@@ -121,7 +121,9 @@ export function InfiniteSlider({
         ref={ref}
       >
         {children}
-        {children}
+        <div aria-hidden="true" style={{ display: 'contents' }}>
+          {children}
+        </div>
       </motion.div>
     </div>
   );

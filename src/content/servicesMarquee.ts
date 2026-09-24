@@ -67,7 +67,7 @@ export const servicesMarqueeItems: ServiceMarqueeItem[] = services.map(
       id: service.id,
       title: service.title,
       tone,
-      src: `/assets/images/services-marquee/service-${service.id}-${service.slug}-${tone}.png`,
+      src: `/assets/images/services-marquee/service-${service.id}-${service.slug}-${tone}.webp`,
     };
   },
 );

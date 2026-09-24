@@ -45,6 +45,8 @@ export function HeroSection() {
               className="hero-section__visual-img"
               width={1374}
               height={1145}
+              decoding="async"
+              fetchPriority="high"
             />
           </div>
         </div>

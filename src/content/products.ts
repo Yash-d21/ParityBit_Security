@@ -17,7 +17,7 @@ export const productsContent = {
       subtitle: 'ThreatAtlas',
       paragraph:
         'ATLAS is an AI-driven threat intelligence platform. It delivers real-time APT attribution across nation-state and criminal groups, with 24/7 dark web and underground surveillance.',
-      image: '/assets/images/products/atlas.png',
+      image: '/assets/images/products/atlas.webp',
     },
     {
       vendor: 'AI Powered SIEM Solution',
@@ -25,7 +25,7 @@ export const productsContent = {
       subtitle: 'AI-Powered Unified SOC Platform.',
       paragraph:
         'VECTOR is an AI-powered unified SOC platform. It gives teams one console for detection, tickets, and response, with auto compliance monitoring across frameworks.',
-      image: '/assets/images/products/vector.png',
+      image: '/assets/images/products/vector.webp',
     },
     {
       vendor: 'Intelligence Gathering & Analysis System',
@@ -33,7 +33,7 @@ export const productsContent = {
       subtitle: 'ParityBit Trace',
       paragraph:
         'Trace is an AI-powered investigation and OSINT platform. Analysts run plain-text conversational investigation queries, with multi-source deep and dark web correlation.',
-      image: '/assets/images/products/trace.png',
+      image: '/assets/images/products/trace.webp',
     },
     {
       vendor: 'Advanced Phishing Simulation & Awareness',
@@ -41,7 +41,7 @@ export const productsContent = {
       subtitle: 'ParityBit ZeroXPhish',
       paragraph:
         'ZeroXphish is an AI-powered phishing simulation platform. It runs tailored campaigns with high-fidelity landing pages and realistic attack scenarios.',
-      image: '/assets/images/products/zeroxphish.png',
+      image: '/assets/images/products/zeroxphish.webp',
     },
   ] satisfies ProductItem[],
 };

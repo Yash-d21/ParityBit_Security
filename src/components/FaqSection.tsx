@@ -74,7 +74,7 @@ export function FaqSection() {
           <aside className="faq-section__visual" aria-hidden="true">
             <img
               className="faq-section__visual-image"
-              src="/assets/images/faq-cyber-isometric.png"
+              src="/assets/images/faq-cyber-isometric.webp"
               alt=""
               width={1024}
               height={1024}

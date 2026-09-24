@@ -83,7 +83,7 @@
   isolation: isolate;
   overflow: hidden;
   background-color: rgb(232, 232, 234);
-  background-image: url("/assets/images/service-card-corner-bg-purple.png");
+  background-image: url("/assets/images/service-card-corner-bg-purple.webp");
   background-position: top right;
   background-size: cover;
   background-repeat: no-repeat;

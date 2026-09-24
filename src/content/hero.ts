@@ -13,7 +13,7 @@ export const heroContent = {
     label: 'Explore our services',
     href: homeAnchors.services,
   },
-  visualSrc: '/assets/images/hero-visual.png?v=3',
+  visualSrc: '/assets/images/hero-visual.webp?v=4',
   visualAlt: 'Neon molecular core network visualization',
   proofHighlight: 'Canadian operators and MSP partners',
   proofRest: 'trust ParityBit Security to make intelligence-driven, 24/7 security decisions',

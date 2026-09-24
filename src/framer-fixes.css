@@ -690,7 +690,7 @@ img[src*="service-icon-ai"] {
   opacity: 1 !important;
   z-index: 0 !important;
   pointer-events: none !important;
-  background: url("/assets/images/service-card-corner-bg.png") top right / cover no-repeat !important;
+  background: url("/assets/images/service-card-corner-bg.webp") top right / cover no-repeat !important;
 }
 
 [data-framer-name="Service Section"] [data-framer-name="Desktop Service Card "] [data-framer-name="Bg"] img {
@@ -871,7 +871,7 @@ a[data-framer-name="Desktop Service Card "][href="/services/rapid-incident-respo
   opacity: 1 !important;
   z-index: 0 !important;
   pointer-events: none !important;
-  background: url("/assets/images/service-card-corner-bg.png") top right / cover no-repeat !important;
+  background: url("/assets/images/service-card-corner-bg.webp") top right / cover no-repeat !important;
 }
 
 a[data-framer-name="Desktop Service Card "][href="/services/ai-powered-threat-detection-system"] [data-framer-name="Bg"] img,
